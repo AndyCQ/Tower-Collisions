@@ -32,7 +32,7 @@ public class EnemyMove : MonoBehaviour
         }
 
         if (waypointIndex == waypoints.Length) {
-            waypointIndex = 0;
+            Destroy(gameObject);
         }
     }
 }
