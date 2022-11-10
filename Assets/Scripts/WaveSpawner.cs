@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
+
 public class WaveSpawner : MonoBehaviour
 {
+    [SerializeField]
+    private string waveFilePath;
     // Start is called before the first frame update
     void Start()
     {
-        readTextFile("Assets/Waves/test.txt");
+        readTextFile(waveFilePath);
     }
 
     // Update is called once per frame
