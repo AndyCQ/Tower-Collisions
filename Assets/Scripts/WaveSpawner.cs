@@ -24,7 +24,13 @@ public class WaveSpawner : MonoBehaviour
     public GameObject skelPrefab;
 
     public GameObject spawn;
-    private float countdown;
+
+    [SerializeField]
+    private bool going = false;
+
+    [SerializeField]
+    private bool pause = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,37 +39,58 @@ public class WaveSpawner : MonoBehaviour
         PrintDebug(fullLevelData);
     }
 
-    private void Update() {
-        countdown-=Time.deltaTime;
-    }
 
-    public void SpawnWave(){
-        stop = false;
+    private void FixedUpdate() {
         currString=fullLevelData[index];
-        while(!stop){
-            switch(currString[0]){
-                case 'w':
-                    if(int.Parse(currString.Substring(1))!=waveNumber){
-                        stop = true;
-                        waveNumber+=1;
-                    }
-                    break;
-                case 's':
-                    int spawned=0;
-                    while(spawned<int.Parse(currString.Substring(1))){
-                        if(countdown<=0){
-                            countdown=0.5f;
-                            Instantiate(skelPrefab, spawn.transform.position, Quaternion.identity);
-                            spawned+=1;
-                        }
-                    }
-                    break;
-            }
-            index+=1;
-            currString=fullLevelData[index];
+    }
+    public void SpawnWave(){
+        if(!going){
+            going = true;
+            CheckNext();
         }
     }
 
+
+    private void CheckNext(){
+        switch(currString[0]){
+                case 'w':
+                    if(int.Parse(currString.Substring(1))!=waveNumber){
+                        waveNumber+=1;
+                        index+=1;
+                        going = false;
+                    }
+                    break;
+                case 's':                    
+                    StartCoroutine(SpawnSkeletons(int.Parse(currString.Substring(1)),1f));
+                    break;
+                case 'd':
+                    print("stop");
+                    StartCoroutine(Wait(float.Parse(currString.Substring(1))));
+                    break;
+                default:
+                    break;
+            }
+    }
+    IEnumerator Wait(float time){
+        yield return new WaitForSeconds(time);
+        index+=1;
+        yield return new WaitForFixedUpdate();
+        CheckNext();
+        yield break;
+    }
+    IEnumerator SpawnSkeletons(int enemies, float time){
+        int spawned=0;
+        while(spawned<enemies){
+            Instantiate(skelPrefab, spawn.transform.position, Quaternion.identity);
+            spawned+=1;
+            yield return new WaitForSeconds(time);
+        }
+        index+=1;
+        yield return new WaitForFixedUpdate();
+        CheckNext();
+        yield break;
+        
+    }
 
     void ReadTextFile(string file_path)
     {
