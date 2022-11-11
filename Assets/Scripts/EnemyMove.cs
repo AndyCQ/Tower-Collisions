@@ -9,7 +9,7 @@ public class EnemyMove : MonoBehaviour
 
     [SerializeField] float moveSpeed = 2f;
 
-    int waypointIndex = 0;
+    public int waypointIndex = 0;
 
     void Start()
     {
@@ -27,12 +27,12 @@ public class EnemyMove : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, 
         waypoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
 
-        if (transform.position == waypoints[waypointIndex].transform.position) {
+        if ((transform.position - waypoints[waypointIndex].transform.position).magnitude < .2f) {
             waypointIndex += 1;
         }
 
         if (waypointIndex == waypoints.Length) {
-            waypointIndex = 0;
+            Destroy(gameObject);
         }
     }
 }
