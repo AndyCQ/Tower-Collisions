@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
+/*
+w - wave number
+s - skeleton
+d - delay for x seconds
+
+*/
+
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -16,8 +23,7 @@ public class WaveSpawner : MonoBehaviour
 
     [SerializeField]
     private int index = 0;
-    [SerializeField]
-    private bool stop = true;
+
     [SerializeField]
     private string currString = "";
 
@@ -28,8 +34,6 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField]
     private bool going = false;
 
-    [SerializeField]
-    private bool pause = false;
 
 
     // Start is called before the first frame update
@@ -54,9 +58,9 @@ public class WaveSpawner : MonoBehaviour
     private void CheckNext(){
         switch(currString[0]){
                 case 'w':
+                    index+=1;
                     if(int.Parse(currString.Substring(1))!=waveNumber){
                         waveNumber+=1;
-                        index+=1;
                         going = false;
                     }
                     break;

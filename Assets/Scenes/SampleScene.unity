@@ -274,10 +274,10 @@ MonoBehaviour:
   fullLevelData: []
   waveNumber: 0
   index: 0
-  stop: 1
   currString: 
   skelPrefab: {fileID: 5532259593148717270, guid: 578ac2db36496a0498a9d2feb3180c00, type: 3}
   spawn: {fileID: 519529926}
+  going: 0
 --- !u!1 &519529926
 GameObject:
   m_ObjectHideFlags: 0
