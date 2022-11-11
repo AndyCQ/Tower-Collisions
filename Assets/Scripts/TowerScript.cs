@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class TowerScript : MonoBehaviour
 {
-    public GameObject curr_target;
+    protected GameObject curr_target;
     public GameObject projectile;
     public string DamageType = "Normal";
     public float range = 10f;
-    public float fireRate = 5f;
+    public float fireRate = 1000f;
+    protected float timeToFire = 0f;
     public float Damage = 5f; 
-
+    public Transform firingPosition;
     public string TargetTag = "Enemy";
     public List<GameObject> enemies;
     
@@ -21,6 +22,7 @@ public class TowerScript : MonoBehaviour
     void Update(){
         gameObject.GetComponent<SphereCollider>().radius = range;
         GetCurrentTarget();
+        FireBullet();
     }
 
 
@@ -53,7 +55,19 @@ public class TowerScript : MonoBehaviour
         }
     }
 
-    private void FireBullet
+    private void FireBullet(){
+        if(Time.time > timeToFire){
+            if(curr_target != null){
+                GameObject bullet = Instantiate(projectile, firingPosition.position, Quaternion.identity).gameObject;
+                bullet.GetComponent<Projectile>().SetEnemy(curr_target);
+                
+            }
+            timeToFire = Time.time + fireRate;
+            print(timeToFire);
+            print(Time.time);
+            
+        }
+    }
 
 
 }
