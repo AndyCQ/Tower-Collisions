@@ -19,7 +19,7 @@ public class EnemyHealth : MonoBehaviour
         elementalMatchup.Add("Plant","Water");
     }
 
-    void TakeDamage(float damage, string DMGType){
+    public void TakeDamage(float damage, string DMGType){
         if(DMGType == "Normal"){
             health -= damage * normalDmgBoost;
         } else{
@@ -40,7 +40,7 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(health<0f){
+        if(health<=0f){
             Destroy(gameObject);
         }
     }

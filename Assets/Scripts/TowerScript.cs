@@ -13,7 +13,7 @@ public class TowerScript : MonoBehaviour
     public float Damage = 5f; 
     public Transform firingPosition;
     public string TargetTag = "Enemy";
-    private List<GameObject> enemies;
+    public List<GameObject> enemies;
     
     void Start(){
         gameObject.GetComponent<SphereCollider>().radius = range;
@@ -52,7 +52,16 @@ public class TowerScript : MonoBehaviour
 
     private void GetCurrentTarget(){
         if(enemies.Count > 0){
-            curr_target = enemies[0];
+            while(enemies.Count > 0){
+                curr_target = enemies[0];
+                if(curr_target == null){
+                    enemies.RemoveAt(0);
+                    continue;
+                }
+                break;
+            }
+            
+            
         } else{
             curr_target = null;
         }
@@ -61,7 +70,7 @@ public class TowerScript : MonoBehaviour
     private void FireBullet(){
         if(curr_target != null){
             GameObject bullet = Instantiate(projectile, firingPosition.position, Quaternion.identity).gameObject;
-            bullet.GetComponent<Projectile>().SetEnemy(curr_target);        
+            bullet.GetComponent<Projectile>().SetBulletStats(curr_target,DamageType,Damage);        
         }
     }
 
