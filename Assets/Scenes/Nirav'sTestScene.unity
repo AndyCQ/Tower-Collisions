@@ -1109,10 +1109,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2174805739714389741, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 46.93506
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174805739755676600, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174805739755676600, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174805739755676600, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174805739755676600, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174805739755676600, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174805739755676600, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174805739755676600, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174805739755676600, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2174805739755676601, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
       propertyPath: spawn
       value: 
       objectReference: {fileID: 306580075}
+    - target: {fileID: 2174805740208574544, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2174805740208574546, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
