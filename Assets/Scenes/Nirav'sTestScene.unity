@@ -1461,6 +1461,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower_ProtoType
       objectReference: {fileID: 0}
+    - target: {fileID: 2180651076822844198, guid: 710dc34c528df9d47bb08386ff0e12b1, type: 3}
+      propertyPath: fireRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180651076822844198, guid: 710dc34c528df9d47bb08386ff0e12b1, type: 3}
+      propertyPath: DamageType
+      value: Plant
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 710dc34c528df9d47bb08386ff0e12b1, type: 3}
 --- !u!1 &1735037978
