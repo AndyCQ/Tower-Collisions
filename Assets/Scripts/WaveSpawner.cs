@@ -45,7 +45,18 @@ public class WaveSpawner : MonoBehaviour
 
 
     private void FixedUpdate() {
-        currString=fullLevelData[index];
+        if(index<fullLevelData.Count){
+            currString=fullLevelData[index];
+        }else{
+            currString="x";
+        }
+        
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        if(enemies.Length==0){
+            going=false;
+        }
+
+        
     }
     public void SpawnWave(){
         if(!going){
@@ -61,7 +72,6 @@ public class WaveSpawner : MonoBehaviour
                     index+=1;
                     if(int.Parse(currString.Substring(1))!=waveNumber){
                         waveNumber+=1;
-                        going = false;
                     }
                     break;
                 case 's':                    
