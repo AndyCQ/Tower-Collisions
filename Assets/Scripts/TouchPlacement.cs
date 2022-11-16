@@ -8,6 +8,10 @@ public class TouchPlacement : MonoBehaviour
     [SerializeField]
     Camera mainCam;
 
+    private void Start() {
+        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+    }
+
     public bool SpawnTowerAtPos(Vector3 touchPos) {
         if (currPrefab == null) {
             return false;
@@ -16,6 +20,7 @@ public class TouchPlacement : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, LayerMask.GetMask("TowerSpawn"))) {
             Instantiate(currPrefab, hit.point, Quaternion.identity);
+            currPrefab = null;
             return true;
         } else {
             return false;
