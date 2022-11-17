@@ -14,6 +14,8 @@ public class TowerScript : MonoBehaviour
     public Transform firingPosition;
     public string TargetTag = "Enemy";
     public List<GameObject> enemies;
+    public float health = 100f;
+    public int AmmoCount = 100;
     
     void Start(){
         gameObject.GetComponent<SphereCollider>().radius = range;
@@ -23,9 +25,10 @@ public class TowerScript : MonoBehaviour
     void Update(){
         gameObject.GetComponent<SphereCollider>().radius = range;
         GetCurrentTarget();
-        if(timeToFire <= 0f){
+        if(timeToFire <= 0f && AmmoCount > 0){
             FireBullet();
             timeToFire = fireRate;
+            AmmoCount -= 1;
         }
         timeToFire -= Time.deltaTime;    
     }
