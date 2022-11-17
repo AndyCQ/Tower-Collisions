@@ -33,6 +33,7 @@ public class WaveSpawner : MonoBehaviour
 
     [SerializeField]
     private bool going = false;
+    DeckManager DM;
 
 
 
@@ -41,6 +42,7 @@ public class WaveSpawner : MonoBehaviour
     {
         ReadTextFile(waveFilePath);
         PrintDebug(fullLevelData);
+        DM = GameObject.FindGameObjectWithTag("GameManager").GetComponent<DeckManager>();
     }
 
 
@@ -62,6 +64,8 @@ public class WaveSpawner : MonoBehaviour
         if(!going){
             going = true;
             CheckNext();
+            // get the next card hand
+            DM.FillHand();
         }
     }
 
