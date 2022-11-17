@@ -7,6 +7,7 @@ TagManager:
   - Map
   - Enemy
   - GameManager
+  - Canvas
   layers:
   - Default
   - TransparentFX
