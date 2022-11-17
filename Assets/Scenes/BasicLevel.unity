@@ -439,17 +439,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1511221923, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
+    - target: {fileID: 1511221922, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1511221923, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
+      propertyPath: m_LocalScale.y
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1511221923, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+    - target: {fileID: 1729708545, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729708545, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 267
+      value: 190
       objectReference: {fileID: 0}
     - target: {fileID: 2174805739755676601, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
       propertyPath: spawn
