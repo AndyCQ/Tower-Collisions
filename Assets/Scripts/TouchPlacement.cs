@@ -18,7 +18,7 @@ public class TouchPlacement : MonoBehaviour
         }
         Ray ray = mainCam.ScreenPointToRay(touchPos);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, LayerMask.GetMask("TowerSpawn"))) {
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("TowerSpawn"))) {
             Instantiate(currPrefab, hit.point, Quaternion.identity);
             currPrefab = null;
             return true;

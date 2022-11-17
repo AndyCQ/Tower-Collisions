@@ -10,7 +10,7 @@ public class CardButton : MonoBehaviour
     Image cardSprite;
 
     private void Start() {
-        GM = GameObject.FindGameObjectWithTag("GameManage");
+        GM = GameObject.FindGameObjectWithTag("GameManager");
         cardSprite = this.GetComponent<Image>();
     }
 
