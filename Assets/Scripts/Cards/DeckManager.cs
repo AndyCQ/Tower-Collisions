@@ -29,6 +29,7 @@ public class DeckManager : MonoBehaviour
     }
     public void FillHand(int size = 3) {
         handList.Clear();
+        handList = new List<CardData>(size);
         for (int i = 0; i < size; i++)
         {
             CardData currCard = GetDeckCard();

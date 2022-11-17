@@ -8,7 +8,7 @@ public class CardUIManager : MonoBehaviour
     GameObject cardButtonPrefab;
     [SerializeField]
     GameObject UIPanel;
-    List<GameObject> currButtons;
+    List<GameObject> currButtons = new List<GameObject>();
 
     public void AddHand(List<CardData> handList) {
         foreach (GameObject go in currButtons) {
@@ -17,7 +17,7 @@ public class CardUIManager : MonoBehaviour
         foreach (CardData cd in handList) {
             GameObject currButton = Instantiate(cardButtonPrefab, UIPanel.transform) as GameObject;
             currButton.GetComponent<CardButton>().currCard = cd;
-            currButton.GetComponent<CardButton>().SetArt();
+            // currButton.GetComponent<CardButton>().SetArt();
             currButtons.Add(currButton);
         }
     }
