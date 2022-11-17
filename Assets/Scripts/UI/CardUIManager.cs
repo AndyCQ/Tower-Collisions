@@ -11,14 +11,18 @@ public class CardUIManager : MonoBehaviour
     List<GameObject> currButtons = new List<GameObject>();
 
     public void AddHand(List<CardData> handList) {
-        foreach (GameObject go in currButtons) {
-            Destroy(go);
-        }
+        ClearButtons();
         foreach (CardData cd in handList) {
             GameObject currButton = Instantiate(cardButtonPrefab, UIPanel.transform) as GameObject;
             currButton.GetComponent<CardButton>().currCard = cd;
             // currButton.GetComponent<CardButton>().SetArt();
             currButtons.Add(currButton);
+        }
+    }
+
+    public void ClearButtons() {
+        foreach (GameObject go in currButtons) {
+            Destroy(go);
         }
     }
 }
