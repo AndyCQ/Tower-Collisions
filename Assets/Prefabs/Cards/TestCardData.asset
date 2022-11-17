@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: 
   cardArt: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  towerPrefab: {fileID: 1398183943976000876, guid: b7429c252b97cb346831640bedbd5ec3, type: 3}
+  towerPrefab: {fileID: 2180651076822844197, guid: 710dc34c528df9d47bb08386ff0e12b1, type: 3}
