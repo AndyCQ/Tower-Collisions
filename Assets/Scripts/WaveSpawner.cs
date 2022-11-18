@@ -141,7 +141,13 @@ public class WaveSpawner : MonoBehaviour
 
     void ReadTextFile(string file_path)
     {
-        StreamReader inp_stm = new StreamReader(file_path);
+        TextAsset textFile = Resources.Load<TextAsset>("level1");
+        if(textFile == null){
+            print("bad");
+        }
+            
+
+        StreamReader inp_stm = new StreamReader(new MemoryStream(textFile.bytes));
 
         while(!inp_stm.EndOfStream)
         {

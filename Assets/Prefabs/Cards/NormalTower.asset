@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbd76e6697931ae4388140555d3425a2, type: 3}
   m_Name: NormalTower
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: Normal
   cardArt: {fileID: 0}
   towerPrefab: {fileID: 3527695204420412267, guid: 9f09521b087646a408e76f81f841897c, type: 3}

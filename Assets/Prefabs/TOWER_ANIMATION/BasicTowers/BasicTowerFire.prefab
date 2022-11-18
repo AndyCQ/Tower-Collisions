@@ -339,7 +339,7 @@ MonoBehaviour:
   normalDmgBoost: 1.25
   elementalDmgBoost: 2
   elementalResist: 0.5
-  maxHealth: 25
+  maxHealth: 15
   healthBarUI: {fileID: 2854325436476632528}
   slider: {fileID: 2854325437319560528}
   tier: 1

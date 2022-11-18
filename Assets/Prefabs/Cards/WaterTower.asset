@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbd76e6697931ae4388140555d3425a2, type: 3}
   m_Name: WaterTower
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: water
   cardArt: {fileID: 0}
   towerPrefab: {fileID: 3527695204420412267, guid: 9fd71f08592569c419e7d0806d88da0e, type: 3}

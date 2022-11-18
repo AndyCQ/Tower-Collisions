@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbd76e6697931ae4388140555d3425a2, type: 3}
   m_Name: FireTower
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: Fire
   cardArt: {fileID: 0}
   towerPrefab: {fileID: 3527695204420412267, guid: de5a78b3c3145334eb83f63c8f395030, type: 3}
