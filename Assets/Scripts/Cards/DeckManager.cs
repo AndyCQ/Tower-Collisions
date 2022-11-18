@@ -14,31 +14,37 @@ public class DeckManager : MonoBehaviour
     List<CardData> discardList;
     [SerializeField]
     int maxHandSize = 3;
+    int currHandSize = 3;
+    CardUIManager UIM;
 
     private void Start() {
         internalDeckList = new List<CardData>(deckList);
-    }
-
-    private void Update() {
-        if (internalDeckList.Count == 0) {
-            int numOfNull = 0;
-            foreach (CardData cd in handList) { if (cd == null) numOfNull++; }
-            if (numOfNull == handList.Count)
-                DiscardToDeck();
-        }
+        UIM = GameObject.FindGameObjectWithTag("Canvas").GetComponent<CardUIManager>();
     }
 
     public List<CardData> GetHandList() { return handList; }
     public List<CardData> GetInternalDeckList() { return internalDeckList; }
     public List<CardData> GetDiscardList() { return discardList; }
+    public int GetCurrHandSize() { return currHandSize; }
+    public void DecreaseHandSize(int val = -1) { currHandSize -= val; }
     public GameObject GetObjAtInd(int ind) {
         return handList[ind].towerPrefab;
     }
     public void FillHand(int size = 3) {
+        currHandSize = size;
+        ClearHand();
+        handList = new List<CardData>(size);
         for (int i = 0; i < size; i++)
         {
-            handList.Add(GetDeckCard());
+            CardData currCard = GetDeckCard();
+            handList.Add(currCard);
+            AddToDiscard(currCard);
         }
+        UIM.AddHand(handList);
+    }
+    public void ClearHand() { 
+        handList.Clear();
+        UIM.ClearButtons();
     }
     CardData GetDeckCard() {
         if (internalDeckList.Count == 0) {

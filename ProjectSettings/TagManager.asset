@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Map
   - Enemy
+  - GameManager
+  - Canvas
+  - Tower
   - Base
   layers:
   - Default

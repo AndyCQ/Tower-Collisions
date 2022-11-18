@@ -17,6 +17,9 @@ public class EnemyHealth : MonoBehaviour
    public GameObject healthBarUI;
    public Slider slider;
 
+   [SerializeField]
+   private int tier = 1;
+
    private Dictionary<string,string> elementalMatchup = new Dictionary<string, string>();
 
     void Start()
@@ -58,5 +61,13 @@ public class EnemyHealth : MonoBehaviour
 
     float CalculateHealth(){
         return health / maxHealth;
+    }
+
+    public void SetType(string element){
+        type=element;
+    }
+
+    public void SetTier(int level){
+        tier=level;
     }
 }
