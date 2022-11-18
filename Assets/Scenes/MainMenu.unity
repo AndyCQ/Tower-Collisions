@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3703edc351a8fdc47bc0e0529cf52e21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToGo: BasicLevel
+  SceneToGo: Level1
 --- !u!114 &200861531
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -150,7 +150,6 @@ MonoBehaviour:
   normalDmgBoost: 1.25
   elementalDmgBoost: 2
   elementalResist: 0.5
-  damage: 5
   maxHealth: 10
   healthBarUI: {fileID: 1993146388348718238}
   slider: {fileID: 1993146386902080542}
@@ -217,7 +216,7 @@ MonoBehaviour:
   DamageType: Normal
   range: 5
   fireRate: 1
-  Damage: 2
+  Damage: 1
   firingPosition: {fileID: 621763271325663172}
   TargetTag: TowerTarget
   enemies: []

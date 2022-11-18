@@ -334,12 +334,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86dcc0f6dc55bae44b6587bc7be15a1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 25
   type: Normal
   normalDmgBoost: 1.25
   elementalDmgBoost: 2
   elementalResist: 0.5
-  damage: 2.81
   maxHealth: 10
   healthBarUI: {fileID: 2854325436476632528}
   slider: {fileID: 2854325437319560528}
@@ -501,7 +500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 81697750989776893, guid: 25b1c246df9eb304bbf89b969d1c47e5, type: 3}
   DamageType: Normal
-  range: 10
+  range: 7
   fireRate: 1
   Damage: 2
   firingPosition: {fileID: 7039470969840772987}
