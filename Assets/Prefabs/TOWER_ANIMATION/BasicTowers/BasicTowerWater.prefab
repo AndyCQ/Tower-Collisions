@@ -334,12 +334,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86dcc0f6dc55bae44b6587bc7be15a1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 25
+  health: 15
   type: Water
   normalDmgBoost: 1.25
   elementalDmgBoost: 2
   elementalResist: 0.5
-  maxHealth: 25
+  maxHealth: 15
   healthBarUI: {fileID: 2854325436476632528}
   slider: {fileID: 2854325437319560528}
   tier: 1
