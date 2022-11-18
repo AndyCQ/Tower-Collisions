@@ -339,7 +339,7 @@ MonoBehaviour:
   normalDmgBoost: 1.25
   elementalDmgBoost: 2
   elementalResist: 0.5
-  maxHealth: 10
+  maxHealth: 25
   healthBarUI: {fileID: 2854325436476632528}
   slider: {fileID: 2854325437319560528}
   tier: 1
@@ -500,7 +500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 81697750989776893, guid: 25b1c246df9eb304bbf89b969d1c47e5, type: 3}
   DamageType: Normal
-  range: 7
+  range: 10
   fireRate: 1
   Damage: 2
   firingPosition: {fileID: 7039470969840772987}

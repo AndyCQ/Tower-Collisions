@@ -339,7 +339,7 @@ MonoBehaviour:
   normalDmgBoost: 1.25
   elementalDmgBoost: 2
   elementalResist: 0.5
-  maxHealth: 10
+  maxHealth: 25
   healthBarUI: {fileID: 2854325436476632528}
   slider: {fileID: 2854325437319560528}
   tier: 1
@@ -419,7 +419,8 @@ Transform:
   m_LocalPosition: {x: -0, y: 3.25, z: 0}
   m_LocalScale: {x: 0.5768918, y: 0.5768918, z: 0.5768918}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2191691317541065641}
   m_Father: {fileID: 4305217723297937873}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -500,13 +501,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 81697750989776893, guid: 25b1c246df9eb304bbf89b969d1c47e5, type: 3}
   DamageType: Plant
-  range: 7
+  range: 10
   fireRate: 1
   Damage: 2
-  firingPosition: {fileID: 7039470969840772987}
+  firingPosition: {fileID: 2191691317541065641}
   TargetTag: Enemy
   enemies: []
   AmmoCount: 100
+--- !u!1 &8426339452804103302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2191691317541065641}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2191691317541065641
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8426339452804103302}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7039470969840772987}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4338529709918722750
 PrefabInstance:
   m_ObjectHideFlags: 0
