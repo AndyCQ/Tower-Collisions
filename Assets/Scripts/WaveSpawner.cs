@@ -108,15 +108,19 @@ public class WaveSpawner : MonoBehaviour
             enemy.GetComponent<EnemyHealth>().SetTier(tier);
             switch (type){
                 case 'w':
+                    enemy.GetComponentInChildren<TowerScript>().SetType("Water");
                     enemy.GetComponent<EnemyHealth>().SetType("Water");
                     break;
                 case 'p':
+                    enemy.GetComponentInChildren<TowerScript>().SetType("Plant");
                     enemy.GetComponent<EnemyHealth>().SetType("Plant");
                     break;
                 case 'f':
+                    enemy.GetComponentInChildren<TowerScript>().SetType("Fire");
                     enemy.GetComponent<EnemyHealth>().SetType("Fire");
                     break;
                 case 'n':
+                    enemy.GetComponentInChildren<TowerScript>().SetType("Normal");
                     enemy.GetComponent<EnemyHealth>().SetType("Normal");
                     break;
             }

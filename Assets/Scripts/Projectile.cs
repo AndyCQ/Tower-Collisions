@@ -24,6 +24,7 @@ public class Projectile : MonoBehaviour
         target.transform.position, moveSpeed * Time.deltaTime);
 
         if((transform.position - target.transform.position).magnitude < .2f){
+
             target.GetComponent<EnemyHealth>().TakeDamage(Damage,DamageType);
             Destroy(gameObject);
         }
