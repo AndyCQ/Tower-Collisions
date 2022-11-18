@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -9,6 +10,12 @@ public class EnemyHealth : MonoBehaviour
    public float normalDmgBoost = 1.25f;
    public float elementalDmgBoost = 2f;
    public float elementalResist = 0.5f;
+   public float damage = 5f;
+
+   //Healthbar vars
+   public float maxHealth = 10f;
+   public GameObject healthBarUI;
+   public Slider slider;
 
    [SerializeField]
    private int tier = 1;
@@ -20,6 +27,7 @@ public class EnemyHealth : MonoBehaviour
         elementalMatchup.Add("Water","Fire");
         elementalMatchup.Add("Fire","Plant");
         elementalMatchup.Add("Plant","Water");
+        slider.value = CalculateHealth();
     }
 
     public void TakeDamage(float damage, string DMGType){
@@ -46,6 +54,13 @@ public class EnemyHealth : MonoBehaviour
         if(health<=0f){
             Destroy(gameObject);
         }
+
+        slider.value = CalculateHealth();
+        
+    }
+
+    float CalculateHealth(){
+        return health / maxHealth;
     }
 
     public void SetType(string element){
