@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class BaseScript : MonoBehaviour
 {
     public float base_health = 50;
+    public float damage = 5f;
     public float currHealth;
 
     public GameObject healthBarUI;
@@ -20,7 +21,7 @@ public class BaseScript : MonoBehaviour
     private void OnCollisionEnter(Collision other){
         if(other.gameObject.CompareTag("Enemy")){
             GameObject enemy = other.gameObject;
-            currHealth -= enemy.GetComponent<Health>().damage;
+            currHealth -= damage;
             Destroy(other.gameObject);
         }
     }

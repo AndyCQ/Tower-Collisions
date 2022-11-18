@@ -10,7 +10,6 @@ public class Health : MonoBehaviour
    public float normalDmgBoost = 1.25f;
    public float elementalDmgBoost = 2f;
    public float elementalResist = 0.5f;
-   public float damage = 5f;
 
    //Healthbar vars
    public float maxHealth = 10f;

@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 4338529709966378209}
   - component: {fileID: 4338529709966378222}
   m_Layer: 0
-  m_Name: BasicTowerNormal
+  m_Name: BasicTowerFire
   m_TagString: TowerTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -335,11 +335,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  type: Normal
+  type: Fire
   normalDmgBoost: 1.25
   elementalDmgBoost: 2
   elementalResist: 0.5
-  damage: 2.81
+  damage: 5
   maxHealth: 10
   healthBarUI: {fileID: 2854325436476632528}
   slider: {fileID: 2854325437319560528}
@@ -452,7 +452,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 75a7c1a04f6bbb34c952b87caaa10daa, type: 2}
+  - {fileID: 2100000, guid: 6f66b23c790b0e44a8435e236f160aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -500,7 +500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 81697750989776893, guid: 25b1c246df9eb304bbf89b969d1c47e5, type: 3}
-  DamageType: Normal
+  DamageType: Fire
   range: 10
   fireRate: 1
   Damage: 2
