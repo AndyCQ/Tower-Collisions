@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 
 /*
-w - wave number
+w - end of wave
 s - skeleton
 d - delay for x seconds
 
@@ -56,9 +56,12 @@ public class WaveSpawner : MonoBehaviour
         }
         
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if(enemies.Length==0){
+        if(enemies.Length==0&&currString=="w"){
             going=false;
             text.text="Start Wave "+waveNumber;
+        }else if(enemies.Length==0&&index==fullLevelData.Count){
+            going=false;
+            text.text="End of Level";
         }
 
         
@@ -105,23 +108,23 @@ public class WaveSpawner : MonoBehaviour
         while(spawned<enemies){
             enemy = Instantiate(skelPrefab, spawn.transform.position, Quaternion.identity);
             print(tier);
-            enemy.GetComponent<EnemyHealth>().SetTier(tier);
+            enemy.GetComponent<Health>().SetTier(tier);
             switch (type){
                 case 'w':
-                    enemy.GetComponentInChildren<TowerScript>().SetType("Water");
-                    enemy.GetComponent<EnemyHealth>().SetType("Water");
+                    enemy.GetComponentInChildren<EnemyShoot>().SetType("Water");
+                    enemy.GetComponent<Health>().SetType("Water");
                     break;
                 case 'p':
-                    enemy.GetComponentInChildren<TowerScript>().SetType("Plant");
-                    enemy.GetComponent<EnemyHealth>().SetType("Plant");
+                    enemy.GetComponentInChildren<EnemyShoot>().SetType("Plant");
+                    enemy.GetComponent<Health>().SetType("Plant");
                     break;
                 case 'f':
-                    enemy.GetComponentInChildren<TowerScript>().SetType("Fire");
-                    enemy.GetComponent<EnemyHealth>().SetType("Fire");
+                    enemy.GetComponentInChildren<EnemyShoot>().SetType("Fire");
+                    enemy.GetComponent<Health>().SetType("Fire");
                     break;
                 case 'n':
-                    enemy.GetComponentInChildren<TowerScript>().SetType("Normal");
-                    enemy.GetComponent<EnemyHealth>().SetType("Normal");
+                    enemy.GetComponentInChildren<EnemyShoot>().SetType("Normal");
+                    enemy.GetComponent<Health>().SetType("Normal");
                     break;
             }
             spawned+=1;

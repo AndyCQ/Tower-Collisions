@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class Health : MonoBehaviour
 {
    public float health = 10f;
    public string type = "Fire";
@@ -14,7 +14,7 @@ public class EnemyHealth : MonoBehaviour
    private int tier = 1;
 
    private Dictionary<string,string> elementalMatchup = new Dictionary<string, string>();
-
+ 
     void Start()
     {
         elementalMatchup.Add("Water","Fire");
