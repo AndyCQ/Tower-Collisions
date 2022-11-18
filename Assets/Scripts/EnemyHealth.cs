@@ -10,6 +10,9 @@ public class EnemyHealth : MonoBehaviour
    public float elementalDmgBoost = 2f;
    public float elementalResist = 0.5f;
 
+   [SerializeField]
+   private int tier = 1;
+
    private Dictionary<string,string> elementalMatchup = new Dictionary<string, string>();
 
     void Start()
@@ -43,5 +46,13 @@ public class EnemyHealth : MonoBehaviour
         if(health<=0f){
             Destroy(gameObject);
         }
+    }
+
+    public void SetType(string element){
+        type=element;
+    }
+
+    public void SetTier(int level){
+        tier=level;
     }
 }

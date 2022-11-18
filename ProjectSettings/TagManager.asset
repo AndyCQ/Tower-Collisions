@@ -7,6 +7,8 @@ TagManager:
   - Map
   - Enemy
   - GameManager
+  - Canvas
+  - Tower
   layers:
   - Default
   - TransparentFX
