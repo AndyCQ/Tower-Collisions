@@ -148,6 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currCard: {fileID: 11400000, guid: 310c46713ca25a548bf4b3434abacfa1, type: 2}
+  cardSprite: {fileID: 3073077470779107652}
+  cardText: {fileID: 3073077472186281008}
 --- !u!1 &3073077472186281038
 GameObject:
   m_ObjectHideFlags: 0

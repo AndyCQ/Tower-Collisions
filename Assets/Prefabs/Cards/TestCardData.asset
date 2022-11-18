@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbd76e6697931ae4388140555d3425a2, type: 3}
   m_Name: TestCardData
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: Test
   cardArt: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   towerPrefab: {fileID: 785444027023795219, guid: 710dc34c528df9d47bb08386ff0e12b1, type: 3}
