@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.UI;
+using TMPro;
 
 /*
 w - wave number
@@ -19,7 +21,7 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField]
     private List<string> fullLevelData;
 
-    public int waveNumber = 0;
+    public int waveNumber = 1;
 
     [SerializeField]
     private int index = 0;
@@ -35,8 +37,8 @@ public class WaveSpawner : MonoBehaviour
     private bool going = false;
     DeckManager DM;
 
-
-
+    [SerializeField]
+    private TMP_Text text;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +58,7 @@ public class WaveSpawner : MonoBehaviour
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         if(enemies.Length==0){
             going=false;
+            text.text="Start Wave "+waveNumber;
         }
 
         
@@ -63,6 +66,7 @@ public class WaveSpawner : MonoBehaviour
     public void SpawnWave(){
         if(!going){
             going = true;
+            text.text="Good Luck!";
             CheckNext();
             // get the next card hand
             DM.FillHand();
@@ -74,12 +78,11 @@ public class WaveSpawner : MonoBehaviour
         switch(currString[0]){
                 case 'w':
                     index+=1;
-                    if(int.Parse(currString.Substring(1))!=waveNumber){
-                        waveNumber+=1;
-                    }
+                    waveNumber+=1;
                     break;
-                case 's':                    
-                    StartCoroutine(SpawnSkeletons(int.Parse(currString.Substring(1)),1f));
+                case 's':
+                    int tier = int.Parse(currString[1].ToString());       
+                    StartCoroutine(SpawnSkeletons(tier,currString[2],int.Parse(currString.Substring(3)),1f));
                     break;
                 case 'd':
                     print("stop");
@@ -96,10 +99,27 @@ public class WaveSpawner : MonoBehaviour
         CheckNext();
         yield break;
     }
-    IEnumerator SpawnSkeletons(int enemies, float time){
+    IEnumerator SpawnSkeletons(int tier, char type, int enemies, float time){
         int spawned=0;
+        GameObject enemy;
         while(spawned<enemies){
-            Instantiate(skelPrefab, spawn.transform.position, Quaternion.identity);
+            enemy = Instantiate(skelPrefab, spawn.transform.position, Quaternion.identity);
+            print(tier);
+            enemy.GetComponent<EnemyHealth>().SetTier(tier);
+            switch (type){
+                case 'w':
+                    enemy.GetComponent<EnemyHealth>().SetType("Water");
+                    break;
+                case 'p':
+                    enemy.GetComponent<EnemyHealth>().SetType("Plant");
+                    break;
+                case 'f':
+                    enemy.GetComponent<EnemyHealth>().SetType("Fire");
+                    break;
+                case 'n':
+                    enemy.GetComponent<EnemyHealth>().SetType("Normal");
+                    break;
+            }
             spawned+=1;
             yield return new WaitForSeconds(time);
         }
