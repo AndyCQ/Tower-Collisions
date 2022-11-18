@@ -20,7 +20,7 @@ public class BaseScript : MonoBehaviour
     private void OnCollisionEnter(Collision other){
         if(other.gameObject.CompareTag("Enemy")){
             GameObject enemy = other.gameObject;
-            currHealth -= enemy.GetComponent<EnemyHealth>().damage;
+            currHealth -= enemy.GetComponent<Health>().damage;
             Destroy(other.gameObject);
         }
     }
