@@ -36,7 +36,7 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField]
     private bool going = false;
     DeckManager DM;
-
+    private bool endOfWave = false;
     [SerializeField]
     private TMP_Text text;
     // Start is called before the first frame update
@@ -56,9 +56,11 @@ public class WaveSpawner : MonoBehaviour
         }
         
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if(enemies.Length==0&&currString=="w"){
+        print(currString);
+        if(enemies.Length==0&&endOfWave){
             going=false;
             text.text="Start Wave "+waveNumber;
+            endOfWave=false;
         }else if(enemies.Length==0&&index==fullLevelData.Count){
             going=false;
             text.text="End of Level";
@@ -82,6 +84,7 @@ public class WaveSpawner : MonoBehaviour
                 case 'w':
                     index+=1;
                     waveNumber+=1;
+                    endOfWave=true;
                     break;
                 case 's':
                     int tier = int.Parse(currString[1].ToString());       
