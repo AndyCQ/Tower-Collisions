@@ -56,7 +56,7 @@ public class WaveSpawner : MonoBehaviour
         }
         
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        print(currString);
+        //print(currString);
         if(enemies.Length==0&&endOfWave){
             going=false;
             text.text="Start Wave "+waveNumber;
@@ -110,7 +110,6 @@ public class WaveSpawner : MonoBehaviour
         GameObject enemy;
         while(spawned<enemies){
             enemy = Instantiate(skelPrefab, spawn.transform.position, Quaternion.identity);
-            print(tier);
             enemy.GetComponent<Health>().SetTier(tier);
             switch (type){
                 case 'w':

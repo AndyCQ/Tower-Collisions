@@ -152,7 +152,7 @@ MonoBehaviour:
   elementalResist: 0.5
   damage: 5
   maxHealth: 10
-  healthBarUI: {fileID: 0}
+  healthBarUI: {fileID: 1993146388348718238}
   slider: {fileID: 1993146386902080542}
   tier: 1
 --- !u!1 &621763271325663227
@@ -344,5 +344,10 @@ MonoBehaviour:
 --- !u!224 &1993146388348718237 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1993146387522533229, guid: 2f779b497ddd47a41922731ebfa163cf, type: 3}
+  m_PrefabInstance: {fileID: 860027888}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1993146388348718238 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1993146387522533230, guid: 2f779b497ddd47a41922731ebfa163cf, type: 3}
   m_PrefabInstance: {fileID: 860027888}
   m_PrefabAsset: {fileID: 0}

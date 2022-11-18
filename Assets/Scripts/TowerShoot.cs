@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerScript : MonoBehaviour
+public class TowerShoot : MonoBehaviour
 {
     private GameObject curr_target;
     public GameObject projectile;
@@ -14,7 +14,6 @@ public class TowerScript : MonoBehaviour
     public Transform firingPosition;
     public string TargetTag = "Enemy";
     public List<GameObject> enemies;
-    public float health = 100f;
     public int AmmoCount = 100;
     
     void Start(){
@@ -25,7 +24,7 @@ public class TowerScript : MonoBehaviour
     void Update(){
         gameObject.GetComponent<SphereCollider>().radius = range;
         GetCurrentTarget();
-        if(timeToFire <= 0f && AmmoCount > 0){
+        if(timeToFire <= 0f && AmmoCount > 0 && curr_target != null){
             FireBullet();
             timeToFire = fireRate;
             AmmoCount -= 1;
