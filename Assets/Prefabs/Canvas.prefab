@@ -586,7 +586,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start Wave
+  m_text: Start Wave 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -956,6 +956,7 @@ MonoBehaviour:
   skelPrefab: {fileID: 5532259593148717270, guid: 578ac2db36496a0498a9d2feb3180c00, type: 3}
   spawn: {fileID: 0}
   going: 0
+  text: {fileID: 0}
 --- !u!1 &2174805740208574550
 GameObject:
   m_ObjectHideFlags: 0

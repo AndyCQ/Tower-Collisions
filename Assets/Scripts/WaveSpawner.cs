@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 
 /*
-w - wave number
+w - end of wave
 s - skeleton
 d - delay for x seconds
 
@@ -36,7 +36,7 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField]
     private bool going = false;
     DeckManager DM;
-
+    private bool endOfWave = false;
     [SerializeField]
     private TMP_Text text;
     // Start is called before the first frame update
@@ -56,9 +56,14 @@ public class WaveSpawner : MonoBehaviour
         }
         
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if(enemies.Length==0){
+        print(currString);
+        if(enemies.Length==0&&endOfWave){
             going=false;
             text.text="Start Wave "+waveNumber;
+            endOfWave=false;
+        }else if(enemies.Length==0&&index==fullLevelData.Count){
+            going=false;
+            text.text="End of Level";
         }
 
         
@@ -79,6 +84,7 @@ public class WaveSpawner : MonoBehaviour
                 case 'w':
                     index+=1;
                     waveNumber+=1;
+                    endOfWave=true;
                     break;
                 case 's':
                     int tier = int.Parse(currString[1].ToString());       
@@ -105,19 +111,23 @@ public class WaveSpawner : MonoBehaviour
         while(spawned<enemies){
             enemy = Instantiate(skelPrefab, spawn.transform.position, Quaternion.identity);
             print(tier);
-            enemy.GetComponent<EnemyHealth>().SetTier(tier);
+            enemy.GetComponent<Health>().SetTier(tier);
             switch (type){
                 case 'w':
-                    enemy.GetComponent<EnemyHealth>().SetType("Water");
+                    enemy.GetComponentInChildren<EnemyShoot>().SetType("Water");
+                    enemy.GetComponent<Health>().SetType("Water");
                     break;
                 case 'p':
-                    enemy.GetComponent<EnemyHealth>().SetType("Plant");
+                    enemy.GetComponentInChildren<EnemyShoot>().SetType("Plant");
+                    enemy.GetComponent<Health>().SetType("Plant");
                     break;
                 case 'f':
-                    enemy.GetComponent<EnemyHealth>().SetType("Fire");
+                    enemy.GetComponentInChildren<EnemyShoot>().SetType("Fire");
+                    enemy.GetComponent<Health>().SetType("Fire");
                     break;
                 case 'n':
-                    enemy.GetComponent<EnemyHealth>().SetType("Normal");
+                    enemy.GetComponentInChildren<EnemyShoot>().SetType("Normal");
+                    enemy.GetComponent<Health>().SetType("Normal");
                     break;
             }
             spawned+=1;

@@ -30,10 +30,10 @@ public class TowerScript : MonoBehaviour
             timeToFire = fireRate;
             AmmoCount -= 1;
         }
-        timeToFire -= Time.deltaTime;    
+        timeToFire -= Time.deltaTime; 
+        
+
     }
-
-
     void OnDrawGizmosSelected(){
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position,range);
@@ -75,6 +75,9 @@ public class TowerScript : MonoBehaviour
             GameObject bullet = Instantiate(projectile, firingPosition.position, Quaternion.identity).gameObject;
             bullet.GetComponent<Projectile>().SetBulletStats(curr_target,DamageType,Damage);        
         }
+    }
+    public void SetType(string element){
+        DamageType=element;
     }
 
 
