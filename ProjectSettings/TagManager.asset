@@ -9,7 +9,7 @@ TagManager:
   - GameManager
   - Canvas
   - Tower
-  - Base
+  - TowerTarget
   layers:
   - Default
   - TransparentFX

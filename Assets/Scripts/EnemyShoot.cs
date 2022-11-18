@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerScript : MonoBehaviour
+public class EnemyShoot : MonoBehaviour
 {
     private GameObject curr_target;
     public GameObject projectile;
@@ -14,7 +14,7 @@ public class TowerScript : MonoBehaviour
     public Transform firingPosition;
     public string TargetTag = "Enemy";
     public List<GameObject> enemies;
-    
+     
     void Start(){
         gameObject.GetComponent<SphereCollider>().radius = range;
         timeToFire = fireRate;
