@@ -7,6 +7,7 @@ public class TowerShoot : MonoBehaviour
     private GameObject curr_target;
     public GameObject projectile;
     public string DamageType = "Normal";
+    public int dtype = 0;
     public float range = 10f;
     public float fireRate = 1f;
     private float timeToFire = 0f;
@@ -72,7 +73,7 @@ public class TowerShoot : MonoBehaviour
     private void FireBullet(){
         if(curr_target != null){
             GameObject bullet = Instantiate(projectile, firingPosition.position, Quaternion.identity).gameObject;
-            bullet.GetComponent<Projectile>().SetBulletStats(curr_target,DamageType,Damage);        
+            bullet.GetComponent<Projectile>().SetBulletStats(curr_target,DamageType,Damage,dtype);        
         }
     }
     public void SetType(string element){

@@ -5,6 +5,8 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public GameObject target;
+
+    public Material[] mainMat;
     public string DamageType = "Normal";
     public float Damage = 2f;
     public float moveSpeed = 10f;
@@ -36,9 +38,11 @@ public class Projectile : MonoBehaviour
         target = enemy;
     }
 
-    public void SetBulletStats(GameObject enemy,string dmgType,float dmg){
+    public void SetBulletStats(GameObject enemy,string dmgType,float dmg,int ty){
         target = enemy;
         DamageType = dmgType;
         Damage = dmg;
+
+        gameObject.GetComponent<MeshRenderer>().material = mainMat[ty];
     }
 }

@@ -500,6 +500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 81697750989776893, guid: 25b1c246df9eb304bbf89b969d1c47e5, type: 3}
   DamageType: Water
+  dtype: 3
   range: 10
   fireRate: 1
   Damage: 2
