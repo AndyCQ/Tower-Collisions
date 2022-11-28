@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
     public string DamageType = "Normal";
     public float Damage = 2f;
     public float moveSpeed = 10f;
+    public Material[] mainMat;
     //public float Damage = 5f;
 
     
