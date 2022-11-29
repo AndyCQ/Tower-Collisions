@@ -6,9 +6,12 @@ ModelImporter:
   - first:
       74: 7591967290195223202
     second: Tower|Crystal Move
+  - first:
+      74: 2208151389408907760
+    second: Tower|Tower.001|Tower|Crystal Move|Tower|Crystal Move
   externalObjects: {}
   materials:
-    materialImportMode: 2
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
