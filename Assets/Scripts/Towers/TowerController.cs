@@ -66,7 +66,7 @@ public class TowerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(healthController.getCurrentHealth()<0){
+        if(healthController.getCurrentHealth()<=0){
             Destroy(gameObject);
         }
     }

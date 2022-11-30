@@ -22,9 +22,9 @@ public class TowerShoot : MonoBehaviour
     void Update(){
         GetCurrentTarget();
         if(timeToFire <= 0f && AmmoCount > 0 && curr_target != null){
-            FireBullet();
             timeToFire = controller.fireRate;
             AmmoCount -= 1;
+            FireBullet();
         }
         timeToFire -= Time.deltaTime; 
     }
@@ -63,6 +63,16 @@ public class TowerShoot : MonoBehaviour
         if(curr_target != null){
             GameObject bullet = Instantiate(controller.projectile, gameObject.transform.position, Quaternion.identity).gameObject;
             bullet.GetComponent<Projectile>().SetBulletStats(curr_target,controller.damageType,controller.Damage);        
+            updateUI();
         }
     }
+
+    public void updateUI(){
+		controller.ammoBar.value =  AmmoCount / controller.getMaxAmmo();
+	}
+
+    public float getCurrentAmmo(){
+        return AmmoCount;
+    }
+
 }
