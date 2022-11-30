@@ -7,39 +7,37 @@ public class TowerShoot : MonoBehaviour
     private GameObject curr_target;
     private float timeToFire = 0f;
     private TowerController controller;
-    public List<GameObject> enemies;
+    public List<GameObject> enemies = new List<GameObject>();
     private float AmmoCount = 100f;
     
-    void Start(){
-        gameObject.GetComponent<SphereCollider>().radius = range;
-        timeToFire = fireRate;
+    public void Setup(TowerController c){
+        controller = c;
+        gameObject.AddComponent<SphereCollider>();
+        gameObject.GetComponent<SphereCollider>().radius = controller.range;
+        gameObject.GetComponent<SphereCollider>().isTrigger = true;
+        timeToFire = controller.fireRate;
+        AmmoCount = controller.getMaxAmmo();
     }
 
     void Update(){
-        gameObject.GetComponent<SphereCollider>().radius = range;
         GetCurrentTarget();
         if(timeToFire <= 0f && AmmoCount > 0 && curr_target != null){
             FireBullet();
-            timeToFire = fireRate;
+            timeToFire = controller.fireRate;
             AmmoCount -= 1;
         }
         timeToFire -= Time.deltaTime; 
-        
-
-    }
-    void OnDrawGizmosSelected(){
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position,range);
     }
 
     private void OnTriggerEnter(Collider other){
-        if(other.CompareTag(TargetTag)){
+        if(other.CompareTag(controller.TargetTag)){
             GameObject enemy = other.gameObject;
             enemies.Add(enemy);
         }
     }
+
     private void OnTriggerExit(Collider other){
-        if(other.CompareTag(TargetTag)){
+        if(other.CompareTag(controller.TargetTag)){
             GameObject enemy = other.gameObject;
             if(enemies.Contains(enemy))
                 enemies.Remove(enemy);
@@ -56,8 +54,6 @@ public class TowerShoot : MonoBehaviour
                 }
                 break;
             }
-            
-            
         } else{
             curr_target = null;
         }
@@ -65,8 +61,8 @@ public class TowerShoot : MonoBehaviour
 
     private void FireBullet(){
         if(curr_target != null){
-            GameObject bullet = Instantiate(projectile, firingPosition.position, Quaternion.identity).gameObject;
-            bullet.GetComponent<Projectile>().SetBulletStats(curr_target,DamageType,Damage);        
+            GameObject bullet = Instantiate(controller.projectile, gameObject.transform.position, Quaternion.identity).gameObject;
+            bullet.GetComponent<Projectile>().SetBulletStats(curr_target,controller.damageType,controller.Damage);        
         }
     }
 }

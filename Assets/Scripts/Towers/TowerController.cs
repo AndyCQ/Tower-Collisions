@@ -43,6 +43,7 @@ public class TowerController : MonoBehaviour
    	public Slider healthBar;
 	public Slider ammoBar;
 	private TowerHealth healthController;
+    private TowerShoot shootController;
 
     // Start is called before the first frame update
     void Start()
@@ -52,11 +53,10 @@ public class TowerController : MonoBehaviour
 		healthController = TowerBase.GetComponent<TowerHealth>();
 		healthController.Setup(this,maxHealth);
 
-		firingPosition.AddComponent<TowerShoot>();
-
-
-
-
+		maxAmmo = SetupAmmo;
+        firingPosition.AddComponent<TowerShoot>();
+        shootController = firingPosition.GetComponent<TowerShoot>();
+        shootController.Setup(this);
     }
 
     void OnValidate()
@@ -66,7 +66,9 @@ public class TowerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(healthController.getCurrentHealth()<0){
+            Destroy(gameObject);
+        }
     }
 
 	void OnDrawGizmosSelected()

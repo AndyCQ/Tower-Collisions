@@ -45,4 +45,8 @@ public class TowerHealth : MonoBehaviour
     public void updateUI(){
 		controller.healthBar.value =  currHealth / controller.getMaxHealth();
 	}
+
+    public float getCurrentHealth(){
+        return currHealth;
+    }
 }

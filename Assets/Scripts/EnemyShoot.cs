@@ -13,7 +13,7 @@ public class EnemyShoot : MonoBehaviour
     public float Damage = 5f; 
     public Transform firingPosition;
     public string TargetTag = "TowerTarget";
-    public List<GameObject> enemies;
+    public List<GameObject> enemies = new List<GameObject>();
      
     void Start(){
         gameObject.GetComponent<SphereCollider>().radius = range;

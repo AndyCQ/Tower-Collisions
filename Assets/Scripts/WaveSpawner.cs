@@ -91,7 +91,6 @@ public class WaveSpawner : MonoBehaviour
                     StartCoroutine(SpawnSkeletons(tier,currString[2],int.Parse(currString.Substring(3)),1f));
                     break;
                 case 'd':
-                    print("stop");
                     StartCoroutine(Wait(float.Parse(currString.Substring(1))));
                     break;
                 default:
