@@ -6,7 +6,7 @@ public class EnemyShoot : MonoBehaviour
 {
     private GameObject curr_target;
     public GameObject projectile;
-    public string DamageType = "Normal";
+    public TowerController.DamageType DamageType = TowerController.DamageType.Normal;
     public float range = 10f;
     public float fireRate = 1f;
     private float timeToFire = 0f;
@@ -73,9 +73,24 @@ public class EnemyShoot : MonoBehaviour
             bullet.GetComponent<Projectile>().SetBulletStats(curr_target,DamageType,Damage);        
         }
     }
-    public void SetType(string element){
-        DamageType=element;
-    }
 
+    public void SetType(string element){
+        switch(element){
+            case "Normal":
+                DamageType = TowerController.DamageType.Normal;
+                break;
+            case "Fire":
+                DamageType = TowerController.DamageType.Fire;
+                break;
+            case "Plant":
+                DamageType = TowerController.DamageType.Plant;
+                break;
+            case "Water":
+                DamageType = TowerController.DamageType.Water;
+                break;
+            default:
+                break;
+        }
+    }
 
 }

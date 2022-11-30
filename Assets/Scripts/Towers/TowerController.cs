@@ -1,25 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TowerController : MonoBehaviour
 {
     //Dropdown Choices
-    public enum DamageType {Normal,Fire,Plant,Water};
-    public enum Rariety {N,R,SR,UR};
-    public enum Tier {Bronze,Silver,Gold};
+    public enum DamageType { Normal, Fire, Plant, Water };
+    public enum Rariety { N, R, SR, UR };
+    public enum Tier { Bronze, Silver, Gold };
 
 
     //Tower Customizable Variables
     public float SetupHealth = 10f;
-    public float SetupAmmo = 10f; 
+    public float SetupAmmo = 10f;
     public float range = 10f;
     public float fireRate = 1f;
-    public float Damage = 5f; 
+    public float Damage = 5f;
     public DamageType damageType = new DamageType();
     //Tower in game stats
     public Tier tier = new Tier();
-    public Rariety rariety = new Rariety();     
+    public Rariety rariety = new Rariety();
 
     //Tower Settings
     public GameObject projectile;
@@ -27,21 +28,62 @@ public class TowerController : MonoBehaviour
     public GameObject firingPosition;
     public string TargetTag = "Enemy";
 
-   //Healthbar vars
-   //public GameObject healthBarUI;
-   //public Slider slider;
+    //Healthbar vars
+    //public GameObject healthBarUI;
+    //public Slider slider;
 
-   //Material Change
-   public Material baseColors; 
-   public Material[] damageColor;
-   public Material[] tierColor;
-   public Material[] rarietyColor;
-   Material dM;
-   Material tM;
-   Material rM;
-    
-    void MaterialUpdate(){
-        switch(tier){
+    //Material Change
+    public Material baseColors;
+    public Material[] damageColor;
+    public Material[] tierColor;
+    public Material[] rarietyColor;
+    Material dM;
+    Material tM;
+    Material rM;
+
+	//Health/Ammo Variables
+	private float maxHealth;
+	private float maxAmmo;
+   	public Slider healthBar;
+	public Slider ammoBar;
+	private TowerHealth healthController;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+		maxHealth = SetupHealth;
+		TowerBase.AddComponent<TowerHealth>();
+		healthController = TowerBase.GetComponent<TowerHealth>();
+		healthController.Setup(this,maxHealth);
+
+		// firingPosition.AddComponent<SphereCollider>();
+		// firingPosition.AddComponent<TowerShoot>();
+
+
+
+
+    }
+
+    void OnValidate()
+    {
+        MaterialUpdate();
+    }
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+	void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(firingPosition.transform.position, range);
+    }
+
+    void MaterialUpdate()
+    {
+        switch (tier)
+        {
             case Tier.Bronze:
                 tM = tierColor[0];
                 break;
@@ -55,7 +97,8 @@ public class TowerController : MonoBehaviour
                 print("COLOR NOT FOUND");
                 break;
         };
-        switch(rariety){
+        switch (rariety)
+        {
             case Rariety.N:
                 rM = rarietyColor[0];
                 break;
@@ -72,7 +115,8 @@ public class TowerController : MonoBehaviour
                 print("COLOR NOT FOUND");
                 break;
         };
-        switch(damageType){
+        switch (damageType)
+        {
             case DamageType.Normal:
                 dM = damageColor[0];
                 break;
@@ -89,28 +133,8 @@ public class TowerController : MonoBehaviour
                 print("COLOR NOT FOUND");
                 break;
         };
-        Material[] newMats = {baseColors,tM,rM};
+        Material[] newMats = { baseColors, tM, rM };
         TowerBase.GetComponent<MeshRenderer>().materials = newMats;
         firingPosition.GetComponent<MeshRenderer>().material = dM;
-    }
-    
-    void OnDrawGizmosSelected(){
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(firingPosition.transform.position,range);
-    }
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        MaterialUpdate();
-    }
-
-    void OnValidate(){
-        MaterialUpdate();
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

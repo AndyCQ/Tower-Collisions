@@ -4,68 +4,51 @@ using UnityEngine;
 using UnityEngine.UI;
 public class TowerHealth : MonoBehaviour
 {
-    public float health = 10f;
-   public string type = "Fire";
-   public float normalDmgBoost = 1.25f;
-   public float elementalDmgBoost = 2f;
-   public float elementalResist = 0.5f;
+    public TowerController controller;
+    private float currHealth;
 
-   //Healthbar vars
-   public float maxHealth = 10f;
-   public GameObject healthBarUI;
-   public Slider slider;
-
-   [SerializeField]
-   private int tier = 1;
-
-   private Dictionary<string,string> elementalMatchup = new Dictionary<string, string>();
- 
-    void Start()
-    {
-        elementalMatchup.Add("Water","Fire");
-        elementalMatchup.Add("Fire","Plant");
-        elementalMatchup.Add("Plant","Water");
-        slider.value = CalculateHealth();
+    public void Setup(TowerController c, float health){
+        controller = c;
+        currHealth = health;
     }
 
-    public void TakeDamage(float damage, string DMGType){
-        if(DMGType == "Normal"){
-            health -= damage * normalDmgBoost;
+    void Heal(float amount){
+        currHealth += amount;
+    }
+
+    public void TakeDamage(float damage, TowerController.DamageType type){
+        if(type == TowerController.DamageType.Normal){
+            currHealth -= damage * Constants.normalDmgBoost;
         } else{
-            if(elementalMatchup.ContainsKey(DMGType)){
-                if(elementalMatchup[DMGType] == type){
-                    health -= damage * elementalDmgBoost;
-                } else if(type == DMGType) {
-                    health -= damage * elementalResist;
+            if(Constants.elementalMatchup.Contains(type)){
+                // int index = Constants.elementalMatchup.Find(type);
+                int index = 1;
+                TowerController.DamageType strong = Constants.elementalMatchup[((index+1)%3)];
+                TowerController.DamageType weak = Constants.elementalMatchup[((index- 1)%3)];
+                
+                if(controller.damageType == strong){
+                    currHealth -= damage * Constants.elementalDmgBoost;
+                } else if(controller.damageType == weak) {
+                    currHealth -= damage * Constants.elementalResist;
                 } else{
-                    health -= damage;
+                    currHealth -= damage;
                 }
+            } else{
+                print("Error Damage");
             }
                 
         }
-        print(health);
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if(health<=0f){
-            Destroy(gameObject);
-        }
+    // void Update()
+    // {
+    //     if(currHealth<=0f){
+    //         Destroy(gameObject);
+    //     }
+    // }
 
-        slider.value = CalculateHealth();
-        
-    }
-
-    float CalculateHealth(){
-        return health / maxHealth;
-    }
-
-    public void SetType(string element){
-        type=element;
-    }
-
-    public void SetTier(int level){
-        tier=level;
-    }
+    // float CalculateHealth(){
+    //     return health / maxHealth;
+    // }
 }
