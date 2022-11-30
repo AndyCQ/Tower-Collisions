@@ -28,10 +28,6 @@ public class TowerController : MonoBehaviour
     public GameObject firingPosition;
     public string TargetTag = "Enemy";
 
-    //Healthbar vars
-    //public GameObject healthBarUI;
-    //public Slider slider;
-
     //Material Change
     public Material baseColors;
     public Material[] damageColor;
@@ -56,8 +52,7 @@ public class TowerController : MonoBehaviour
 		healthController = TowerBase.GetComponent<TowerHealth>();
 		healthController.Setup(this,maxHealth);
 
-		// firingPosition.AddComponent<SphereCollider>();
-		// firingPosition.AddComponent<TowerShoot>();
+		firingPosition.AddComponent<TowerShoot>();
 
 
 
@@ -137,4 +132,12 @@ public class TowerController : MonoBehaviour
         TowerBase.GetComponent<MeshRenderer>().materials = newMats;
         firingPosition.GetComponent<MeshRenderer>().material = dM;
     }
+
+	public float getMaxHealth(){
+		return maxHealth;
+	}
+	
+	public float getMaxAmmo(){
+		return maxAmmo;
+	}
 }

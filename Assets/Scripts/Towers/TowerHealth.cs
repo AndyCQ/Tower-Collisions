@@ -10,10 +10,12 @@ public class TowerHealth : MonoBehaviour
     public void Setup(TowerController c, float health){
         controller = c;
         currHealth = health;
+        updateUI();
     }
 
     void Heal(float amount){
         currHealth += amount;
+        updateUI();
     }
 
     public void TakeDamage(float damage, TowerController.DamageType type){
@@ -36,19 +38,11 @@ public class TowerHealth : MonoBehaviour
             } else{
                 print("Error Damage");
             }
-                
         }
+        updateUI();
     }
 
-    // Update is called once per frame
-    // void Update()
-    // {
-    //     if(currHealth<=0f){
-    //         Destroy(gameObject);
-    //     }
-    // }
-
-    // float CalculateHealth(){
-    //     return health / maxHealth;
-    // }
+    public void updateUI(){
+		controller.healthBar.value =  currHealth / controller.getMaxHealth();
+	}
 }

@@ -60,6 +60,7 @@ public class Health : MonoBehaviour
 
     void Start()
     {
+        currHealth = maxHealth;
         slider.value = CalculateHealth();
     }
 

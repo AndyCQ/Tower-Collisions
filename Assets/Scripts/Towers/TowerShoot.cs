@@ -5,16 +5,10 @@ using UnityEngine;
 public class TowerShoot : MonoBehaviour
 {
     private GameObject curr_target;
-    public GameObject projectile;
-    public TowerController.DamageType DamageType = TowerController.DamageType.Normal;
-    public float range = 10f;
-    public float fireRate = 1f;
     private float timeToFire = 0f;
-    public float Damage = 5f; 
-    public Transform firingPosition;
-    public string TargetTag = "Enemy";
+    private TowerController controller;
     public List<GameObject> enemies;
-    public int AmmoCount = 100;
+    private float AmmoCount = 100f;
     
     void Start(){
         gameObject.GetComponent<SphereCollider>().radius = range;

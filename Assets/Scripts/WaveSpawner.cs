@@ -43,7 +43,7 @@ public class WaveSpawner : MonoBehaviour
     void Start()
     {
         ReadTextFile(waveFilePath);
-        PrintDebug(fullLevelData);
+        //PrintDebug(fullLevelData);
         DM = GameObject.FindGameObjectWithTag("GameManager").GetComponent<DeckManager>();
     }
 

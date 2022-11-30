@@ -12,7 +12,7 @@ public class EnemyShoot : MonoBehaviour
     private float timeToFire = 0f;
     public float Damage = 5f; 
     public Transform firingPosition;
-    public string TargetTag = "Enemy";
+    public string TargetTag = "TowerTarget";
     public List<GameObject> enemies;
      
     void Start(){
