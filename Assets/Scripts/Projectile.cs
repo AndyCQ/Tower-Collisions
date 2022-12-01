@@ -36,7 +36,6 @@ public class Projectile : MonoBehaviour
     private void TowerTargetMoveProjectile(){
         transform.position = Vector3.MoveTowards(transform.position, 
         target.transform.position, moveSpeed * Time.deltaTime);
-
         if((transform.position - target.transform.position).magnitude < .2f){
             target.GetComponent<TowerHealth>().TakeDamage(Damage,DamageType);
             Destroy(gameObject);

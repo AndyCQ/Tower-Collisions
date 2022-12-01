@@ -14,6 +14,7 @@ public class EnemyShoot : MonoBehaviour
     public Transform firingPosition;
     public string TargetTag = "TowerTarget";
     public List<GameObject> enemies = new List<GameObject>();
+    public bool melee = false;
      
     void Start(){
         gameObject.GetComponent<SphereCollider>().radius = range;
@@ -69,8 +70,12 @@ public class EnemyShoot : MonoBehaviour
 
     private void FireBullet(){
         if(curr_target != null){
-            GameObject bullet = Instantiate(projectile, firingPosition.position, Quaternion.identity).gameObject;
-            bullet.GetComponent<Projectile>().SetBulletStats(curr_target,DamageType,Damage);        
+            if(melee){
+                curr_target.GetComponent<TowerHealth>().TakeDamage(Damage,DamageType);
+            }else{
+                GameObject bullet = Instantiate(projectile, firingPosition.position, Quaternion.identity).gameObject;
+                bullet.GetComponent<Projectile>().SetBulletStats(curr_target,DamageType,Damage);   
+            }     
         }
     }
 

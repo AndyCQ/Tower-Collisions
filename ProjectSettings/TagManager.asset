@@ -10,6 +10,8 @@ TagManager:
   - Canvas
   - Tower
   - TowerTarget
+  - Base
+  - AltPath
   layers:
   - Default
   - TransparentFX

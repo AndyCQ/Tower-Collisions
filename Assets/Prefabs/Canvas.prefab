@@ -948,12 +948,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42202d8347bf82146992b5ed1683899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveFilePath: Assets/Waves/test.txt
+  waveFilePath: level1
   fullLevelData: []
   waveNumber: 0
   index: 0
   currString: 
-  skelPrefab: {fileID: 5532259593148717270, guid: 578ac2db36496a0498a9d2feb3180c00, type: 3}
+  skelPrefab: {fileID: 621763271064468882, guid: a20be4416d93a634f97f7fc9bafbc8a4, type: 3}
+  orcPrefab: {fileID: 621763271064468882, guid: 96b5ea9de4a21834084ebb330c1aa53f, type: 3}
+  gobPrefab: {fileID: 621763271064468882, guid: a16d9e64970e46d4981a4cdf5fd571fa, type: 3}
   spawn: {fileID: 0}
   going: 0
   text: {fileID: 0}
