@@ -87,8 +87,10 @@ public class WaveSpawner : MonoBehaviour
                     endOfWave=true;
                     break;
                 case 's':
-                    int tier = int.Parse(currString[1].ToString());       
-                    StartCoroutine(SpawnSkeletons(tier,currString[2],int.Parse(currString.Substring(3)),1f));
+                    int tier = int.Parse(currString[1].ToString());  
+                    int path = int.Parse(currString[3].ToString()); 
+                    print(currString.Substring(4));    
+                    StartCoroutine(SpawnSkeletons(tier,currString[2],path,int.Parse(currString.Substring(4)),1f));
                     break;
                 case 'd':
                     StartCoroutine(Wait(float.Parse(currString.Substring(1))));
@@ -104,12 +106,13 @@ public class WaveSpawner : MonoBehaviour
         CheckNext();
         yield break;
     }
-    IEnumerator SpawnSkeletons(int tier, char type, int enemies, float time){
+    IEnumerator SpawnSkeletons(int tier, char type, int path, int enemies, float time){
         int spawned=0;
         GameObject enemy;
         while(spawned<enemies){
             enemy = Instantiate(skelPrefab, spawn.transform.position, Quaternion.identity);
             enemy.GetComponent<Health>().SetTier(tier);
+            enemy.GetComponent<EnemyMove>().ChangePath(path);
             switch (type){
                 case 'w':
                     enemy.GetComponentInChildren<EnemyShoot>().SetType("Water");
@@ -140,7 +143,7 @@ public class WaveSpawner : MonoBehaviour
 
     void ReadTextFile(string file_path)
     {
-        TextAsset textFile = Resources.Load<TextAsset>("level1");
+        TextAsset textFile = Resources.Load<TextAsset>(file_path);
         if(textFile == null){
             print("bad");
         }
