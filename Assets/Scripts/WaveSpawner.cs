@@ -30,6 +30,8 @@ public class WaveSpawner : MonoBehaviour
     private string currString = "";
 
     public GameObject skelPrefab;
+    public GameObject orcPrefab;
+    public GameObject gobPrefab;
 
     public GameObject spawn;
 
@@ -80,22 +82,21 @@ public class WaveSpawner : MonoBehaviour
 
 
     private void CheckNext(){
+        int tier;
+        int path;
         switch(currString[0]){
                 case 'w':
                     index+=1;
                     waveNumber+=1;
                     endOfWave=true;
                     break;
-                case 's':
-                    int tier = int.Parse(currString[1].ToString());  
-                    int path = int.Parse(currString[3].ToString()); 
-                    print(currString.Substring(4));    
-                    StartCoroutine(SpawnSkeletons(tier,currString[2],path,int.Parse(currString.Substring(4)),1f));
-                    break;
                 case 'd':
                     StartCoroutine(Wait(float.Parse(currString.Substring(1))));
                     break;
                 default:
+                    tier = int.Parse(currString[1].ToString());  
+                    path = int.Parse(currString[3].ToString()); 
+                    StartCoroutine(Spawn(currString[0],tier,currString[2],path,int.Parse(currString.Substring(4))));
                     break;
             }
     }
@@ -106,11 +107,25 @@ public class WaveSpawner : MonoBehaviour
         CheckNext();
         yield break;
     }
-    IEnumerator SpawnSkeletons(int tier, char type, int path, int enemies, float time){
+    IEnumerator Spawn(char kind, int tier, char type, int path, int enemies){
         int spawned=0;
         GameObject enemy;
+        float time;
         while(spawned<enemies){
-            enemy = Instantiate(skelPrefab, spawn.transform.position, Quaternion.identity);
+            switch(kind){
+                case 's':
+                    enemy = Instantiate(skelPrefab, spawn.transform.position, Quaternion.identity);
+                    time = 1;
+                    break;
+                case 'o':
+                    enemy = Instantiate(orcPrefab, spawn.transform.position, Quaternion.identity);
+                    time = 2;
+                    break;
+                default:
+                    enemy = Instantiate(gobPrefab, spawn.transform.position, Quaternion.identity);
+                    time = 0.5f;
+                    break;
+            }
             enemy.GetComponent<Health>().SetTier(tier);
             enemy.GetComponent<EnemyMove>().ChangePath(path);
             switch (type){
@@ -138,7 +153,6 @@ public class WaveSpawner : MonoBehaviour
         yield return new WaitForFixedUpdate();
         CheckNext();
         yield break;
-        
     }
 
     void ReadTextFile(string file_path)
