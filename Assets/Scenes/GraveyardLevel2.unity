@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4396998, g: 0.4880131, b: 0.5685724, a: 1}
+  m_IndirectSpecularColor: {r: 0.43969956, g: 0.48801255, b: 0.5685719, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1190,7 +1190,7 @@ PrefabInstance:
       objectReference: {fileID: 621763271064468882, guid: a20be4416d93a634f97f7fc9bafbc8a4, type: 3}
     - target: {fileID: 2174805739755676601, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
       propertyPath: waveFilePath
-      value: Assets/Waves/level1.txt
+      value: level1
       objectReference: {fileID: 0}
     - target: {fileID: 2174805739755676607, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
       propertyPath: m_Name

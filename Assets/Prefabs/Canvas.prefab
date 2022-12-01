@@ -948,7 +948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42202d8347bf82146992b5ed1683899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveFilePath: Assets/Waves/test.txt
+  waveFilePath: level1
   fullLevelData: []
   waveNumber: 0
   index: 0
