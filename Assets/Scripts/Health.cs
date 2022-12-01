@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
 
     public TowerController.DamageType Type = TowerController.DamageType.Fire;
     private float currHealth = 10f;
-    private int tier;
+    private int tier=1;
 
     void Heal(float amount)
     {
@@ -102,6 +102,8 @@ public class Health : MonoBehaviour
     }
 
     public void SetTier(int level){
+        currHealth = level/tier;
         tier=level;
+
     }
 }
