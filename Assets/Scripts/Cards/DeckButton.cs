@@ -13,7 +13,7 @@ public class DeckButton : MonoBehaviour
     bool setup = false;
 
     private void Update() {
-        if (setup) {
+        if (setup && currCard != null) {
             cardText.text = currCard.cardName;
             setup = false;
         }
