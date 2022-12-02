@@ -37,6 +37,8 @@ public class TowerController : MonoBehaviour
     Material tM;
     Material rM;
 
+    public bool shrine = false;
+
 	//Health/Ammo Variables
 	private float maxHealth;
 	private float maxAmmo;
@@ -57,6 +59,7 @@ public class TowerController : MonoBehaviour
         firingPosition.AddComponent<TowerShoot>();
         shootController = firingPosition.GetComponent<TowerShoot>();
         shootController.Setup(this);
+        shootController.shrine=shrine;
     }
 
     void OnValidate()
@@ -68,6 +71,7 @@ public class TowerController : MonoBehaviour
     {
         if(healthController.getCurrentHealth()<=0){
             Destroy(gameObject);
+            shootController.Debuff();
         }
     }
 
