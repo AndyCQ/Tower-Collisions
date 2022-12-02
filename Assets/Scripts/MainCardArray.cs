@@ -22,7 +22,7 @@ public static class MainCardArray
     12 :
     13 :
     */
-    public static List<int> CardArray = new List<int>(13);
+    public static List<int> CardArray = new List<int>(new int[13]);
     public static List<CardData> DeckArray;
 
     public static int currency = 0;
