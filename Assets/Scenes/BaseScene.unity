@@ -155,7 +155,7 @@ MonoBehaviour:
   CurrLevel:
     m_Handle: 0
   noStartMenu: 1
-  testSceneName: DesertLevel3
+  testSceneName: Level1
 --- !u!4 &428610912
 Transform:
   m_ObjectHideFlags: 0

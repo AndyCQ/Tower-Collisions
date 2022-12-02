@@ -9,6 +9,10 @@ public class TowerShoot : MonoBehaviour
     private TowerController controller;
     public List<GameObject> enemies = new List<GameObject>();
     private float AmmoCount = 100f;
+    public Dictionary<string, bool> buffed;
+    public bool shrine = false;
+
+    public float buff=1;
     
     public void Setup(TowerController c){
         controller = c;
@@ -20,27 +24,50 @@ public class TowerShoot : MonoBehaviour
     }
 
     void Update(){
-        GetCurrentTarget();
-        if(timeToFire <= 0f && AmmoCount > 0 && curr_target != null){
-            timeToFire = controller.fireRate;
-            AmmoCount -= 1;
-            FireBullet();
+        if(!shrine){
+            GetCurrentTarget();
+            if(timeToFire <= 0f && AmmoCount > 0 && curr_target != null){
+                timeToFire = controller.fireRate;
+                AmmoCount -= 1;
+                FireBullet();
+            }
+            timeToFire -= Time.deltaTime; 
+        }else{
+            for(int i=0;i<enemies.Count;i++){
+                if(!buffed[enemies[i].name]){
+                    buffed[enemies[i].name]=true;
+                    enemies[i].GetComponent<TowerShoot>().buff+=0.2f;
+                }
+            }
         }
-        timeToFire -= Time.deltaTime; 
     }
-
+    public void Debuff(){
+        for(int i=0;i<enemies.Count;i++){
+                if(!buffed[enemies[i].name]){
+                    buffed[enemies[i].name]=true;
+                    enemies[i].GetComponent<TowerShoot>().buff+=0.2f;
+                }
+            }
+    }
     private void OnTriggerEnter(Collider other){
         if(other.CompareTag(controller.TargetTag)){
             GameObject enemy = other.gameObject;
             enemies.Add(enemy);
+            if(shrine){
+                buffed.Add(enemy.name,false);
+            }
         }
     }
 
     private void OnTriggerExit(Collider other){
         if(other.CompareTag(controller.TargetTag)){
             GameObject enemy = other.gameObject;
-            if(enemies.Contains(enemy))
+            if(enemies.Contains(enemy)){
                 enemies.Remove(enemy);
+                if(shrine){
+                    buffed.Remove(enemy.name);
+                }
+            }
         }
     }
 
@@ -62,7 +89,7 @@ public class TowerShoot : MonoBehaviour
     private void FireBullet(){
         if(curr_target != null){
             GameObject bullet = Instantiate(controller.projectile, gameObject.transform.position, Quaternion.identity).gameObject;
-            bullet.GetComponent<Projectile>().SetBulletStats(curr_target,controller.damageType,controller.Damage);        
+            bullet.GetComponent<Projectile>().SetBulletStats(curr_target,controller.damageType,controller.Damage*buff);        
             updateUI();
         }
     }
