@@ -7,6 +7,10 @@ public class SelectButton : MonoBehaviour
 {
     public CardData currCard;
     [SerializeField]
+    public GameObject deckButton;
+    [SerializeField]
+    public GameObject deckPanel;
+    [SerializeField]
     Image cardSprite;
     [SerializeField]
     TMPro.TextMeshProUGUI cardText;
@@ -25,7 +29,8 @@ public class SelectButton : MonoBehaviour
     }
 
     public void AddToDeck() {
-        
+        GameObject currDeckButton = Instantiate(deckButton, deckPanel.transform);
+        currDeckButton.GetComponent<DeckButton>().currCard = currCard;
     }
 
     public void DestroySelf() { Destroy(this.gameObject); }
