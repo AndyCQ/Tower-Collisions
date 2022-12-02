@@ -91,9 +91,10 @@ public class WaveSpawner : MonoBehaviour
         else if(!going){
             
             text.text="Wave "+waveNumber;
+            going = true;
             CheckNext();
             // get the next card hand
-            DM.FillHand();
+            
         }
     }
 
@@ -103,15 +104,16 @@ public class WaveSpawner : MonoBehaviour
         int path;
         switch(currString[0]){
                 case 'w':
-                    if(enemies.Length==0 && !going){
+                    if(enemies.Length==0 && !endOfWave){
                         if(index<fullLevelData.Count-2){
                             StartCoroutine(WaitWave(6));
-                            going=true;
+                            endOfWave=true;
                         }else{
                             text.text="Next Level";
                             index+=1;
                         }
                     }
+                    DM.FillHand();
                     break;
                 case 'd':
                     StartCoroutine(Wait(float.Parse(currString.Substring(1))));
@@ -138,7 +140,7 @@ public class WaveSpawner : MonoBehaviour
             index+=1;
             waveNumber+=1;
             text.text="Wave "+waveNumber;
-            going=false;
+            endOfWave=false;
         }
         yield return new WaitForFixedUpdate();
         CheckNext();
