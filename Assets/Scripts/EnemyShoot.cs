@@ -15,6 +15,8 @@ public class EnemyShoot : MonoBehaviour
     public string TargetTag = "TowerTarget";
     public List<GameObject> enemies = new List<GameObject>();
     public bool melee = false;
+
+    
      
     void Start(){
         gameObject.GetComponent<SphereCollider>().radius = range;

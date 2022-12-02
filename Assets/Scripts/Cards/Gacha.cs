@@ -35,7 +35,7 @@ public class Gacha : MonoBehaviour
             //     print("UR");
             //     GCM.MainCardList[card+12].count += 1;
             // }
-            int card = Random.Range(0,5);
+            int card = Random.Range(0,4);
             GCM.MainCardList[card].count += 1;
             GCM.currency-=10;
         }else{
@@ -66,11 +66,13 @@ public class Gacha : MonoBehaviour
             //     GCM.MainCardList[card+12].count += 1;
             // }
             // print(card);
-            int card = Random.Range(0,5);
+            int card = Random.Range(0,4);
             GCM.MainCardList[card].count += 1;
             for(int i=0;i<10;i++){
                 PullOne();
             }
+        }else{
+            StartCoroutine(NotEnough());
         }
        
     }
