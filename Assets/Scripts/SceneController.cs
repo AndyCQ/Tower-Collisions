@@ -18,6 +18,7 @@ public class SceneController : MonoBehaviour
             swapToScene("StartMenu");
         } else {
             CurrLevel = SceneManager.GetSceneByName(testSceneName);
+            SceneManager.SetActiveScene(CurrLevel);
         }
     }
 
