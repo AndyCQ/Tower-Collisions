@@ -9,11 +9,15 @@ public class SceneController : MonoBehaviour
     Scene CurrLevel;
     [SerializeField]
     bool noStartMenu = false;
+    [SerializeField]
+    string testSceneName;
 
     private void Start() {
         //loads the main menu
         if (!noStartMenu) {
             swapToScene("StartMenu");
+        } else {
+            CurrLevel = SceneManager.GetSceneByName(testSceneName);
         }
     }
 
