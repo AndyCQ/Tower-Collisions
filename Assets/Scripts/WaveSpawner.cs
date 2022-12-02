@@ -113,7 +113,7 @@ public class WaveSpawner : MonoBehaviour
                             index+=1;
                         }
                     }
-                    DM.FillHand();
+                    
                     break;
                 case 'd':
                     StartCoroutine(Wait(float.Parse(currString.Substring(1))));
@@ -143,6 +143,7 @@ public class WaveSpawner : MonoBehaviour
             endOfWave=false;
         }
         yield return new WaitForFixedUpdate();
+        DM.FillHand();
         CheckNext();
         
         yield break;
