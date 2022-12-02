@@ -18,7 +18,6 @@ public class DeckManager : MonoBehaviour
     CardUIManager UIM;
 
     private void Start() {
-        deckList = MainCardArray.DeckArray;
         internalDeckList = new List<CardData>(deckList);
         UIM = GameObject.FindGameObjectWithTag("Canvas").GetComponent<CardUIManager>();
     }

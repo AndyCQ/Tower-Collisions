@@ -18,7 +18,12 @@ public class SelectButton : MonoBehaviour
     int count;
 
     private void Start() {
-        count = MainCardArray.CardArray[currCard.mainArrayIndex];
+        GameCardManager GCM = GameObject.FindGameObjectWithTag("GameCardManager").GetComponent<GameCardManager>();
+        foreach (GameCardData GCD in GCM.MainCardList) {
+            if (GCD.CD == currCard) {
+                count = GCD.count;
+            }
+        }
     }
 
     private void Update() {
