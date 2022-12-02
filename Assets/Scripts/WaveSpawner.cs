@@ -47,12 +47,15 @@ public class WaveSpawner : MonoBehaviour
     private TMP_Text text;
     [SerializeField]
     GameObject[] enemies;
+
+    GameCardManager GCM;
     // Start is called before the first frame update
     void Start()
     {
         ReadTextFile(waveFilePath);
         //PrintDebug(fullLevelData);
         DM = GameObject.FindGameObjectWithTag("GameManager").GetComponent<DeckManager>();
+        GCM = GameObject.FindGameObjectWithTag("GameCardManager").GetComponent<GameCardManager>();
     }
 
 
@@ -77,9 +80,9 @@ public class WaveSpawner : MonoBehaviour
     }
     public void SpawnWave(){
         if(index>=fullLevelData.Count-1){
-            MainCardArray.currency+=MainCardArray.earned;
-            MainCardArray.earned=0;
-            print(MainCardArray.currency);
+            GCM.currency+=GCM.earned;
+            GCM.earned=0;
+            print(GCM.currency);
             SceneManager.LoadScene(nextScene);
         }
         else if(!going){
