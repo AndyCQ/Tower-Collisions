@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4943435745049374423
+--- !u!1 &9098417732185821608
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2136205114039271057}
-  - component: {fileID: 4413802333614537983}
+  - component: {fileID: 9098417732185821606}
+  - component: {fileID: 9098417732185821609}
   m_Layer: 0
   m_Name: MusicManager
   m_TagString: Untagged
@@ -17,122 +17,66 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2136205114039271057
+--- !u!4 &9098417732185821606
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4943435745049374423}
+  m_GameObject: {fileID: 9098417732185821608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 404.08234, y: 216.72534, z: -0.9574777}
+  m_LocalPosition: {x: 0, y: 19.2, z: -10.299999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4413802333614537983
+--- !u!114 &9098417732185821609
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4943435745049374423}
+  m_GameObject: {fileID: 9098417732185821608}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2066fb0a5eeb31540a8f61176c03d470, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f146b68dd02e2942b19e528dd126079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: EndScene
-    clip: {fileID: 8300000, guid: 24dce80f47ed7ab4ca33dc6cb88213fb, type: 3}
-    volume: 1
-    pitch: 1.2
-    loop: 1
-    group: {fileID: 24300002, guid: c625c7c41c7597147bf95210f1642c8c, type: 2}
-    source: {fileID: 0}
   - name: StartMenu
-    clip: {fileID: 8300000, guid: 56c08030b26ce5b41afdb6af72b69da7, type: 3}
-    volume: 1
-    pitch: 0.99
+    clip: {fileID: 8300000, guid: 422a91f1e9b8d9f41bfd006c08cce48e, type: 3}
+    volume: 0.261
+    pitch: 1
     loop: 1
-    group: {fileID: 24300002, guid: c625c7c41c7597147bf95210f1642c8c, type: 2}
+    group: {fileID: 24300002, guid: df13d7f231303b7439aff86bab4cc092, type: 2}
     source: {fileID: 0}
-  - name: Winds
-    clip: {fileID: 8300000, guid: c343668bf94385f4d9354ce8211701cf, type: 3}
-    volume: 1
-    pitch: 0.95
+  - name: MainMenu
+    clip: {fileID: 8300000, guid: 422a91f1e9b8d9f41bfd006c08cce48e, type: 3}
+    volume: 0.261
+    pitch: 1
     loop: 1
-    group: {fileID: 24300002, guid: c625c7c41c7597147bf95210f1642c8c, type: 2}
+    group: {fileID: 24300002, guid: df13d7f231303b7439aff86bab4cc092, type: 2}
     source: {fileID: 0}
-  - name: blast
-    clip: {fileID: 8300000, guid: de812cfb519929c4aad9d296f655c81d, type: 3}
-    volume: 1
-    pitch: 0.95
-    loop: 0
-    group: {fileID: 24300002, guid: 43b0a80544a680b42b9383d8f8a59a85, type: 2}
+  - name: ForestLevel1
+    clip: {fileID: 8300000, guid: 8cec75150485e3d4caeb7e8f3f196b88, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    group: {fileID: 24300002, guid: df13d7f231303b7439aff86bab4cc092, type: 2}
     source: {fileID: 0}
-  - name: heavy_blast
-    clip: {fileID: 8300000, guid: 18d6a007b013c9d4ebf7f7c44e1e5f06, type: 3}
-    volume: 1
-    pitch: 0.95
-    loop: 0
-    group: {fileID: 24300002, guid: 43b0a80544a680b42b9383d8f8a59a85, type: 2}
+  - name: DesertLevel1
+    clip: {fileID: 8300000, guid: 60729e8b4047b2647a4f790fd47a89d7, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    group: {fileID: 24300002, guid: df13d7f231303b7439aff86bab4cc092, type: 2}
     source: {fileID: 0}
-  - name: empty_mag
-    clip: {fileID: 8300000, guid: d3bfc09906578ae4f97f0be75ae2cce8, type: 3}
-    volume: 1
-    pitch: 0.95
-    loop: 0
-    group: {fileID: 24300002, guid: 43b0a80544a680b42b9383d8f8a59a85, type: 2}
-    source: {fileID: 0}
-  - name: multiblast
-    clip: {fileID: 8300000, guid: 9f45e6a5f5cd816458d7c9359c903f4b, type: 3}
-    volume: 1
-    pitch: 0.95
-    loop: 0
-    group: {fileID: 24300002, guid: 43b0a80544a680b42b9383d8f8a59a85, type: 2}
-    source: {fileID: 0}
-  - name: light_blast
-    clip: {fileID: 8300000, guid: 8154f5e18ea48164e9cb0132012cf432, type: 3}
-    volume: 1
-    pitch: 0.95
-    loop: 0
-    group: {fileID: 24300002, guid: 43b0a80544a680b42b9383d8f8a59a85, type: 2}
-    source: {fileID: 0}
-  - name: footstep
-    clip: {fileID: 8300000, guid: dd3a9bf23f1906c41820c9956b72b01f, type: 3}
-    volume: 1
-    pitch: 0.95
-    loop: 0
-    group: {fileID: 24300002, guid: 43b0a80544a680b42b9383d8f8a59a85, type: 2}
-    source: {fileID: 0}
-  - name: heavyFootstep
-    clip: {fileID: 8300000, guid: 0945b72b3fde78e41b2d01139ecee2a5, type: 3}
-    volume: 1
-    pitch: 0.95
-    loop: 0
-    group: {fileID: 24300002, guid: 43b0a80544a680b42b9383d8f8a59a85, type: 2}
-    source: {fileID: 0}
-  - name: Electronic
-    clip: {fileID: 8300000, guid: f6510b707d01cfc44984033154792187, type: 3}
-    volume: 1
-    pitch: 0.95
-    loop: 0
-    group: {fileID: 24300002, guid: c625c7c41c7597147bf95210f1642c8c, type: 2}
-    source: {fileID: 0}
-  - name: Different
-    clip: {fileID: 8300000, guid: 1a68fa94e804fcb49b5908def6b622a1, type: 3}
-    volume: 1
-    pitch: 0.95
-    loop: 0
-    group: {fileID: 24300002, guid: c625c7c41c7597147bf95210f1642c8c, type: 2}
-    source: {fileID: 0}
-  - name: Final
-    clip: {fileID: 8300000, guid: 85f475cf6450b9b48bb7207f791fc8ee, type: 3}
-    volume: 1
-    pitch: 0.95
-    loop: 0
-    group: {fileID: 24300002, guid: c625c7c41c7597147bf95210f1642c8c, type: 2}
+  - name: GraveyardLevel1
+    clip: {fileID: 8300000, guid: d87812a72fc9df0448d58dd627df8896, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    group: {fileID: 24300002, guid: df13d7f231303b7439aff86bab4cc092, type: 2}
     source: {fileID: 0}
