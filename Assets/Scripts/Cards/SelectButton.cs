@@ -36,6 +36,7 @@ public class SelectButton : MonoBehaviour
     public void AddToDeck() {
         GameObject currDeckButton = Instantiate(deckButton, deckPanel.transform);
         currDeckButton.GetComponent<DeckButton>().currCard = currCard;
+        count -= 1;
     }
 
     public void DestroySelf() { Destroy(this.gameObject); }
