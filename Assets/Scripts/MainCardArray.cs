@@ -18,7 +18,12 @@ public static class MainCardArray
     8 : 
     9 : 
     10 : 
+    11 :
+    12 :
+    13 :
     */
-    public static List<int> CardArray = new List<int>(11);
+    public static List<int> CardArray = new List<int>(13);
     public static List<CardData> DeckArray;
+
+    public static int currency = 0;
 }
