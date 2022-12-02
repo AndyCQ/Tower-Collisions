@@ -154,6 +154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrLevel:
     m_Handle: 0
+  noStartMenu: 1
+  testSceneName: MainMenu
 --- !u!4 &428610912
 Transform:
   m_ObjectHideFlags: 0
@@ -181,7 +183,7 @@ GameObject:
   - component: {fileID: 988841784}
   m_Layer: 0
   m_Name: GameCardManager
-  m_TagString: Untagged
+  m_TagString: GameCardManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -198,7 +200,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfd9fecb28f18774fa09a193687b9b75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainCardList: []
+  MainCardList:
+  - CD: {fileID: 11400000, guid: ec442aaf4f8b71d4fa8140156c3d8e9a, type: 2}
+    count: 0
+  - CD: {fileID: 11400000, guid: c2f8c849094316448bdb2b2fe039597d, type: 2}
+    count: 0
+  - CD: {fileID: 11400000, guid: b2863aa0acbcbca44a40b452eeab8cc0, type: 2}
+    count: 0
+  - CD: {fileID: 11400000, guid: 29ea28f54542b3b42b61feef7cda507e, type: 2}
+    count: 0
+  - CD: {fileID: 11400000, guid: 29ea28f54542b3b42b61feef7cda507e, type: 2}
+    count: 0
+  currency: 0
+  earned: 0
 --- !u!4 &988841785
 Transform:
   m_ObjectHideFlags: 0

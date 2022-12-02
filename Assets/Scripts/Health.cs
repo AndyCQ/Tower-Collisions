@@ -11,6 +11,9 @@ public class Health : MonoBehaviour
     private int tier=1;
 
     public int drop = 0;
+    GameCardManager GCM;
+
+
 
     void Heal(float amount)
     {
@@ -63,6 +66,7 @@ public class Health : MonoBehaviour
     void Start()
     {
         currHealth = maxHealth;
+        GCM = GameObject.FindGameObjectWithTag("GameCardManager").GetComponent<GameCardManager>();
         slider.value = CalculateHealth();
     }
 
@@ -117,7 +121,7 @@ public class Health : MonoBehaviour
     }
     private void OnDestroy() {
         if(currHealth<=0 && gameObject.tag=="Enemy"){
-            MainCardArray.earned+=drop;
+            GCM.earned+=drop;
         }
     }
 }

@@ -5,13 +5,15 @@ using UnityEngine;
 [System.Serializable]
 public class GameCardData {
     [SerializeField]
-    CardData CD;
+    public CardData CD;
     [SerializeField]
-    int count;
+    public int count;
 }
 
 public class GameCardManager : MonoBehaviour
 {
     [SerializeField]
     public List<GameCardData> MainCardList;
+    public int currency=0;
+    public int earned=0;
 }

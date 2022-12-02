@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 5813593499651692777}
   - component: {fileID: 5813593499651692776}
   m_Layer: 0
-  m_Name: CommonAttackTower
+  m_Name: CommonAttackTower Normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -410,7 +410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SetupHealth: 10
-  SetupAmmo: 2
+  SetupAmmo: 100
   range: 5
   fireRate: 1
   Damage: 2

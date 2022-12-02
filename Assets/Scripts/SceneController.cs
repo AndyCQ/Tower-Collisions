@@ -7,23 +7,39 @@ public class SceneController : MonoBehaviour
 {
     [SerializeField]
     Scene CurrLevel;
+    [SerializeField]
+    bool noStartMenu = false;
+    [SerializeField]
+    string testSceneName;
 
     private void Start() {
         //loads the main menu
+        if (!noStartMenu) {
+            swapToScene("StartMenu");
+        } else {
+            CurrLevel = SceneManager.GetSceneByName(testSceneName);
+            SceneManager.SetActiveScene(CurrLevel);
+        }
     }
 
     public void swapToScene(int buildInd) {
-        SceneManager.UnloadSceneAsync(CurrLevel);
+        if (CurrLevel.IsValid()) {
+            SceneManager.UnloadSceneAsync(CurrLevel);
+        }
         AsyncOperation op = SceneManager.LoadSceneAsync(buildInd, LoadSceneMode.Additive);
         op.completed += handle => {
             CurrLevel = SceneManager.GetSceneByBuildIndex(buildInd);
+            SceneManager.SetActiveScene(CurrLevel);
         };
     }
     public void swapToScene(string sceneName) {
-        SceneManager.UnloadSceneAsync(CurrLevel);
+        if (CurrLevel.IsValid()) {
+            SceneManager.UnloadSceneAsync(CurrLevel);
+        }
         AsyncOperation op = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         op.completed += handle => {
             CurrLevel = SceneManager.GetSceneByName(sceneName);
+            SceneManager.SetActiveScene(CurrLevel);
         };
     }
 }
