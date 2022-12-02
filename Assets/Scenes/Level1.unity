@@ -1085,6 +1085,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2174805739251082705, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_text
+      value: Start
+      objectReference: {fileID: 0}
     - target: {fileID: 2174805739714389740, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
       propertyPath: m_Name
       value: PauseButton
@@ -1139,7 +1143,7 @@ PrefabInstance:
       objectReference: {fileID: 621763271064468882, guid: a20be4416d93a634f97f7fc9bafbc8a4, type: 3}
     - target: {fileID: 2174805739755676601, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
       propertyPath: waveFilePath
-      value: level1
+      value: 1-1
       objectReference: {fileID: 0}
     - target: {fileID: 2174805739755676607, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
       propertyPath: m_Name
@@ -3262,7 +3266,7 @@ Transform:
   - {fileID: 1292045386}
   - {fileID: 1097244551}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1704779594
 PrefabInstance:

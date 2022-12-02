@@ -1080,6 +1080,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2174805739251082705, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_text
+      value: Start
+      objectReference: {fileID: 0}
     - target: {fileID: 2174805739714389740, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
       propertyPath: m_Name
       value: PauseButton
