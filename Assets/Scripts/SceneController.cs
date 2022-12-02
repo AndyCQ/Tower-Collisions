@@ -10,6 +10,7 @@ public class SceneController : MonoBehaviour
 
     private void Start() {
         //loads the main menu
+        swapToScene("StartMenu");
     }
 
     public void swapToScene(int buildInd) {
