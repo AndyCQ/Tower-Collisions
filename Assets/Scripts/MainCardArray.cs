@@ -26,4 +26,5 @@ public static class MainCardArray
     public static List<CardData> DeckArray;
 
     public static int currency = 0;
+    public static int earned = 0;
 }

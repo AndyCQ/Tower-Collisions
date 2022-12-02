@@ -10,6 +10,8 @@ public class Health : MonoBehaviour
     private float currHealth = 10f;
     private int tier=1;
 
+    public int drop = 0;
+
     void Heal(float amount)
     {
         currHealth += amount;
@@ -71,6 +73,7 @@ public class Health : MonoBehaviour
         if (currHealth <= 0f)
         {
             Destroy(gameObject);
+            
         }
 
         slider.value = CalculateHealth();
@@ -102,8 +105,19 @@ public class Health : MonoBehaviour
     }
 
     public void SetTier(int level){
-        currHealth = level/tier;
+        currHealth *= level/tier;
+        maxHealth *= level/tier;
+        drop *= level/tier;
         tier=level;
 
+    }
+
+    public float GetHealth(){
+        return currHealth;
+    }
+    private void OnDestroy() {
+        if(currHealth<=0 && gameObject.tag=="Enemy"){
+            MainCardArray.earned+=drop;
+        }
     }
 }
