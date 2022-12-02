@@ -15,4 +15,5 @@ public class GameCardManager : MonoBehaviour
     [SerializeField]
     public List<GameCardData> MainCardList;
     public int currency;
+    public int earned;
 }

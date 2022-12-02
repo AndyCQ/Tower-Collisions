@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrLevel:
     m_Handle: 0
+  noStartMenu: 0
 --- !u!4 &428610912
 Transform:
   m_ObjectHideFlags: 0
@@ -199,6 +200,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCardList: []
+  currency: 0
+  earned: 0
 --- !u!4 &988841785
 Transform:
   m_ObjectHideFlags: 0
