@@ -79,9 +79,10 @@ public class WaveSpawner : MonoBehaviour
         if(index>=fullLevelData.Count-1){
             MainCardArray.currency+=MainCardArray.earned;
             MainCardArray.earned=0;
+            print(MainCardArray.currency);
             SceneManager.LoadScene(nextScene);
         }
-        if(!going){
+        else if(!going){
             
             text.text="Wave "+waveNumber;
             CheckNext();
@@ -97,11 +98,12 @@ public class WaveSpawner : MonoBehaviour
         switch(currString[0]){
                 case 'w':
                     if(enemies.Length==0 && !going){
-                        if(index<fullLevelData.Count-1){
+                        if(index<fullLevelData.Count-2){
                             StartCoroutine(WaitWave(6));
                             going=true;
                         }else{
                             text.text="Next Level";
+                            index+=1;
                         }
                     }
                     break;
