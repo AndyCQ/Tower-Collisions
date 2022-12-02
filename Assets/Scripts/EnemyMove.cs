@@ -40,7 +40,9 @@ public class EnemyMove : MonoBehaviour
         }
     }
     public void ChangePath(int p) {
+
         path = p;
+        transform.position = waypoints[path][waypointIndex].transform.position;
     }
 
 
