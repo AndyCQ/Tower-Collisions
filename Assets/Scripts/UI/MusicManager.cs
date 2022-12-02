@@ -49,8 +49,11 @@ public class MusicManager : MonoBehaviour
             if(sceneName == "StartMenu"){
                 currBGM = PlayBGM("StartMenu");
             }
+            if(sceneName == "MainMenu"){
+                currBGM = PlayBGM("MainMenu");
+            }
             if(sceneName == "WinScreen"){
-                currBGM = PlayBGM("EndScene");
+                currBGM = PlayBGM("WinScreen");
             }
             currScene = sceneName;
         }
