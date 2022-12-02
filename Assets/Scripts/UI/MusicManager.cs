@@ -59,7 +59,7 @@ public class MusicManager : MonoBehaviour
             }
             if(sceneName == "GraveyardLevel1"){
                 currBGM.Stop();
-                currBGM = PlayBGM("Graveyard1");
+                currBGM = PlayBGM("GraveyardLevel1");
             }
             currScene = sceneName;
         }
