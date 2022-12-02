@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2919,12 +2919,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5147506474047399151, guid: b802c2b0dec481a41a167ea432b69219, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 75a7c1a04f6bbb34c952b87caaa10daa, type: 2}
+    - target: {fileID: 5147506474163447491, guid: b802c2b0dec481a41a167ea432b69219, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5ff2cc7c8dc888b4f8a8bcd9520ed812, type: 2}
+    - target: {fileID: 5147506474163447491, guid: b802c2b0dec481a41a167ea432b69219, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2b88d1ff83e1b6d4981c319e0ed36fb2, type: 2}
     - target: {fileID: 5813593498143950922, guid: b802c2b0dec481a41a167ea432b69219, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5813593498143950922, guid: b802c2b0dec481a41a167ea432b69219, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5813593499651692776, guid: b802c2b0dec481a41a167ea432b69219, type: 3}
+      propertyPath: tier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5813593499651692776, guid: b802c2b0dec481a41a167ea432b69219, type: 3}
+      propertyPath: rariety
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5813593499651692776, guid: b802c2b0dec481a41a167ea432b69219, type: 3}
+      propertyPath: damageType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5813593499651692777, guid: b802c2b0dec481a41a167ea432b69219, type: 3}

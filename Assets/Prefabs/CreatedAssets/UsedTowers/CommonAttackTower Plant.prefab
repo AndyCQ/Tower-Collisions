@@ -410,7 +410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SetupHealth: 10
-  SetupAmmo: 2
+  SetupAmmo: 10
   range: 5
   fireRate: 1
   Damage: 2
