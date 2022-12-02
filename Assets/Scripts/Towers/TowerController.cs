@@ -71,7 +71,7 @@ public class TowerController : MonoBehaviour
     {
         if(healthController.getCurrentHealth()<=0){
             Destroy(gameObject);
-            shootController.Debuff();
+            //shootController.Debuff();
         }
     }
 
