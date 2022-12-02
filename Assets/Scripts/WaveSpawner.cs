@@ -93,7 +93,10 @@ public class WaveSpawner : MonoBehaviour
             text.text="Wave "+waveNumber;
             going = true;
             CheckNext();
+<<<<<<< HEAD
             // get the next card hand
+=======
+>>>>>>> 142268a494090c9abe2f21099a758033d8973ec4
             
         }
     }
