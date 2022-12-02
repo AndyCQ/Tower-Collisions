@@ -46,9 +46,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: StartMenu
-    clip: {fileID: 8300000, guid: 8cec75150485e3d4caeb7e8f3f196b88, type: 3}
+    clip: {fileID: 8300000, guid: 422a91f1e9b8d9f41bfd006c08cce48e, type: 3}
     volume: 0.261
     pitch: 1
-    loop: 0
-    group: {fileID: 0}
+    loop: 1
+    group: {fileID: 24300002, guid: df13d7f231303b7439aff86bab4cc092, type: 2}
+    source: {fileID: 0}
+  - name: MainMenu
+    clip: {fileID: 8300000, guid: 422a91f1e9b8d9f41bfd006c08cce48e, type: 3}
+    volume: 0.261
+    pitch: 1
+    loop: 1
+    group: {fileID: 24300002, guid: df13d7f231303b7439aff86bab4cc092, type: 2}
+    source: {fileID: 0}
+  - name: ForestLevel1
+    clip: {fileID: 8300000, guid: 8cec75150485e3d4caeb7e8f3f196b88, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    group: {fileID: 24300002, guid: df13d7f231303b7439aff86bab4cc092, type: 2}
+    source: {fileID: 0}
+  - name: DesertLevel1
+    clip: {fileID: 8300000, guid: 60729e8b4047b2647a4f790fd47a89d7, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    group: {fileID: 24300002, guid: df13d7f231303b7439aff86bab4cc092, type: 2}
+    source: {fileID: 0}
+  - name: GraveyardLevel1
+    clip: {fileID: 8300000, guid: d87812a72fc9df0448d58dd627df8896, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    group: {fileID: 24300002, guid: df13d7f231303b7439aff86bab4cc092, type: 2}
     source: {fileID: 0}

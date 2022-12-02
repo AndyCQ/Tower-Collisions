@@ -43,17 +43,23 @@ public class MusicManager : MonoBehaviour
     void BGM(){
         string sceneName = SceneManager.GetActiveScene().name;
         if(sceneName != currScene){
-            if(currBGM != null){
-                currBGM.Stop();
-            }
-            if(sceneName == "StartMenu"){
-                currBGM = PlayBGM("StartMenu");
-            }
             if(sceneName == "MainMenu"){
+                if(currBGM != null){
+                    currBGM.Stop();
+                }
                 currBGM = PlayBGM("MainMenu");
             }
-            if(sceneName == "WinScreen"){
-                currBGM = PlayBGM("WinScreen");
+            if(sceneName == "Level1"){
+                currBGM.Stop();
+                currBGM = PlayBGM("ForestLevel1");
+            }
+            if(sceneName == "DesertLevel1"){
+                currBGM.Stop();
+                currBGM = PlayBGM("DesertLevel1");
+            }
+            if(sceneName == "GraveyardLevel1"){
+                currBGM.Stop();
+                currBGM = PlayBGM("Graveyard1");
             }
             currScene = sceneName;
         }
