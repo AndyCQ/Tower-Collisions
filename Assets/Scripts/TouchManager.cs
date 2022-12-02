@@ -17,5 +17,8 @@ public class TouchManager : MonoBehaviour
                 TP.SpawnTowerAtPos(t.position);
             }
         }
+        if (Input.GetMouseButtonDown(0)) {
+            TP.SpawnTowerAtPos(Input.mousePosition);
+        }
     }
 }
