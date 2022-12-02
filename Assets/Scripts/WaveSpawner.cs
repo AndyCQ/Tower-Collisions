@@ -59,6 +59,7 @@ public class WaveSpawner : MonoBehaviour
         DM = GameObject.FindGameObjectWithTag("GameManager").GetComponent<DeckManager>();
         GCM = GameObject.FindGameObjectWithTag("GameCardManager").GetComponent<GameCardManager>();
         SM = GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController>();
+        DM.FillHand();
     }
 
 
@@ -127,7 +128,7 @@ public class WaveSpawner : MonoBehaviour
     }
 
     IEnumerator WaitWave(float time){
-        
+        DM.FillHand();
         while(time>0){
             yield return new WaitForSeconds(1);
             time-=1;
@@ -143,7 +144,6 @@ public class WaveSpawner : MonoBehaviour
             endOfWave=false;
         }
         yield return new WaitForFixedUpdate();
-        DM.FillHand();
         CheckNext();
         
         yield break;
