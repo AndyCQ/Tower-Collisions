@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Fire
   cardArt: {fileID: 0}
-  towerPrefab: {fileID: 3527695204420412267, guid: de5a78b3c3145334eb83f63c8f395030, type: 3}
+  towerPrefab: {fileID: 5813593499651692779, guid: a3e41352d01453a46b29a3f5ae04024d, type: 3}
+  mainArrayIndex: 0

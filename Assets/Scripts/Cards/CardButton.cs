@@ -37,7 +37,9 @@ public class CardButton : MonoBehaviour
     }
 
     public void SetTower() {
-        GM.GetComponent<TouchPlacement>().currPrefab = currCard.towerPrefab;
-        Destroy(this.gameObject);
+        if (GM.GetComponent<TouchPlacement>().currPrefab == null) {
+            GM.GetComponent<TouchPlacement>().currPrefab = currCard.towerPrefab;
+            Destroy(this.gameObject);
+        }
     }
 }
