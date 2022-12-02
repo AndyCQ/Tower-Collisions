@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Plant
   cardArt: {fileID: 0}
-  towerPrefab: {fileID: 3527695204420412267, guid: 9f09521b087646a408e76f81f841897c, type: 3}
+  towerPrefab: {fileID: 5813593499651692779, guid: 81407c3131f0d71428cf5fffca6a4a37, type: 3}
+  mainArrayIndex: 0
