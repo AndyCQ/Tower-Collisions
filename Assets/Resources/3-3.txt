@@ -15,9 +15,9 @@ s2f02
 s2w01
 s2p02
 w
-g1p10
+g1p00
 d3
-s1f10
+s1f00
 w
 s3f01
 d2
