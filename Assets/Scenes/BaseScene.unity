@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -200,7 +200,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfd9fecb28f18774fa09a193687b9b75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainCardList: []
+  MainCardList:
+  - CD: {fileID: 11400000, guid: ec442aaf4f8b71d4fa8140156c3d8e9a, type: 2}
+    count: 0
+  - CD: {fileID: 11400000, guid: c2f8c849094316448bdb2b2fe039597d, type: 2}
+    count: 0
+  - CD: {fileID: 11400000, guid: b2863aa0acbcbca44a40b452eeab8cc0, type: 2}
+    count: 0
+  - CD: {fileID: 11400000, guid: 29ea28f54542b3b42b61feef7cda507e, type: 2}
+    count: 0
+  - CD: {fileID: 11400000, guid: 29ea28f54542b3b42b61feef7cda507e, type: 2}
+    count: 0
   currency: 0
   earned: 0
 --- !u!4 &988841785
