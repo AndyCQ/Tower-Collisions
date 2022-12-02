@@ -49,6 +49,8 @@ public class WaveSpawner : MonoBehaviour
     GameObject[] enemies;
 
     GameCardManager GCM;
+
+    SceneController SM;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +58,7 @@ public class WaveSpawner : MonoBehaviour
         //PrintDebug(fullLevelData);
         DM = GameObject.FindGameObjectWithTag("GameManager").GetComponent<DeckManager>();
         GCM = GameObject.FindGameObjectWithTag("GameCardManager").GetComponent<GameCardManager>();
+        SM = GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController>();
     }
 
 
@@ -79,11 +82,11 @@ public class WaveSpawner : MonoBehaviour
         
     }
     public void SpawnWave(){
-        if(index>=fullLevelData.Count-1){
+        if(index>=fullLevelData.Count-1 &&enemies.Length==0){
             GCM.currency+=GCM.earned;
             GCM.earned=0;
             print(GCM.currency);
-            SceneManager.LoadScene(nextScene);
+            SM.swapToScene(nextScene);
         }
         else if(!going){
             

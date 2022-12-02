@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 5813593499651692777}
   - component: {fileID: 5813593499651692776}
   m_Layer: 0
-  m_Name: CommonAttackTower
+  m_Name: CommonAttackTower Normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
