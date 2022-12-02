@@ -17,20 +17,15 @@ public class SelectButton : MonoBehaviour
     bool setup = false;
     int count;
 
-    private void Start() {
+    public void SetUp(CardData newCD) {
+        currCard = newCD;
         GameCardManager GCM = GameObject.FindGameObjectWithTag("GameCardManager").GetComponent<GameCardManager>();
         foreach (GameCardData GCD in GCM.MainCardList) {
-            if (GCD.CD == currCard) {
+            if (GCD.CD.cardName == currCard.cardName) {
                 count = GCD.count;
             }
         }
-    }
-
-    private void Update() {
-        if (setup) {
-            cardText.text = currCard.cardName + " : " + count;
-            setup = false;
-        }
+        cardText.text = currCard.cardName + " : " + count;
     }
 
     public void AddToDeck() {

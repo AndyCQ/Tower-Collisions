@@ -28,7 +28,7 @@ public class BaseScript : MonoBehaviour
 
     private void Update() {
         if (currHealth <= 0){
-            SceneManager.LoadScene("LoseScreen");
+            GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController>().swapToScene("LoseScreen");
         }
 
         slider.value = CalculateHealth();
