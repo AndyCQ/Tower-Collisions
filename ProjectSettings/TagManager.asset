@@ -12,6 +12,8 @@ TagManager:
   - TowerTarget
   - Base
   - AltPath
+  - SceneController
+  - GameCardManager
   layers:
   - Default
   - TransparentFX

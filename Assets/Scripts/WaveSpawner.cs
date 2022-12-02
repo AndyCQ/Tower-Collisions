@@ -4,6 +4,7 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 /*
 w - end of wave
@@ -36,17 +37,25 @@ public class WaveSpawner : MonoBehaviour
     public GameObject spawn;
 
     [SerializeField]
+    private string nextScene;
+
+    [SerializeField]
     private bool going = false;
     DeckManager DM;
     private bool endOfWave = false;
     [SerializeField]
     private TMP_Text text;
+    [SerializeField]
+    GameObject[] enemies;
+
+    GameCardManager GCM;
     // Start is called before the first frame update
     void Start()
     {
         ReadTextFile(waveFilePath);
         //PrintDebug(fullLevelData);
         DM = GameObject.FindGameObjectWithTag("GameManager").GetComponent<DeckManager>();
+        GCM = GameObject.FindGameObjectWithTag("GameCardManager").GetComponent<GameCardManager>();
     }
 
 
@@ -57,13 +66,12 @@ public class WaveSpawner : MonoBehaviour
             currString="x";
         }
         
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        if(enemies.Length==0&&currString=="w"){
+            CheckNext();
+        }
         //print(currString);
-        if(enemies.Length==0&&endOfWave){
-            going=false;
-            text.text="Start Wave "+waveNumber;
-            endOfWave=false;
-        }else if(enemies.Length==0&&index==fullLevelData.Count){
+        if(enemies.Length==0&&index==fullLevelData.Count){
             going=false;
             text.text="End of Level";
         }
@@ -71,9 +79,15 @@ public class WaveSpawner : MonoBehaviour
         
     }
     public void SpawnWave(){
-        if(!going){
-            going = true;
-            text.text="Good Luck!";
+        if(index>=fullLevelData.Count-1){
+            GCM.currency+=GCM.earned;
+            GCM.earned=0;
+            print(GCM.currency);
+            SceneManager.LoadScene(nextScene);
+        }
+        else if(!going){
+            
+            text.text="Wave "+waveNumber;
             CheckNext();
             // get the next card hand
             DM.FillHand();
@@ -86,9 +100,15 @@ public class WaveSpawner : MonoBehaviour
         int path;
         switch(currString[0]){
                 case 'w':
-                    index+=1;
-                    waveNumber+=1;
-                    endOfWave=true;
+                    if(enemies.Length==0 && !going){
+                        if(index<fullLevelData.Count-2){
+                            StartCoroutine(WaitWave(6));
+                            going=true;
+                        }else{
+                            text.text="Next Level";
+                            index+=1;
+                        }
+                    }
                     break;
                 case 'd':
                     StartCoroutine(Wait(float.Parse(currString.Substring(1))));
@@ -99,6 +119,28 @@ public class WaveSpawner : MonoBehaviour
                     StartCoroutine(Spawn(currString[0],tier,currString[2],path,int.Parse(currString.Substring(4))));
                     break;
             }
+    }
+
+    IEnumerator WaitWave(float time){
+        
+        while(time>0){
+            yield return new WaitForSeconds(1);
+            time-=1;
+            text.text=time.ToString();
+            print(time);
+            
+        }
+        
+        if(time<=0){
+            index+=1;
+            waveNumber+=1;
+            text.text="Wave "+waveNumber;
+            going=false;
+        }
+        yield return new WaitForFixedUpdate();
+        CheckNext();
+        
+        yield break;
     }
     IEnumerator Wait(float time){
         yield return new WaitForSeconds(time);

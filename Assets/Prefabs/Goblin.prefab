@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 1
+  drop: 2
   maxHealth: 5
   healthBarUI: {fileID: 1993146388348718238}
   slider: {fileID: 1993146386902080542}

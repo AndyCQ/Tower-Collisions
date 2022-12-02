@@ -1156,9 +1156,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 306580075}
     - target: {fileID: 2174805739755676601, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: nextScene
+      value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174805739755676601, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
       propertyPath: skelPrefab
       value: 
       objectReference: {fileID: 621763271064468882, guid: a20be4416d93a634f97f7fc9bafbc8a4, type: 3}
+    - target: {fileID: 2174805739755676601, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: waveNumber
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2174805739755676601, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
       propertyPath: waveFilePath
       value: test
@@ -1327,6 +1335,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneToGo: MainMenu
+  mainMenu: {fileID: 0}
+  gachaMenu: {fileID: 0}
 --- !u!114 &462000951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2954,6 +2964,18 @@ PrefabInstance:
     - target: {fileID: 5813593498143950922, guid: b802c2b0dec481a41a167ea432b69219, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5813593499651692776, guid: b802c2b0dec481a41a167ea432b69219, type: 3}
+      propertyPath: Damage
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5813593499651692776, guid: b802c2b0dec481a41a167ea432b69219, type: 3}
+      propertyPath: SetupAmmo
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5813593499651692776, guid: b802c2b0dec481a41a167ea432b69219, type: 3}
+      propertyPath: SetupHealth
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5813593499651692777, guid: b802c2b0dec481a41a167ea432b69219, type: 3}
       propertyPath: m_RootOrder

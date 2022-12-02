@@ -42,4 +42,6 @@ public class EnemyMove : MonoBehaviour
     public void ChangePath(int p) {
         path = p;
     }
+
+
 }

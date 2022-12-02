@@ -8,4 +8,5 @@ public class CardData : ScriptableObject
     public string cardName;
     public Sprite cardArt;
     public GameObject towerPrefab;
+    public int mainArrayIndex;
 }
