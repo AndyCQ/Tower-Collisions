@@ -4,6 +4,7 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 /*
 w - end of wave
@@ -34,6 +35,9 @@ public class WaveSpawner : MonoBehaviour
     public GameObject gobPrefab;
 
     public GameObject spawn;
+
+    [SerializeField]
+    private string nextScene;
 
     [SerializeField]
     private bool going = false;
@@ -72,6 +76,11 @@ public class WaveSpawner : MonoBehaviour
         
     }
     public void SpawnWave(){
+        if(index>=fullLevelData.Count-1){
+            MainCardArray.currency+=MainCardArray.earned;
+            MainCardArray.earned=0;
+            SceneManager.LoadScene(nextScene);
+        }
         if(!going){
             
             text.text="Wave "+waveNumber;
@@ -88,8 +97,12 @@ public class WaveSpawner : MonoBehaviour
         switch(currString[0]){
                 case 'w':
                     if(enemies.Length==0 && !going){
-                        StartCoroutine(WaitWave(6));
-                        going=true;
+                        if(index<fullLevelData.Count-1){
+                            StartCoroutine(WaitWave(6));
+                            going=true;
+                        }else{
+                            text.text="Next Level";
+                        }
                     }
                     break;
                 case 'd':
