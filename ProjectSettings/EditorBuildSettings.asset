@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/StartMenu.unity
     guid: 3341bbbec1ff00a40a023318019d8e82
   - enabled: 1
@@ -51,6 +51,6 @@ EditorBuildSettings:
     path: Assets/Scenes/DeckBuilder.unity
     guid: 64b81346c56e6474c96dd3ce355d005e
   - enabled: 0
-    path: Assets/Scenes/GachaScreen.unity
-    guid: c15e32253cb83a04981471a56b2c417e
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
