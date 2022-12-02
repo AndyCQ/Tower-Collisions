@@ -92,8 +92,7 @@ public class WaveSpawner : MonoBehaviour
             
             text.text="Wave "+waveNumber;
             CheckNext();
-            // get the next card hand
-            DM.FillHand();
+            
         }
     }
 
@@ -112,6 +111,8 @@ public class WaveSpawner : MonoBehaviour
                             index+=1;
                         }
                     }
+                    // get the next card hand
+                    DM.FillHand();
                     break;
                 case 'd':
                     StartCoroutine(Wait(float.Parse(currString.Substring(1))));
