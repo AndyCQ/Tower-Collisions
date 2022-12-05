@@ -34,8 +34,6 @@ public class WaveSpawner : MonoBehaviour
     public GameObject orcPrefab;
     public GameObject gobPrefab;
 
-    public GameObject spawn;
-
     [SerializeField]
     private string nextScene;
 
@@ -47,7 +45,7 @@ public class WaveSpawner : MonoBehaviour
     private TMP_Text text;
     [SerializeField]
     GameObject[] enemies;
-
+    public GameObject[] paths;
     GameCardManager GCM;
 
     SceneController SM;
@@ -157,25 +155,26 @@ public class WaveSpawner : MonoBehaviour
     }
     IEnumerator Spawn(char kind, int tier, char type, int path, int enemies){
         int spawned=0;
+        Transform spawn = paths[path].GetComponent<Path>().waypoints[0];
         GameObject enemy;
         float time;
         while(spawned<enemies){
             switch(kind){
                 case 's':
-                    enemy = Instantiate(skelPrefab, spawn.transform.position, Quaternion.identity);
+                    enemy = Instantiate(skelPrefab, spawn.position, Quaternion.identity);
                     time = 1;
                     break;
                 case 'o':
-                    enemy = Instantiate(orcPrefab, spawn.transform.position, Quaternion.identity);
+                    enemy = Instantiate(orcPrefab, spawn.position, Quaternion.identity);
                     time = 2;
                     break;
                 default:
-                    enemy = Instantiate(gobPrefab, spawn.transform.position, Quaternion.identity);
+                    enemy = Instantiate(gobPrefab, spawn.position, Quaternion.identity);
                     time = 0.5f;
                     break;
             }
             enemy.GetComponent<Health>().SetTier(tier);
-            enemy.GetComponent<EnemyMove>().ChangePath(path);
+            enemy.GetComponent<EnemyMove>().ChangePath(paths[path].GetComponent<Path>());
             switch (type){
                 case 'w':
                     enemy.GetComponentInChildren<EnemyShoot>().SetType("Water");
