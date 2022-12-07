@@ -202,17 +202,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainCardList:
   - CD: {fileID: 11400000, guid: ec442aaf4f8b71d4fa8140156c3d8e9a, type: 2}
-    count: 0
+    count: 5
   - CD: {fileID: 11400000, guid: c2f8c849094316448bdb2b2fe039597d, type: 2}
-    count: 0
+    count: 5
   - CD: {fileID: 11400000, guid: b2863aa0acbcbca44a40b452eeab8cc0, type: 2}
-    count: 0
+    count: 5
   - CD: {fileID: 11400000, guid: 29ea28f54542b3b42b61feef7cda507e, type: 2}
-    count: 0
-  - CD: {fileID: 11400000, guid: 29ea28f54542b3b42b61feef7cda507e, type: 2}
-    count: 0
+    count: 5
+  CurrCardList:
+  - {fileID: 11400000, guid: ec442aaf4f8b71d4fa8140156c3d8e9a, type: 2}
+  - {fileID: 11400000, guid: ec442aaf4f8b71d4fa8140156c3d8e9a, type: 2}
+  - {fileID: 11400000, guid: ec442aaf4f8b71d4fa8140156c3d8e9a, type: 2}
+  - {fileID: 11400000, guid: ec442aaf4f8b71d4fa8140156c3d8e9a, type: 2}
+  - {fileID: 11400000, guid: ec442aaf4f8b71d4fa8140156c3d8e9a, type: 2}
   currency: 0
   earned: 0
+  maxDeckSize: 10
 --- !u!4 &988841785
 Transform:
   m_ObjectHideFlags: 0
