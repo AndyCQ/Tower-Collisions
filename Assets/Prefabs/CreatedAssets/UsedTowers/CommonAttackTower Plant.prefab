@@ -410,7 +410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SetupHealth: 10
-  SetupAmmo: 2
+  SetupAmmo: 8
   range: 5
   fireRate: 1
   Damage: 2
@@ -916,6 +916,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: lowTierCrystal
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 171b3c0874cea5c45959a75a7a2791be, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 02773a19fd0f1704a9a5edc9023791c6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 171b3c0874cea5c45959a75a7a2791be, type: 3}
 --- !u!4 &6279338399329525632 stripped

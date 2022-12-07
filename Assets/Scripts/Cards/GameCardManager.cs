@@ -14,6 +14,8 @@ public class GameCardManager : MonoBehaviour
 {
     [SerializeField]
     public List<GameCardData> MainCardList;
+    public List<CardData> CurrCardList;
     public int currency=0;
     public int earned=0;
+    public int maxDeckSize = 10;
 }
