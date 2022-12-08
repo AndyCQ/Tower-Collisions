@@ -12,8 +12,10 @@ public class Gacha : MonoBehaviour
     public Image[] pullElevenImg;
     public Button[] buttons;
     GameCardManager GCM;
+    SaveGame save;
     private void Start() {
         GCM = GameObject.FindGameObjectWithTag("GameCardManager").GetComponent<GameCardManager>();
+        save = GameObject.FindGameObjectWithTag("Save").GetComponent<SaveGame>();
     }
     public void PullOne(){
         List<int> pulled = new List<int>();
@@ -102,6 +104,7 @@ public class Gacha : MonoBehaviour
     }
 
     public void Display(List<int> pulled){
+        save.Save();
         if(pulled.Count==1){
             pullOnePanel.SetActive(true);
             for(int i=0;i<buttons.Length;i++){

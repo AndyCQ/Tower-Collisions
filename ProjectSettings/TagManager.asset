@@ -15,6 +15,7 @@ TagManager:
   - SceneController
   - GameCardManager
   - DeckMenu
+  - Save
   layers:
   - Default
   - TransparentFX
