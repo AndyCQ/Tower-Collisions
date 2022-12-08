@@ -38,20 +38,22 @@ public class SaveGame : MonoBehaviour
         if (File.Exists(Application.persistentDataPath 
                     + "/save.dat"))
         {
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = 
-                    File.Open(Application.persistentDataPath 
-                    + "/save.dat", FileMode.Open);
-            SaveData data = (SaveData)bf.Deserialize(file);
-            file.Close();
-            for(int i =0;i<data.MainCardList.Count;i++){
-                GCM.MainCardList[i].count=data.MainCardList[i];
-            }
-            GCM.currency = data.currency;
-            GCM.CurrCardList.Clear();
-            for(int i = 0;i<data.CurrCardList.Count;i++){
-                GCM.CurrCardList.Add(GCM.MainCardList[data.CurrCardList[i]].CD);
-            }
+            try{
+                BinaryFormatter bf = new BinaryFormatter();
+                FileStream file = 
+                        File.Open(Application.persistentDataPath 
+                        + "/save.dat", FileMode.Open);
+                SaveData data = (SaveData)bf.Deserialize(file);
+                file.Close();
+                for(int i =0;i<data.MainCardList.Count;i++){
+                    GCM.MainCardList[i].count=data.MainCardList[i];
+                }
+                GCM.currency = data.currency;
+                GCM.CurrCardList.Clear();
+                for(int i = 0;i<data.CurrCardList.Count;i++){
+                    GCM.CurrCardList.Add(GCM.MainCardList[data.CurrCardList[i]].CD);
+                }
+            }catch{}
             
         }
         
