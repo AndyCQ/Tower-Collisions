@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrLevel:
     m_Handle: 0
-  noStartMenu: 1
+  noStartMenu: 0
   testSceneName: Level1
 --- !u!4 &428610912
 Transform:
