@@ -60,6 +60,8 @@ public class TowerController : MonoBehaviour
         shootController = firingPosition.GetComponent<TowerShoot>();
         shootController.Setup(this);
         shootController.shrine=shrine;
+        healthBar.enabled = false;
+        ammoBar.enabled = false;
     }
 
     void OnValidate()
