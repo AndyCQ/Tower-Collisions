@@ -28,11 +28,11 @@ g3p02
 w
 g1f05
 w
-g1f010
+g1f05
 w
-g1p110
+g1p17
 d9
-g1n010
+g1n08
 w
 g3f13
 d2

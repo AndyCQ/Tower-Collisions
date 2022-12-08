@@ -9,10 +9,12 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] float moveSpeed = 2f;
 
     public int waypointIndex = 0;
+    public BaseScript baselvl;
 
     void Start()
     {
         transform.position = path.waypoints[waypointIndex].transform.position;
+        baselvl = GameObject.FindGameObjectWithTag("Base").GetComponent<BaseScript>();
         
     }
 
@@ -31,6 +33,7 @@ public class EnemyMove : MonoBehaviour
         }
 
         if (waypointIndex == path.waypoints.Length) {
+            baselvl.Damage();
             Destroy(gameObject);
         }
     }
