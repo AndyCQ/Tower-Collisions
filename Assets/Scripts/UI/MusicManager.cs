@@ -50,15 +50,21 @@ public class MusicManager : MonoBehaviour
                 currBGM = PlayBGM("MainMenu");
             }
             if(sceneName == "Level1"){
-                currBGM.Stop();
+                if(currBGM != null){
+                    currBGM.Stop();
+                }
                 currBGM = PlayBGM("ForestLevel1");
             }
             if(sceneName == "DesertLevel1"){
-                currBGM.Stop();
+                if(currBGM != null){
+                    currBGM.Stop();
+                }
                 currBGM = PlayBGM("DesertLevel1");
             }
             if(sceneName == "GraveyardLevel1"){
-                currBGM.Stop();
+                if(currBGM != null){
+                    currBGM.Stop();
+                }
                 currBGM = PlayBGM("GraveyardLevel1");
             }
             currScene = sceneName;
