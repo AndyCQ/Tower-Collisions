@@ -39,7 +39,7 @@ public class CardButton : MonoBehaviour
     public void SetTower() {
         if (GM.GetComponent<TouchPlacement>().currTower == null) {
             GM.GetComponent<TouchPlacement>().currTower = currCard;
-            //Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
     }
 }

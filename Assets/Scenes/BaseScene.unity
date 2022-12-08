@@ -154,8 +154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrLevel:
     m_Handle: 0
-  noStartMenu: 1
-  testSceneName: DesertLevel3
+  noStartMenu: 0
+  testSceneName: ForestLevel2
 --- !u!4 &428610912
 Transform:
   m_ObjectHideFlags: 0
