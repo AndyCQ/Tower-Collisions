@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TouchPlacement : MonoBehaviour
 {
-    public GameObject currPrefab;
+    public CardData currTower;
     [SerializeField]
     Camera mainCam;
 
@@ -13,7 +13,7 @@ public class TouchPlacement : MonoBehaviour
     }
 
     public bool SpawnTowerAtPos(Vector3 touchPos) {
-        if (currPrefab == null) {
+        if (currTower == null) {
             return false;
         }
         Ray ray = mainCam.ScreenPointToRay(touchPos);
@@ -21,11 +21,14 @@ public class TouchPlacement : MonoBehaviour
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("TowerSpawn"))
             && !hit.transform.CompareTag("Tower")
             ) {
-            Instantiate(currPrefab, hit.point, Quaternion.identity);
-            currPrefab = null;
+            GameObject tower = Instantiate(currTower.towerPrefab, hit.point, Quaternion.identity);
+            tower.GetComponent<TowerController>().Setup(currTower.SetupHealth,currTower.SetupAmmo,currTower.range,currTower.fireRate,currTower.Damage,currTower.damageType,currTower.tier,currTower.rariety);
+            //Destroy(currTower.gameObject);
+            currTower = null;
             return true;
         } else {
             return false;
         }
     }
 }
+

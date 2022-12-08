@@ -3875,7 +3875,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 59b14d95d203c564e889500b66ba4de8, type: 2}
   - {fileID: 2100000, guid: a588f20c30a4bd04d8c0514a6ab1b2ec, type: 2}
   - {fileID: 2100000, guid: 2b88d1ff83e1b6d4981c319e0ed36fb2, type: 2}
-  shrine: 1
   healthBar: {fileID: 1420972114}
   ammoBar: {fileID: 1740333801}
 --- !u!1001 &1498228224
