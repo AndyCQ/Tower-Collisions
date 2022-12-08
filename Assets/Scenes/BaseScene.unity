@@ -155,7 +155,7 @@ MonoBehaviour:
   CurrLevel:
     m_Handle: 0
   noStartMenu: 1
-  testSceneName: NiravTestScene
+  testSceneName: MainMenu
 --- !u!4 &428610912
 Transform:
   m_ObjectHideFlags: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ec442aaf4f8b71d4fa8140156c3d8e9a, type: 2}
   - {fileID: 11400000, guid: ec442aaf4f8b71d4fa8140156c3d8e9a, type: 2}
   - {fileID: 11400000, guid: ec442aaf4f8b71d4fa8140156c3d8e9a, type: 2}
-  currency: 0
+  currency: 1000
   earned: 0
   maxDeckSize: 10
 --- !u!4 &988841785
