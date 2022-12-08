@@ -47,17 +47,20 @@ public class WaveSpawner : MonoBehaviour
     GameObject[] enemies;
     public GameObject[] paths;
     GameCardManager GCM;
+    bool dealt=false;
 
     SceneController SM;
     // Start is called before the first frame update
     void Start()
     {
+        
         ReadTextFile(waveFilePath);
         //PrintDebug(fullLevelData);
         DM = GameObject.FindGameObjectWithTag("GameManager").GetComponent<DeckManager>();
+        
         GCM = GameObject.FindGameObjectWithTag("GameCardManager").GetComponent<GameCardManager>();
         SM = GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController>();
-        DM.FillHand();
+        
     }
 
 
@@ -78,7 +81,10 @@ public class WaveSpawner : MonoBehaviour
             text.text="End of Level";
         }
 
-        
+        if(!dealt){
+            DM.FillHand();
+            dealt=true;
+        }
     }
     public void SpawnWave(){
         if(index>=fullLevelData.Count-1 &&enemies.Length==0){
