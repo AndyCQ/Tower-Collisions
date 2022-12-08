@@ -19,6 +19,13 @@ public class BaseScript : MonoBehaviour
         slider.enabled = false;
     }
 
+    private void OnCollisionEnter(Collision other){
+        if(other.gameObject.CompareTag("Enemy")){
+            GameObject enemy = other.gameObject;
+            currHealth -= damage;
+            Destroy(other.gameObject);
+            FindObjectOfType<MusicManager>().PlaySoundEffects("BaseHit");
+        }
     
 
     public void Damage(){

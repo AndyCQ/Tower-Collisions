@@ -80,3 +80,38 @@ MonoBehaviour:
     loop: 1
     group: {fileID: 24300002, guid: df13d7f231303b7439aff86bab4cc092, type: 2}
     source: {fileID: 0}
+  - name: Fire
+    clip: {fileID: 8300000, guid: 4ae0226842c4c7344806551b1e74fda8, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    group: {fileID: 24300002, guid: af1acf76fbbc22948ab819ff64e15e80, type: 2}
+    source: {fileID: 0}
+  - name: Water
+    clip: {fileID: 8300000, guid: 00cb86bdb32d58f4780ec6b82820431a, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    group: {fileID: 24300002, guid: af1acf76fbbc22948ab819ff64e15e80, type: 2}
+    source: {fileID: 0}
+  - name: Plant
+    clip: {fileID: 8300000, guid: 9972577a4daade0478b8abf50373ce76, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    group: {fileID: 24300002, guid: af1acf76fbbc22948ab819ff64e15e80, type: 2}
+    source: {fileID: 0}
+  - name: Normal
+    clip: {fileID: 8300000, guid: f68ec0a8fd90d23418f6ff4b84682482, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    group: {fileID: 24300002, guid: af1acf76fbbc22948ab819ff64e15e80, type: 2}
+    source: {fileID: 0}
+  - name: BaseHit
+    clip: {fileID: 8300000, guid: 4d36e77b647ed32488020d9b1f3d9ce4, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    group: {fileID: 24300002, guid: af1acf76fbbc22948ab819ff64e15e80, type: 2}
+    source: {fileID: 0}

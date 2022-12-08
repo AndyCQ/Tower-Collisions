@@ -438,6 +438,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 2b88d1ff83e1b6d4981c319e0ed36fb2, type: 2}
   healthBar: {fileID: 6415999237194857463}
   ammoBar: {fileID: 5813593498776633325}
+  element: Plant
 --- !u!1 &6415999236985932580
 GameObject:
   m_ObjectHideFlags: 0
