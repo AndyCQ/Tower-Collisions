@@ -47,6 +47,9 @@ public class TowerController : MonoBehaviour
 	private TowerHealth healthController;
     private TowerShoot shootController;
 
+    //Element type
+    public string element;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -120,15 +123,19 @@ public class TowerController : MonoBehaviour
         {
             case DamageType.Normal:
                 dM = damageColor[0];
+                element = "Normal";
                 break;
             case DamageType.Fire:
                 dM = damageColor[1];
+                element = "Fire";
                 break;
             case DamageType.Plant:
                 dM = damageColor[2];
+                element = "Plant";
                 break;
             case DamageType.Water:
                 dM = damageColor[3];
+                element = "Water";
                 break;
             default:
                 print("COLOR NOT FOUND");

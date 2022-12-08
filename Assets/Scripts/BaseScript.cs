@@ -23,6 +23,7 @@ public class BaseScript : MonoBehaviour
             GameObject enemy = other.gameObject;
             currHealth -= damage;
             Destroy(other.gameObject);
+            FindObjectOfType<MusicManager>().PlaySoundEffects("BaseHit");
         }
     }
 
