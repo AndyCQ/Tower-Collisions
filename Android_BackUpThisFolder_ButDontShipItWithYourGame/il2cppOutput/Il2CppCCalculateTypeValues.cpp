@@ -16459,54 +16459,54 @@ struct UpdaterArray_tF8D43D2A3598E7C17ABB5308E83FDECF1F36A449  : public RuntimeO
 	IVisualTreeUpdaterU5BU5D_t9E9D948BC4F327DA519FEB2BCEC12FB7FD7C59E8* ___m_VisualTreeUpdaters_0;
 };
 
-// WaveSpawner/<Spawn>d__23
-struct U3CSpawnU3Ed__23_t0BF12533F6F9F1C0B18E41232E2F12833582B297  : public RuntimeObject
+// WaveSpawner/<Spawn>d__24
+struct U3CSpawnU3Ed__24_tD233C3F0A59BCA9824A75E779F6199E473749807  : public RuntimeObject
 {
-	// System.Int32 WaveSpawner/<Spawn>d__23::<>1__state
+	// System.Int32 WaveSpawner/<Spawn>d__24::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object WaveSpawner/<Spawn>d__23::<>2__current
+	// System.Object WaveSpawner/<Spawn>d__24::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// WaveSpawner WaveSpawner/<Spawn>d__23::<>4__this
+	// WaveSpawner WaveSpawner/<Spawn>d__24::<>4__this
 	WaveSpawner_tCF00FE935750D519050ACA717269E033818F7075* ___U3CU3E4__this_2;
-	// System.Int32 WaveSpawner/<Spawn>d__23::path
+	// System.Int32 WaveSpawner/<Spawn>d__24::path
 	int32_t ___path_3;
-	// System.Char WaveSpawner/<Spawn>d__23::kind
+	// System.Char WaveSpawner/<Spawn>d__24::kind
 	Il2CppChar ___kind_4;
-	// System.Int32 WaveSpawner/<Spawn>d__23::tier
+	// System.Int32 WaveSpawner/<Spawn>d__24::tier
 	int32_t ___tier_5;
-	// System.Char WaveSpawner/<Spawn>d__23::type
+	// System.Char WaveSpawner/<Spawn>d__24::type
 	Il2CppChar ___type_6;
-	// System.Int32 WaveSpawner/<Spawn>d__23::enemies
+	// System.Int32 WaveSpawner/<Spawn>d__24::enemies
 	int32_t ___enemies_7;
-	// System.Int32 WaveSpawner/<Spawn>d__23::<spawned>5__2
+	// System.Int32 WaveSpawner/<Spawn>d__24::<spawned>5__2
 	int32_t ___U3CspawnedU3E5__2_8;
-	// UnityEngine.Transform WaveSpawner/<Spawn>d__23::<spawn>5__3
+	// UnityEngine.Transform WaveSpawner/<Spawn>d__24::<spawn>5__3
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___U3CspawnU3E5__3_9;
 };
 
-// WaveSpawner/<Wait>d__22
-struct U3CWaitU3Ed__22_t7D5D8DDDAD99F6EF38C5C6198A7490D0F201F365  : public RuntimeObject
+// WaveSpawner/<Wait>d__23
+struct U3CWaitU3Ed__23_t1CDE200BE703656CE61EA64149B76018BB80B4CC  : public RuntimeObject
 {
-	// System.Int32 WaveSpawner/<Wait>d__22::<>1__state
+	// System.Int32 WaveSpawner/<Wait>d__23::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object WaveSpawner/<Wait>d__22::<>2__current
+	// System.Object WaveSpawner/<Wait>d__23::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// System.Single WaveSpawner/<Wait>d__22::time
+	// System.Single WaveSpawner/<Wait>d__23::time
 	float ___time_2;
-	// WaveSpawner WaveSpawner/<Wait>d__22::<>4__this
+	// WaveSpawner WaveSpawner/<Wait>d__23::<>4__this
 	WaveSpawner_tCF00FE935750D519050ACA717269E033818F7075* ___U3CU3E4__this_3;
 };
 
-// WaveSpawner/<WaitWave>d__21
-struct U3CWaitWaveU3Ed__21_t5172509175DBDB088759D012A07D2193F58B48B2  : public RuntimeObject
+// WaveSpawner/<WaitWave>d__22
+struct U3CWaitWaveU3Ed__22_t5AB6C5E4A3845BF95375624B10FD2F09A1A4DFAF  : public RuntimeObject
 {
-	// System.Int32 WaveSpawner/<WaitWave>d__21::<>1__state
+	// System.Int32 WaveSpawner/<WaitWave>d__22::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object WaveSpawner/<WaitWave>d__21::<>2__current
+	// System.Object WaveSpawner/<WaitWave>d__22::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// WaveSpawner WaveSpawner/<WaitWave>d__21::<>4__this
+	// WaveSpawner WaveSpawner/<WaitWave>d__22::<>4__this
 	WaveSpawner_tCF00FE935750D519050ACA717269E033818F7075* ___U3CU3E4__this_2;
-	// System.Single WaveSpawner/<WaitWave>d__21::time
+	// System.Single WaveSpawner/<WaitWave>d__22::time
 	float ___time_3;
 };
 
@@ -54590,6 +54590,24 @@ struct CardData_tA9430D43EC9E6379D6D5485285EB4D225F7490CE  : public ScriptableOb
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___towerPrefab_6;
 	// System.Int32 CardData::mainArrayIndex
 	int32_t ___mainArrayIndex_7;
+	// UnityEngine.GameObject CardData::CardButton
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___CardButton_8;
+	// System.Single CardData::SetupHealth
+	float ___SetupHealth_9;
+	// System.Single CardData::SetupAmmo
+	float ___SetupAmmo_10;
+	// System.Single CardData::range
+	float ___range_11;
+	// System.Single CardData::fireRate
+	float ___fireRate_12;
+	// System.Single CardData::Damage
+	float ___Damage_13;
+	// TowerController/DamageType CardData::damageType
+	int32_t ___damageType_14;
+	// TowerController/Tier CardData::tier
+	int32_t ___tier_15;
+	// TowerController/Rariety CardData::rariety
+	int32_t ___rariety_16;
 };
 
 // UnityEngine.InputSystem.Processors.ClampProcessor
@@ -61711,8 +61729,8 @@ struct TouchManager_t38556C99556388530402BB02D83E19164E477D1C  : public MonoBeha
 // TouchPlacement
 struct TouchPlacement_tDCED0C7EFB6169F865F0EF52B64F131950F67178  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
-	// UnityEngine.GameObject TouchPlacement::currPrefab
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___currPrefab_4;
+	// CardData TouchPlacement::currTower
+	CardData_tA9430D43EC9E6379D6D5485285EB4D225F7490CE* ___currTower_4;
 	// UnityEngine.Camera TouchPlacement::mainCam
 	Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* ___mainCam_5;
 };
@@ -61808,20 +61826,18 @@ struct TowerController_t211727CB3EE3C0DE3208C599A08ECC02EE1AF458  : public MonoB
 	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___tM_21;
 	// UnityEngine.Material TowerController::rM
 	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___rM_22;
-	// System.Boolean TowerController::shrine
-	bool ___shrine_23;
 	// System.Single TowerController::maxHealth
-	float ___maxHealth_24;
+	float ___maxHealth_23;
 	// System.Single TowerController::maxAmmo
-	float ___maxAmmo_25;
+	float ___maxAmmo_24;
 	// UnityEngine.UI.Slider TowerController::healthBar
-	Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* ___healthBar_26;
+	Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* ___healthBar_25;
 	// UnityEngine.UI.Slider TowerController::ammoBar
-	Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* ___ammoBar_27;
+	Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* ___ammoBar_26;
 	// TowerHealth TowerController::healthController
-	TowerHealth_tFB747E97490C8FA9565E0C6C8250435F73B736EF* ___healthController_28;
+	TowerHealth_tFB747E97490C8FA9565E0C6C8250435F73B736EF* ___healthController_27;
 	// TowerShoot TowerController::shootController
-	TowerShoot_tA7D8DA548B30F8EB6A09891669819B6F5855F1FB* ___shootController_29;
+	TowerShoot_tA7D8DA548B30F8EB6A09891669819B6F5855F1FB* ___shootController_28;
 };
 
 // TowerHealth
@@ -61848,10 +61864,8 @@ struct TowerShoot_tA7D8DA548B30F8EB6A09891669819B6F5855F1FB  : public MonoBehavi
 	float ___AmmoCount_8;
 	// System.Collections.Generic.Dictionary`2<System.String,System.Boolean> TowerShoot::buffed
 	Dictionary_2_t17D0D125440AC627FCF80F189C6CBCB02856063C* ___buffed_9;
-	// System.Boolean TowerShoot::shrine
-	bool ___shrine_10;
 	// System.Single TowerShoot::buff
-	float ___buff_11;
+	float ___buff_10;
 };
 
 // UnityEngine.InputSystem.XR.TrackedPoseDriver
@@ -62021,8 +62035,10 @@ struct WaveSpawner_tCF00FE935750D519050ACA717269E033818F7075  : public MonoBehav
 	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___paths_18;
 	// GameCardManager WaveSpawner::GCM
 	GameCardManager_t8ABFFE15BBA138CA444FC2D1919D94981A5D51B2* ___GCM_19;
+	// System.Boolean WaveSpawner::dealt
+	bool ___dealt_20;
 	// SceneController WaveSpawner::SM
-	SceneController_tB7F7B89C800597DE2A7040F3D2EFD8824C8043CB* ___SM_20;
+	SceneController_tB7F7B89C800597DE2A7040F3D2EFD8824C8043CB* ___SM_21;
 };
 
 // UnityEngine.InputSystem.XInput.XInputController
@@ -72663,11 +72679,11 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize3990 = { sizeof(Path_t2BF946
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3991;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize3991 = { sizeof(WaveManager_t432EF298E8C09678E15239E5EF95239F5B4AC141), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3992;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize3992 = { sizeof(U3CWaitWaveU3Ed__21_t5172509175DBDB088759D012A07D2193F58B48B2), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize3992 = { sizeof(U3CWaitWaveU3Ed__22_t5AB6C5E4A3845BF95375624B10FD2F09A1A4DFAF), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3993;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize3993 = { sizeof(U3CWaitU3Ed__22_t7D5D8DDDAD99F6EF38C5C6198A7490D0F201F365), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize3993 = { sizeof(U3CWaitU3Ed__23_t1CDE200BE703656CE61EA64149B76018BB80B4CC), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3994;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize3994 = { sizeof(U3CSpawnU3Ed__23_t0BF12533F6F9F1C0B18E41232E2F12833582B297), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize3994 = { sizeof(U3CSpawnU3Ed__24_tD233C3F0A59BCA9824A75E779F6199E473749807), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3995;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize3995 = { sizeof(WaveSpawner_tCF00FE935750D519050ACA717269E033818F7075), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3996;

@@ -16,6 +16,7 @@ public class BaseScript : MonoBehaviour
     {
         currHealth = base_health;
         slider.value = CalculateHealth();
+        slider.enabled = false;
     }
 
     

@@ -56,6 +56,8 @@ public class TowerController : MonoBehaviour
         firingPosition.AddComponent<TowerShoot>();
         shootController = firingPosition.GetComponent<TowerShoot>();
         shootController.Setup(this);
+        healthBar.enabled = false;
+        ammoBar.enabled = false;
     }
 
     public void Setup(float health, float ammo, float _range, float ratefire, float damage, DamageType element, Tier _tier, Rariety _rariety){
