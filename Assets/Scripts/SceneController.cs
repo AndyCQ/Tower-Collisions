@@ -12,7 +12,12 @@ public class SceneController : MonoBehaviour
     [SerializeField]
     string testSceneName;
 
+    SaveGame save;
+
     private void Start() {
+        save = GameObject.FindGameObjectWithTag("Save").GetComponent<SaveGame>();
+        save.Load();
+
         //loads the main menu
         if (!noStartMenu) {
             swapToScene("StartMenu");
@@ -23,6 +28,7 @@ public class SceneController : MonoBehaviour
     }
 
     public void swapToScene(int buildInd) {
+        save.Save();
         if (CurrLevel.IsValid()) {
             SceneManager.UnloadSceneAsync(CurrLevel);
         }
@@ -33,6 +39,7 @@ public class SceneController : MonoBehaviour
         };
     }
     public void swapToScene(string sceneName) {
+        save.Save();
         if (CurrLevel.IsValid()) {
             SceneManager.UnloadSceneAsync(CurrLevel);
         }

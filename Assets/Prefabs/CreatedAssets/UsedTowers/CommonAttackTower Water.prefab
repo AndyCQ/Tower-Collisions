@@ -410,7 +410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SetupHealth: 10
-  SetupAmmo: 10
+  SetupAmmo: 8
   range: 5
   fireRate: 1
   Damage: 2
@@ -436,7 +436,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 59b14d95d203c564e889500b66ba4de8, type: 2}
   - {fileID: 2100000, guid: a588f20c30a4bd04d8c0514a6ab1b2ec, type: 2}
   - {fileID: 2100000, guid: 2b88d1ff83e1b6d4981c319e0ed36fb2, type: 2}
-  shrine: 0
   healthBar: {fileID: 6415999237194857463}
   ammoBar: {fileID: 5813593498776633325}
   element: Water
@@ -917,6 +916,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: lowTierCrystal
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 171b3c0874cea5c45959a75a7a2791be, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 171b3c0874cea5c45959a75a7a2791be, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 02773a19fd0f1704a9a5edc9023791c6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 171b3c0874cea5c45959a75a7a2791be, type: 3}
 --- !u!4 &6279338399329525632 stripped
@@ -999,6 +1006,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 47b503d1912a2ca4e99e21246a6014bf, type: 3}
       propertyPath: m_TagString
       value: TowerTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 47b503d1912a2ca4e99e21246a6014bf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47b503d1912a2ca4e99e21246a6014bf, type: 3}

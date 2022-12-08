@@ -114,7 +114,7 @@ MonoBehaviour:
   base_health: 10
   damage: 5
   currHealth: 0
-  healthBarUI: {fileID: 0}
+  healthBarUI: {fileID: 4208825197095904271}
   slider: {fileID: 4208825198475703439}
 --- !u!1001 &2432458524425409377
 PrefabInstance:
@@ -236,6 +236,11 @@ PrefabInstance:
 --- !u!224 &4208825197095904268 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1993146387522533229, guid: 2f779b497ddd47a41922731ebfa163cf, type: 3}
+  m_PrefabInstance: {fileID: 2432458524425409377}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4208825197095904271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1993146387522533230, guid: 2f779b497ddd47a41922731ebfa163cf, type: 3}
   m_PrefabInstance: {fileID: 2432458524425409377}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &4208825198475703439 stripped

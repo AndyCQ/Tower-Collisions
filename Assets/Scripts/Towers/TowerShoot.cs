@@ -10,7 +10,7 @@ public class TowerShoot : MonoBehaviour
     public List<GameObject> enemies = new List<GameObject>();
     private float AmmoCount = 100f;
     public Dictionary<string, bool> buffed;
-    public bool shrine = false;
+    
 
     public float buff=1;
     
@@ -24,22 +24,14 @@ public class TowerShoot : MonoBehaviour
     }
 
     void Update(){
-        if(!shrine){
-            GetCurrentTarget();
-            if(timeToFire <= 0f && AmmoCount > 0 && curr_target != null){
-                timeToFire = controller.fireRate;
-                AmmoCount -= 1;
-                FireBullet();
-            }
-            timeToFire -= Time.deltaTime; 
-        }else{
-            for(int i=0;i<enemies.Count;i++){
-                if(!buffed[enemies[i].name]){
-                    buffed[enemies[i].name]=true;
-                    enemies[i].GetComponent<TowerShoot>().buff+=0.2f;
-                }
-            }
+        GetCurrentTarget();
+        if(timeToFire <= 0f && AmmoCount > 0 && curr_target != null){
+            timeToFire = controller.fireRate;
+            AmmoCount -= 1;
+            FireBullet();
         }
+        timeToFire -= Time.deltaTime; 
+
     }
     public void Debuff(){
         for(int i=0;i<enemies.Count;i++){
@@ -53,9 +45,6 @@ public class TowerShoot : MonoBehaviour
         if(other.CompareTag(controller.TargetTag)){
             GameObject enemy = other.gameObject;
             enemies.Add(enemy);
-            if(shrine){
-                buffed.Add(enemy.name,false);
-            }
         }
     }
 
@@ -64,9 +53,6 @@ public class TowerShoot : MonoBehaviour
             GameObject enemy = other.gameObject;
             if(enemies.Contains(enemy)){
                 enemies.Remove(enemy);
-                if(shrine){
-                    buffed.Remove(enemy.name);
-                }
             }
         }
     }

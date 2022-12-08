@@ -956,9 +956,11 @@ MonoBehaviour:
   skelPrefab: {fileID: 621763271064468882, guid: a20be4416d93a634f97f7fc9bafbc8a4, type: 3}
   orcPrefab: {fileID: 621763271064468882, guid: 96b5ea9de4a21834084ebb330c1aa53f, type: 3}
   gobPrefab: {fileID: 621763271064468882, guid: a16d9e64970e46d4981a4cdf5fd571fa, type: 3}
-  spawn: {fileID: 0}
+  nextScene: 
   going: 0
   text: {fileID: 0}
+  enemies: []
+  paths: []
 --- !u!1 &2174805740208574550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,6 +1082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UI: {fileID: 1777088276015906283}
+  wave: {fileID: 2174805739755676602}
 --- !u!114 &1764158427
 MonoBehaviour:
   m_ObjectHideFlags: 0

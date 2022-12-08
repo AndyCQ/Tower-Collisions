@@ -4,56 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/BaseScene.unity
-    guid: 530f3f2f144997142b076c21e2babd3b
-  - enabled: 0
-    path: Assets/Scenes/StartMenu.unity
-    guid: 3341bbbec1ff00a40a023318019d8e82
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 9801f7fcd3aaec74ab2818ef7ad43314
-  - enabled: 0
-    path: Assets/Scenes/BasicLevel.unity
-    guid: 495dd846beeb63643ac065c04fd751c5
-  - enabled: 1
-    path: Assets/Scenes/Level1.unity
-    guid: e42515e293616fa4d81e85e166a1334e
-  - enabled: 1
-    path: Assets/Scenes/LoseScreen.unity
-    guid: 2c372225f008d1348be83b9cc8e7708f
-  - enabled: 1
-    path: Assets/Scenes/Level Select.unity
-    guid: 422d7dade35aa364d9727d45384f2267
-  - enabled: 1
-    path: Assets/Scenes/DesertLevel1.unity
-    guid: 06e362811f7d6bb4d90cf23e7fbcd68d
-  - enabled: 1
-    path: Assets/Scenes/DesertLevel2.unity
-    guid: 1737c727f624b1f498c6782f31ee9812
-  - enabled: 1
-    path: Assets/Scenes/DesertLevel3.unity
-    guid: 513746255ad3c5d489c3050c1b064e5e
-  - enabled: 1
-    path: Assets/Scenes/ForestLevel2.unity
-    guid: f5d6da4cd00990d4a8c0f78dfc5d38e6
-  - enabled: 1
-    path: Assets/Scenes/ForestLevel3.unity
-    guid: e5ff258aa91d4eb42a1898f6df365750
-  - enabled: 1
-    path: Assets/Scenes/GraveyardLevel1.unity
-    guid: b3009f45010b0614b88bf68d8f6bd89a
-  - enabled: 1
-    path: Assets/Scenes/GraveyardLevel2.unity
-    guid: 8b02437fa05a8164ca6d337afb28e217
-  - enabled: 1
-    path: Assets/Scenes/GraveyardLevel3.unity
-    guid: a3c30cbaacf55d542bca9bd72286e26e
-  - enabled: 1
-    path: Assets/Scenes/DeckBuilder.unity
-    guid: 64b81346c56e6474c96dd3ce355d005e
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  m_Scenes: []
   m_configObjects: {}

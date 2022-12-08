@@ -11,12 +11,30 @@ public class DeckButton : MonoBehaviour
     [SerializeField]
     TMPro.TextMeshProUGUI cardText;
     bool setup = false;
+    [SerializeField]
+    DeckCreator DC;
+
+    private void Start() {
+        cardSprite = this.GetComponent<Image>();
+        DC = GameObject.FindGameObjectWithTag("DeckMenu").GetComponent<DeckCreator>();
+    }
 
     private void Update() {
         if (setup && currCard != null) {
             cardText.text = currCard.cardName;
+            cardSprite.sprite = currCard.cardArt;
             setup = false;
         }
+    }
+
+    public void SetUp(CardData newCard) {
+        currCard = newCard;
+        setup = true;
+    }
+
+    public void OnClick() {
+        DC.RemoveCard(currCard);
+        DestroySelf();
     }
 
     public void DestroySelf() { Destroy(this.gameObject); }

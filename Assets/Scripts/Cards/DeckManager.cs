@@ -16,9 +16,11 @@ public class DeckManager : MonoBehaviour
     int maxHandSize = 3;
     int currHandSize = 3;
     CardUIManager UIM;
+    GameCardManager GCM;
 
     private void Start() {
-        //deckList = MainCardArray.DeckArray;
+        GCM = GameObject.FindGameObjectWithTag("GameCardManager").GetComponent<GameCardManager>();
+        deckList = GCM.CurrCardList;
         internalDeckList = new List<CardData>(deckList);
         UIM = GameObject.FindGameObjectWithTag("Canvas").GetComponent<CardUIManager>();
     }
