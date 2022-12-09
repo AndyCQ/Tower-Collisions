@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1795,6 +1795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36cae47f83d20f4ba9306729889ec4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curr_target: {fileID: 0}
   projectile: {fileID: 81697750989776893, guid: 25b1c246df9eb304bbf89b969d1c47e5, type: 3}
   DamageType: 0
   range: 10
@@ -1803,6 +1804,9 @@ MonoBehaviour:
   buffrange: 0
   bufffireRate: 0
   buffDamage: 0
+  currrange: 0
+  currfireRate: 0
+  currDamage: 0
   firingPosition: {fileID: 648172615}
   TargetTag: TowerTarget
   TargetTag2: Shrine
@@ -3585,7 +3589,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: cac53c2ebae520e40bd2e4d540d90cfe, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

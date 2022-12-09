@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: RangeCommonShrine
   m_EditorClassIdentifier: 
   cardName: Range
-  border: {fileID: 0}
-  cardArt: {fileID: 21300000, guid: 4b44a7955dc4cfd44923a0f2c68b2718, type: 3}
-  cardDescription: Test Description
+  border: {fileID: 21300000, guid: 5dbb937c4b4dc564f8647f4a7daed62b, type: 3}
+  cardArt: {fileID: 21300000, guid: b75e959f2b98fbd4babedb920278351e, type: 3}
+  cardDescription: Increases the attack range for nearby towers
   towerPrefab: {fileID: 2407121365463498445, guid: d641d44b2b245b149996b1f989bd44c7, type: 3}
   mainArrayIndex: 4
   CardButton: {fileID: 0}

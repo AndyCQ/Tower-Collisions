@@ -9,6 +9,7 @@ public class Projectile : MonoBehaviour
     public float Damage = 2f;
     public float moveSpeed = 10f;
     public Material[] mainMat;
+    Material dM;
 
 
     private void Update()
@@ -77,5 +78,29 @@ public class Projectile : MonoBehaviour
         target = enemy;
         DamageType = dmgType;
         Damage = dmg;
+        MaterialUpdate();
+    }
+
+    void MaterialUpdate()
+    {
+        switch (DamageType)
+        {
+            case TowerController.DamageType.Normal:
+                dM = mainMat[0];
+                break;
+            case TowerController.DamageType.Fire:
+                dM = mainMat[1];
+                break;
+            case TowerController.DamageType.Plant:
+                dM = mainMat[2];
+                break;
+            case TowerController.DamageType.Water:
+                dM = mainMat[3];
+                break;
+            default:
+                print("COLOR NOT FOUND");
+                break;
+        };
+        gameObject.GetComponent<MeshRenderer>().material = dM;
     }
 }
