@@ -159,11 +159,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 81697750989776893, guid: 25b1c246df9eb304bbf89b969d1c47e5, type: 3}
   DamageType: 0
-  range: 3
+  range: 5
   fireRate: 1
   Damage: 1
   firingPosition: {fileID: 621763271325663172}
   TargetTag: TowerTarget
+  TargetTag2: Shrine
   enemies: []
   melee: 0
 --- !u!1001 &860027888

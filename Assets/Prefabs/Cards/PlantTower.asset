@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Plant
   cardArt: {fileID: 21300000, guid: 4b44a7955dc4cfd44923a0f2c68b2718, type: 3}
-  towerPrefab: {fileID: 5813593499651692779, guid: 81407c3131f0d71428cf5fffca6a4a37, type: 3}
+  towerPrefab: {fileID: 5813593499651692779, guid: a3527ab638582f14eb4f33aa96b79d90, type: 3}
   mainArrayIndex: 0
   CardButton: {fileID: 0}
   SetupHealth: 10
@@ -22,6 +22,6 @@ MonoBehaviour:
   range: 10
   fireRate: 1
   Damage: 5
-  damageType: 0
+  damageType: 2
   tier: 0
   rariety: 0

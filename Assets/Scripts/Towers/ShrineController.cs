@@ -3,38 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TowerController : MonoBehaviour
+public class ShrineController : MonoBehaviour
 {
     //Dropdown Choices
-    public enum DamageType { Normal, Fire, Plant, Water };
+    public enum BuffType { Range, Damage, FireRate, DeRange, DeDamage, DeFireRate, Slow};
     public enum Rariety { N, R, SR, UR };
     public enum Tier { Bronze, Silver, Gold };
 
 
     //Tower Customizable Variables
     public float SetupHealth = 10f;
-    public float SetupAmmo = 10f;
     public float range = 10f;
-    public float fireRate = 1f;
-    public float Damage = 5f;
-    public DamageType damageType = new DamageType();
+    public float BuffAmount = 5f;
+    public BuffType buffType = new BuffType();
     //Tower in game stats
     public Tier tier = new Tier();
     public Rariety rariety = new Rariety();
 
     //Tower Settings
-    public float buffrange = 0f;
-    public float bufffireRate = 0f;
-    public float buffDamage = 0f;
-
-    public GameObject projectile;
-    public GameObject TowerBase;
-    public GameObject firingPosition;
+    public GameObject ShrineBase;
+    public GameObject buffPosition;
+    public GameObject crystal;
     public string TargetTag = "Enemy";
-
     //Material Change
     public Material baseColors;
-    public Material[] damageColor;
+    public Material[] buffColor;
     public Material[] tierColor;
     public Material[] rarietyColor;
     Material dM;
@@ -42,38 +35,29 @@ public class TowerController : MonoBehaviour
     Material rM;
 	//Health/Ammo Variables
 	private float maxHealth;
-	private float maxAmmo;
-   	public Slider healthBar;
-	public Slider ammoBar;
-	private TowerHealth healthController;
-    private TowerShoot shootController;
-
-    //Element type
-    public string element;
+	public Slider healthBar;
+	private ShrineHealth healthController;
+    private ShrineBuff buffController;
 
     // Start is called before the first frame update
     void Start()
     {
 		maxHealth = SetupHealth;
-		TowerBase.AddComponent<TowerHealth>();
-		healthController = TowerBase.GetComponent<TowerHealth>();
+		ShrineBase.AddComponent<ShrineHealth>();
+		healthController = ShrineBase.GetComponent<ShrineHealth>();
 		healthController.Setup(this,maxHealth);
 
-		maxAmmo = SetupAmmo;
-        firingPosition.AddComponent<TowerShoot>();
-        shootController = firingPosition.GetComponent<TowerShoot>();
-        shootController.Setup(this);
+        buffPosition.AddComponent<ShrineBuff>();
+        buffController = buffPosition.GetComponent<ShrineBuff>();
+        buffController.Setup(this);
         healthBar.enabled = false;
-        ammoBar.enabled = false;
     }
 
-    public void Setup(float health, float ammo, float _range, float ratefire, float damage, DamageType element, Tier _tier, Rariety _rariety){
+    public void Setup(float health, float _range, float ratefire, float buff, BuffType bufftype, Tier _tier, Rariety _rariety){
         SetupHealth = health;
-        SetupAmmo = ammo;
         range = _range;
-        fireRate = ratefire;
-        Damage = damage;
-        damageType = element;
+        BuffAmount = buff;
+        buffType = bufftype;
         tier = _tier;
         rariety = _rariety;
         MaterialUpdate();
@@ -87,15 +71,15 @@ public class TowerController : MonoBehaviour
     void Update()
     {
         if(healthController.getCurrentHealth()<=0){
+            buffController.ReBuffAll();
             Destroy(gameObject);
-            //shootController.Debuff();
         }
     }
 
 	void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(firingPosition.transform.position, range);
+        Gizmos.DrawWireSphere(buffPosition.transform.position, range);
     }
 
     void MaterialUpdate()
@@ -133,38 +117,36 @@ public class TowerController : MonoBehaviour
                 print("COLOR NOT FOUND");
                 break;
         };
-        switch (damageType)
+        switch (buffType)
         {
-            case DamageType.Normal:
-                dM = damageColor[0];
-                element = "Normal";
+            case BuffType.Range: 
+                dM = buffColor[0];
                 break;
-            case DamageType.Fire:
-                dM = damageColor[1];
-                element = "Fire";
+            case BuffType.Damage:
+                dM = buffColor[1];
                 break;
-            case DamageType.Plant:
-                dM = damageColor[2];
-                element = "Plant";
+            case BuffType.FireRate:
+                dM = buffColor[2];
                 break;
-            case DamageType.Water:
-                dM = damageColor[3];
-                element = "Water";
+            case BuffType.DeRange: 
+                dM = buffColor[3];
+                break;
+            case BuffType.DeDamage:
+                dM = buffColor[4];
+                break;
+            case BuffType.DeFireRate:
+                dM = buffColor[5];
                 break;
             default:
                 print("COLOR NOT FOUND");
                 break;
         };
         Material[] newMats = { baseColors, tM, rM };
-        TowerBase.GetComponent<MeshRenderer>().materials = newMats;
-        firingPosition.GetComponent<MeshRenderer>().material = dM;
+        ShrineBase.GetComponent<MeshRenderer>().materials = newMats;
+        crystal.GetComponent<MeshRenderer>().material = dM;
     }
 
 	public float getMaxHealth(){
 		return maxHealth;
-	}
-	
-	public float getMaxAmmo(){
-		return maxAmmo;
 	}
 }
