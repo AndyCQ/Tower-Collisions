@@ -13,6 +13,10 @@ public class VolumeSettings : MonoBehaviour
     //     slider.value = -0;
     // }
     public void SetVolume (float volume){
-         audioMixer.SetFloat("Volume", volume);
+        audioMixer.SetFloat("Volume", volume);
+        if (volume == -15){
+            audioMixer.SetFloat("Volume", -80);
+        }
+
     }
 }
