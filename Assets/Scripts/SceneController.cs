@@ -11,7 +11,10 @@ public class SceneController : MonoBehaviour
     bool noStartMenu = false;
     [SerializeField]
     string testSceneName;
-
+    [SerializeField]
+    public string recentSceneName;
+    [SerializeField]
+    public Scene recentScene;
     SaveGame save;
 
     private void Start() {
@@ -24,6 +27,7 @@ public class SceneController : MonoBehaviour
         } else {
             CurrLevel = SceneManager.GetSceneByName(testSceneName);
             SceneManager.SetActiveScene(CurrLevel);
+            
         }
     }
 
@@ -48,5 +52,9 @@ public class SceneController : MonoBehaviour
             CurrLevel = SceneManager.GetSceneByName(sceneName);
             SceneManager.SetActiveScene(CurrLevel);
         };
+    }
+
+    public void RecentScene(){
+        swapToScene(recentSceneName);
     }
 }

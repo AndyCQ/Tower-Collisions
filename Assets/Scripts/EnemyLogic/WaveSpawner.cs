@@ -61,6 +61,7 @@ public class WaveSpawner : MonoBehaviour
         GCM = GameObject.FindGameObjectWithTag("GameCardManager").GetComponent<GameCardManager>();
         SM = GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController>();
         
+        
     }
 
 
@@ -83,6 +84,7 @@ public class WaveSpawner : MonoBehaviour
 
         if(!dealt){
             DM.FillHand();
+            SM.recentSceneName = SceneManager.GetActiveScene().name;
             dealt=true;
         }
     }
@@ -90,7 +92,6 @@ public class WaveSpawner : MonoBehaviour
         if(index>=fullLevelData.Count-1 &&enemies.Length==0){
             GCM.currency+=GCM.earned;
             GCM.earned=0;
-            print(GCM.currency);
             SM.swapToScene(nextScene);
         }
         else if(!going){
@@ -137,8 +138,6 @@ public class WaveSpawner : MonoBehaviour
             yield return new WaitForSeconds(1);
             time-=1;
             text.text=time.ToString();
-            print(time);
-            
         }
         
         if(time<=0){
