@@ -23,6 +23,6 @@ MonoBehaviour:
   range: 10
   fireRate: 1
   Damage: 5
-  damageType: 0
+  damageType: 2
   tier: 0
   rariety: 0
