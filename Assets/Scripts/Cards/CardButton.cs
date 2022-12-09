@@ -53,4 +53,8 @@ public class CardButton : MonoBehaviour
             selected = false;
         }
     }
+
+    public void testPointer() {
+        Debug.Log("Enter pointer");
+    }
 }
