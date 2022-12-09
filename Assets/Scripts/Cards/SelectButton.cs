@@ -18,6 +18,8 @@ public class SelectButton : MonoBehaviour
     GameObject PopupPrefab;
     [SerializeField]
     Transform PopupPos;
+    [SerializeField]
+    float PopupWaitTime = 2f;
     GameObject currPopup;
     bool popUp = false;
 
@@ -53,12 +55,11 @@ public class SelectButton : MonoBehaviour
     public void startPopup() {
         if (!popUp) {
             popUp = true;
-            StartCoroutine(waitTime());
+            StartCoroutine(waitTime(PopupWaitTime));
             if (popUp) {
                 currPopup = Instantiate(PopupPrefab,
-                            PopupPos.position,
-                            Quaternion.identity,
-                            GameObject.FindGameObjectWithTag("Canvas").transform);
+                            PopupPos
+                            );
                 currPopup.GetComponent<InfoPopup>().SetUp(currCard);
             }
         }

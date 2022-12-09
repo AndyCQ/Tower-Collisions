@@ -15,6 +15,8 @@ public class CardButton : MonoBehaviour
     GameObject PopupPrefab;
     [SerializeField]
     Transform PopupPos;
+    [SerializeField]
+    float PopupWaitTime = 2f;
     Image butImage;
     bool setup = false;
     bool selected = false;
@@ -67,7 +69,7 @@ public class CardButton : MonoBehaviour
     public void startPopup() {
         if (!popUp) {
             popUp = true;
-            StartCoroutine(waitTime());
+            StartCoroutine(waitTime(PopupWaitTime));
             if (popUp) {
                 currPopup = Instantiate(PopupPrefab,
                             PopupPos.position,
