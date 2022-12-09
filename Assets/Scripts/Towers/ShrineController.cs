@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ShrineController : MonoBehaviour
 {
     //Dropdown Choices
-    public enum BuffType { Range, Damage, FireRate, DeRange, DeDamage, DeFireRate, Slow};
+    public enum BuffType { Range, Damage, FireRate, DeRange, DeDamage, DeFireRate};
 
     //Tower Customizable Variables
     public float SetupHealth = 10f;

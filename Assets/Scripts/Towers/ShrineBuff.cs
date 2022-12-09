@@ -31,7 +31,7 @@ public class ShrineBuff : MonoBehaviour
             GameObject tar = other.gameObject;
             if(buffs.Contains(tar)){
                 buffs.Remove(tar);
-
+                RemoveBuff(tar);
             }
         }
     }

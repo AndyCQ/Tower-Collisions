@@ -25,25 +25,30 @@ public class TowerShoot : MonoBehaviour
 
     public void ApplyBuffs(){
         currrange = controller.range + controller.buffrange;
-        currfireRate = controller.range + controller.bufffireRate;
+        currfireRate = controller.fireRate + controller.bufffireRate;
         currDamage = controller.Damage + controller.buffDamage;
-        if(currrange < 3){
-            currrange = 3;
+        if(currrange < 3f){
+            currrange = 3f;
         }
-        if(currfireRate > 5){
-            currrange = 3;
+        if(currfireRate > 5f){
+            currfireRate = 5f;
         }
-        if(currrange < 3){
-            currrange = 3;
+        if(currDamage < 3f){
+            currDamage = 3f;
         }
+        if(currfireRate < 0f){
+            currfireRate = .1f;
+        }
+        gameObject.GetComponent<SphereCollider>().radius = currrange;
     }
 
 
 
     void Update(){
+        ApplyBuffs();
         GetCurrentTarget();
         if(timeToFire <= 0f && AmmoCount > 0 && curr_target != null){
-            timeToFire = controller.fireRate;
+            timeToFire = currfireRate;
             AmmoCount -= 1;
             FireBullet();
         }
@@ -84,7 +89,7 @@ public class TowerShoot : MonoBehaviour
     private void FireBullet(){
         if(curr_target != null){
             GameObject bullet = Instantiate(controller.projectile, gameObject.transform.position, Quaternion.identity).gameObject;
-            bullet.GetComponent<Projectile>().SetBulletStats(curr_target,controller.damageType,controller.Damage);        
+            bullet.GetComponent<Projectile>().SetBulletStats(curr_target,controller.damageType,currDamage);        
             updateUI();
             FindObjectOfType<MusicManager>().PlaySoundEffects(controller.element);
         }
