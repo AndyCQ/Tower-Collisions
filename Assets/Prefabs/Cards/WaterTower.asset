@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbd76e6697931ae4388140555d3425a2, type: 3}
   m_Name: WaterTower
   m_EditorClassIdentifier: 
-  cardName: water
+  cardName: Water
   cardArt: {fileID: 21300000, guid: 4b44a7955dc4cfd44923a0f2c68b2718, type: 3}
   cardDescription: Test Description
   towerPrefab: {fileID: 5813593499651692779, guid: a3527ab638582f14eb4f33aa96b79d90, type: 3}
-  mainArrayIndex: 0
+  mainArrayIndex: 2
   CardButton: {fileID: 0}
   SetupHealth: 10
   SetupAmmo: 10
@@ -26,3 +26,7 @@ MonoBehaviour:
   damageType: 3
   tier: 0
   rariety: 0
+  type: 0
+  buff: 0
+  buffAmo: 0
+  TargetTag: 

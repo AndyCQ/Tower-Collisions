@@ -7,6 +7,7 @@ using System;
 [Serializable]
 public class CardData : ScriptableObject
 {
+    public enum TowerType { Tower,Shrine};
     public string cardName;
     public Sprite cardArt;
     public string cardDescription;
@@ -24,6 +25,13 @@ public class CardData : ScriptableObject
     //Tower in game stats
     public TowerController.Tier tier = new TowerController.Tier();
     public TowerController.Rariety rariety = new TowerController.Rariety();
+
+    public TowerType type = new TowerType();
+    public ShrineController.BuffType buff = new ShrineController.BuffType();
+
+    public float buffAmo = 0f;
+    public String TargetTag;
+
 
 
 }

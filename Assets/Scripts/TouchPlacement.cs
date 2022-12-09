@@ -23,15 +23,25 @@ public class TouchPlacement : MonoBehaviour
             && !hit.transform.CompareTag("Tower")
             ) {
             GameObject tower = Instantiate(currTower.towerPrefab, hit.point, Quaternion.identity);
-            tower.GetComponent<TowerController>().Setup(currTower.SetupHealth,
+            if(currTower.type == CardData.TowerType.Tower){
+                tower.GetComponent<TowerController>().Setup(currTower.SetupHealth,
                                                         currTower.SetupAmmo,
                                                         currTower.range,
                                                         currTower.fireRate,
                                                         currTower.Damage,
                                                         currTower.damageType,
                                                         currTower.tier,
-                                                        currTower.rariety);
-            //Destroy(currTower.gameObject);
+                                                        currTower.rariety);    
+            } else{
+                tower.GetComponent<ShrineController>().Setup(currTower.SetupHealth,
+                                                        currTower.range,
+                                                        currTower.buffAmo,
+                                                        currTower.buff,
+                                                        currTower.tier,
+                                                        currTower.rariety,
+                                                        currTower.TargetTag);
+            }
+            
             currTower = null;
             Destroy(currButton);
             currButton = null;

@@ -17,6 +17,7 @@ TagManager:
   - DeckMenu
   - Save
   - Shrine
+  - TowerBuff
   layers:
   - Default
   - TransparentFX

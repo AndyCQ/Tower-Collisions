@@ -259,6 +259,8 @@ MonoBehaviour:
     count: 5
   - CD: {fileID: 11400000, guid: 29ea28f54542b3b42b61feef7cda507e, type: 2}
     count: 5
+  - CD: {fileID: 11400000, guid: 5a16b861336fe864191a9c0cd468cfca, type: 2}
+    count: 5
   CurrCardList:
   - {fileID: 11400000, guid: ec442aaf4f8b71d4fa8140156c3d8e9a, type: 2}
   - {fileID: 11400000, guid: ec442aaf4f8b71d4fa8140156c3d8e9a, type: 2}
@@ -268,7 +270,6 @@ MonoBehaviour:
   currency: 1000
   earned: 0
   maxDeckSize: 10
-  begin: 1
 --- !u!4 &988841785
 Transform:
   m_ObjectHideFlags: 0
