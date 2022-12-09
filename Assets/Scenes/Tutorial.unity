@@ -1199,6 +1199,7 @@ MonoBehaviour:
   paths:
   - {fileID: 608512080}
   tutorial: 1
+  pauseButton: {fileID: 2174805739486315025}
 --- !u!1 &443768149
 GameObject:
   m_ObjectHideFlags: 0

@@ -50,6 +50,8 @@ public class WaveSpawner : MonoBehaviour
     bool dealt=false;
     public bool tutorial = false;
     SceneController SM;
+
+    public GameObject pauseButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -115,6 +117,7 @@ public class WaveSpawner : MonoBehaviour
                 case 'w':
                     if(enemies.Length==0 && !endOfWave){
                         if(index<fullLevelData.Count-2){
+                            pauseButton.SetActive(false);
                             StartCoroutine(WaitWave(6));
                             endOfWave=true;
                         }else{
@@ -125,9 +128,11 @@ public class WaveSpawner : MonoBehaviour
                     
                     break;
                 case 'd':
+                    pauseButton.SetActive(true);
                     StartCoroutine(Wait(float.Parse(currString.Substring(1))));
                     break;
                 default:
+                    pauseButton.SetActive(true);
                     tier = int.Parse(currString[1].ToString());  
                     path = int.Parse(currString[3].ToString()); 
                     StartCoroutine(Spawn(currString[0],tier,currString[2],path,int.Parse(currString.Substring(4))));
@@ -136,10 +141,12 @@ public class WaveSpawner : MonoBehaviour
     }
 
     IEnumerator WaitWave(float time){
+        
         DM.FillHand();
         while(time>0){
             yield return new WaitForSeconds(1);
             time-=1;
+            print(time);
             text.text=time.ToString();
         }
         
@@ -158,6 +165,7 @@ public class WaveSpawner : MonoBehaviour
     }
     public IEnumerator Wait(float time){
         yield return new WaitForSeconds(time);
+        
         index+=1;
         yield return new WaitForFixedUpdate();
         if(!tutorial){
@@ -171,6 +179,7 @@ public class WaveSpawner : MonoBehaviour
         GameObject enemy;
         float time;
         while(spawned<enemies){
+            yield return new WaitUntil(()=>PauseMenu.Paused==false);
             switch(kind){
                 case 's':
                     enemy = Instantiate(skelPrefab, spawn.position, Quaternion.identity);

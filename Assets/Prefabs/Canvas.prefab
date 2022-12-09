@@ -323,7 +323,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UI: {fileID: 0}
-  wave: {fileID: 0}
 --- !u!1 &1181074749
 GameObject:
   m_ObjectHideFlags: 0
@@ -1334,6 +1333,8 @@ MonoBehaviour:
   enemies: []
   paths:
   - {fileID: 0}
+  tutorial: 0
+  pauseButton: {fileID: 2174805739714389740}
 --- !u!1 &2174805740208574550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,7 +1456,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UI: {fileID: 1777088276015906283}
-  wave: {fileID: 2174805739755676602}
 --- !u!114 &1764158427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1726,7 +1726,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UI: {fileID: 0}
-  wave: {fileID: 0}
 --- !u!1 &8818841106699179899
 GameObject:
   m_ObjectHideFlags: 0
