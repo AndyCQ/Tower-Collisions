@@ -65,7 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   waypointIndex: 0
-  path: 0
+  baselvl: {fileID: 0}
 --- !u!114 &621763271064468890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,11 +159,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 81697750989776893, guid: 25b1c246df9eb304bbf89b969d1c47e5, type: 3}
   DamageType: 0
-  range: 3
+  range: 5
   fireRate: 1
   Damage: 1
   firingPosition: {fileID: 621763271325663172}
   TargetTag: TowerTarget
+  TargetTag2: Shrine
   enemies: []
   melee: 0
 --- !u!1001 &860027888
@@ -255,7 +256,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1993146387522533229, guid: 2f779b497ddd47a41922731ebfa163cf, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 0.72
       objectReference: {fileID: 0}
     - target: {fileID: 1993146387522533229, guid: 2f779b497ddd47a41922731ebfa163cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -371,26 +372,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a1427c48e4f494b4cb2304e0856e16ed, type: 3}
   m_PrefabInstance: {fileID: 4018889209761923098}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &794830648285608270
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4252699460365172043}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: a1427c48e4f494b4cb2304e0856e16ed, type: 3}
-  m_Controller: {fileID: 9100000, guid: a99cd34603d1a8f47a45eedf540e1a1a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!23 &3444005036924169967
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -434,3 +415,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &794830648285608270
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4252699460365172043}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: a1427c48e4f494b4cb2304e0856e16ed, type: 3}
+  m_Controller: {fileID: 9100000, guid: a99cd34603d1a8f47a45eedf540e1a1a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

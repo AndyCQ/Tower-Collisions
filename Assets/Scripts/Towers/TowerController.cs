@@ -23,6 +23,10 @@ public class TowerController : MonoBehaviour
     public Rariety rariety = new Rariety();
 
     //Tower Settings
+    public float buffrange = 0f;
+    public float bufffireRate = 0f;
+    public float buffDamage = 0f;
+
     public GameObject projectile;
     public GameObject TowerBase;
     public GameObject firingPosition;
@@ -72,6 +76,7 @@ public class TowerController : MonoBehaviour
         damageType = element;
         tier = _tier;
         rariety = _rariety;
+        MaterialUpdate();
     }
 
     void OnValidate()

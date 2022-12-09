@@ -11,8 +11,14 @@ public class EnemyShoot : MonoBehaviour
     public float fireRate = 1f;
     private float timeToFire = 0f;
     public float Damage = 5f; 
+
+    public float buffrange = 0f;
+    public float bufffireRate = 0f;
+    public float buffDamage = 0f;
+
     public Transform firingPosition;
     public string TargetTag = "TowerTarget";
+    public string TargetTag2 = "Shrine";
     public List<GameObject> enemies = new List<GameObject>();
     public bool melee = false;
 
@@ -44,9 +50,18 @@ public class EnemyShoot : MonoBehaviour
             GameObject enemy = other.gameObject;
             enemies.Add(enemy);
         }
+        if(other.CompareTag(TargetTag2)){
+            GameObject enemy = other.gameObject;
+            enemies.Add(enemy);
+        }
     }
     private void OnTriggerExit(Collider other){
         if(other.CompareTag(TargetTag)){
+            GameObject enemy = other.gameObject;
+            if(enemies.Contains(enemy))
+                enemies.Remove(enemy);
+        }
+        if(other.CompareTag(TargetTag2)){
             GameObject enemy = other.gameObject;
             if(enemies.Contains(enemy))
                 enemies.Remove(enemy);

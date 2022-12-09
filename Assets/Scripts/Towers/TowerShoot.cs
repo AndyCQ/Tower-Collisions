@@ -9,10 +9,10 @@ public class TowerShoot : MonoBehaviour
     private TowerController controller;
     public List<GameObject> enemies = new List<GameObject>();
     private float AmmoCount = 100f;
-    public Dictionary<string, bool> buffed;
-    
 
-    public float buff=1;
+    public float currrange = 0f;
+    public float currfireRate = 0f;
+    public float currDamage = 0f;
     
     public void Setup(TowerController c){
         controller = c;
@@ -23,6 +23,23 @@ public class TowerShoot : MonoBehaviour
         AmmoCount = controller.getMaxAmmo();
     }
 
+    public void ApplyBuffs(){
+        currrange = controller.range + controller.buffrange;
+        currfireRate = controller.range + controller.bufffireRate;
+        currDamage = controller.Damage + controller.buffDamage;
+        if(currrange < 3){
+            currrange = 3;
+        }
+        if(currfireRate > 5){
+            currrange = 3;
+        }
+        if(currrange < 3){
+            currrange = 3;
+        }
+    }
+
+
+
     void Update(){
         GetCurrentTarget();
         if(timeToFire <= 0f && AmmoCount > 0 && curr_target != null){
@@ -32,14 +49,6 @@ public class TowerShoot : MonoBehaviour
         }
         timeToFire -= Time.deltaTime; 
 
-    }
-    public void Debuff(){
-        for(int i=0;i<enemies.Count;i++){
-                if(!buffed[enemies[i].name]){
-                    buffed[enemies[i].name]=true;
-                    enemies[i].GetComponent<TowerShoot>().buff+=0.2f;
-                }
-            }
     }
     private void OnTriggerEnter(Collider other){
         if(other.CompareTag(controller.TargetTag)){
@@ -75,7 +84,7 @@ public class TowerShoot : MonoBehaviour
     private void FireBullet(){
         if(curr_target != null){
             GameObject bullet = Instantiate(controller.projectile, gameObject.transform.position, Quaternion.identity).gameObject;
-            bullet.GetComponent<Projectile>().SetBulletStats(curr_target,controller.damageType,controller.Damage*buff);        
+            bullet.GetComponent<Projectile>().SetBulletStats(curr_target,controller.damageType,controller.Damage);        
             updateUI();
             FindObjectOfType<MusicManager>().PlaySoundEffects(controller.element);
         }
@@ -88,5 +97,4 @@ public class TowerShoot : MonoBehaviour
     public float getCurrentAmmo(){
         return AmmoCount;
     }
-
 }
