@@ -20,7 +20,7 @@ public class EnemyVisuals : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() 
     {
         target = gameObject.GetComponent<EnemyMove>().goal;
         if(target != null){
