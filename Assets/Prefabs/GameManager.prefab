@@ -47,7 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c18b17a412a8240ae6866b8fe1ad8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currPrefab: {fileID: 0}
+  currTower: {fileID: 0}
+  currButton: {fileID: 0}
   mainCam: {fileID: 0}
 --- !u!114 &6594026992199055903
 MonoBehaviour:
@@ -86,6 +87,7 @@ MonoBehaviour:
   internalDeckList: []
   discardList: []
   maxHandSize: 3
+  ExtraTower: {fileID: 11400000, guid: 29ea28f54542b3b42b61feef7cda507e, type: 2}
 --- !u!114 &6594026992199055898
 MonoBehaviour:
   m_ObjectHideFlags: 0

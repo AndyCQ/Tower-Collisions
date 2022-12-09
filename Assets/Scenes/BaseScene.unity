@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrLevel:
     m_Handle: 0
-  noStartMenu: 0
+  noStartMenu: 1
   testSceneName: Tutorial
   recentSceneName: 
   recentScene:

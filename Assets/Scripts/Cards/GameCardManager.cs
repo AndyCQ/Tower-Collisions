@@ -19,5 +19,4 @@ public class GameCardManager : MonoBehaviour
     public int earned=0;
     public int maxDeckSize = 10;
 
-    
 }
