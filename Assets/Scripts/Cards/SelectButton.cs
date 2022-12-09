@@ -38,6 +38,7 @@ public class SelectButton : MonoBehaviour
         count = newCount;
         cardText.text = currCard.cardName + " : " + count;
         cardSprite.sprite = newCD.cardArt;
+        gameObject.transform.GetChild(2).gameObject.GetComponent<Image>().sprite = newCD.border;
         setup = true;
     }
 
