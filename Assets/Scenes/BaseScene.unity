@@ -268,7 +268,6 @@ MonoBehaviour:
   currency: 1000
   earned: 0
   maxDeckSize: 10
-  begin: 1
 --- !u!4 &988841785
 Transform:
   m_ObjectHideFlags: 0
