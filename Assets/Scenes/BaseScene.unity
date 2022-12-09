@@ -154,8 +154,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrLevel:
     m_Handle: 0
+<<<<<<< Updated upstream
   noStartMenu: 1
   testSceneName: Level1
+=======
+  noStartMenu: 0
+  testSceneName: Tutorial
+>>>>>>> Stashed changes
   recentSceneName: 
   recentScene:
     m_Handle: 0
@@ -260,6 +265,10 @@ MonoBehaviour:
   - CD: {fileID: 11400000, guid: 29ea28f54542b3b42b61feef7cda507e, type: 2}
     count: 5
   - CD: {fileID: 11400000, guid: 5a16b861336fe864191a9c0cd468cfca, type: 2}
+    count: 5
+  - CD: {fileID: 11400000, guid: ba0273abc218dc64698ea250293c99c6, type: 2}
+    count: 5
+  - CD: {fileID: 11400000, guid: e2c061ba97968df429567264943750ea, type: 2}
     count: 5
   CurrCardList:
   - {fileID: 11400000, guid: ec442aaf4f8b71d4fa8140156c3d8e9a, type: 2}
