@@ -179,7 +179,9 @@ public class WaveSpawner : MonoBehaviour
         GameObject enemy;
         float time;
         while(spawned<enemies){
+            print(PauseMenu.Paused);
             yield return new WaitUntil(()=>PauseMenu.Paused==false);
+
             switch(kind){
                 case 's':
                     enemy = Instantiate(skelPrefab, spawn.position, Quaternion.identity);
