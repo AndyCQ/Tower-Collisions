@@ -40,6 +40,7 @@ public class SceneController : MonoBehaviour
         op.completed += handle => {
             CurrLevel = SceneManager.GetSceneByBuildIndex(buildInd);
             SceneManager.SetActiveScene(CurrLevel);
+            Screen.SetResolution(1920,1080,true);
         };
     }
     public void swapToScene(string sceneName) {
@@ -51,6 +52,7 @@ public class SceneController : MonoBehaviour
         op.completed += handle => {
             CurrLevel = SceneManager.GetSceneByName(sceneName);
             SceneManager.SetActiveScene(CurrLevel);
+            Screen.SetResolution(1920,1080,true);
         };
     }
 
