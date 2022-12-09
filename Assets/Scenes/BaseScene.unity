@@ -155,7 +155,7 @@ MonoBehaviour:
   CurrLevel:
     m_Handle: 0
   noStartMenu: 1
-  testSceneName: Level1
+  testSceneName: ForestLevel3
   recentSceneName: 
   recentScene:
     m_Handle: 0
