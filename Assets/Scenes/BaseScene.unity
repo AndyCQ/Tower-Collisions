@@ -154,11 +154,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrLevel:
     m_Handle: 0
-  noStartMenu: 1
+  noStartMenu: 0
   testSceneName: Tutorial
   recentSceneName: 
   recentScene:
     m_Handle: 0
+  begin: 1
 --- !u!4 &428610912
 Transform:
   m_ObjectHideFlags: 0
@@ -219,6 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GCM: {fileID: 0}
+  SM: {fileID: 0}
 --- !u!1 &988841783
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,6 +268,7 @@ MonoBehaviour:
   currency: 1000
   earned: 0
   maxDeckSize: 10
+  begin: 1
 --- !u!4 &988841785
 Transform:
   m_ObjectHideFlags: 0

@@ -18,4 +18,6 @@ public class GameCardManager : MonoBehaviour
     public int currency=100;
     public int earned=0;
     public int maxDeckSize = 10;
+
+    public bool begin = false;
 }

@@ -67,6 +67,12 @@ public class MusicManager : MonoBehaviour
                 }
                 currBGM = PlayBGM("GraveyardLevel1");
             }
+            if(sceneName == "Tutorial"){
+                if(currBGM != null){
+                    currBGM.Stop();
+                }
+                currBGM = PlayBGM("ForestLevel1");
+            }
             currScene = sceneName;
         }
     }

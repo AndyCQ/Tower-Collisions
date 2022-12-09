@@ -16,11 +16,11 @@ public class SceneController : MonoBehaviour
     [SerializeField]
     public Scene recentScene;
     SaveGame save;
+    public bool begin = true;
 
     private void Start() {
         save = GameObject.FindGameObjectWithTag("Save").GetComponent<SaveGame>();
         save.Load();
-
         //loads the main menu
         if (!noStartMenu) {
             swapToScene("StartMenu");
