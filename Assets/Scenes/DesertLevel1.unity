@@ -3493,6 +3493,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1181074751, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1dfe82aad744b8c4e99a1be28d0fa481, type: 2}
+    - target: {fileID: 1181074751, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2912402282333360796, guid: 1dfe82aad744b8c4e99a1be28d0fa481, type: 2}
+    - target: {fileID: 573891542861718574, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1dfe82aad744b8c4e99a1be28d0fa481, type: 2}
+    - target: {fileID: 573891542861718574, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2912402282333360796, guid: 1dfe82aad744b8c4e99a1be28d0fa481, type: 2}
+    - target: {fileID: 1777088275480848914, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1dfe82aad744b8c4e99a1be28d0fa481, type: 2}
+    - target: {fileID: 1777088275480848914, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174805739176776984, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1dfe82aad744b8c4e99a1be28d0fa481, type: 2}
+    - target: {fileID: 2174805739176776984, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2912402282333360796, guid: 1dfe82aad744b8c4e99a1be28d0fa481, type: 2}
+    - target: {fileID: 2174805739251082705, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1dfe82aad744b8c4e99a1be28d0fa481, type: 2}
+    - target: {fileID: 2174805739251082705, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2912402282333360796, guid: 1dfe82aad744b8c4e99a1be28d0fa481, type: 2}
     - target: {fileID: 2174805739755676601, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
       propertyPath: nextScene
       value: DesertLevel2
