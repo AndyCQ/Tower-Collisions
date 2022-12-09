@@ -48,44 +48,47 @@ public class WaveSpawner : MonoBehaviour
     public GameObject[] paths;
     GameCardManager GCM;
     bool dealt=false;
-
+    public bool tutorial = false;
     SceneController SM;
     // Start is called before the first frame update
     void Start()
     {
-        
-        ReadTextFile(waveFilePath);
-        //PrintDebug(fullLevelData);
-        DM = GameObject.FindGameObjectWithTag("GameManager").GetComponent<DeckManager>();
-        
-        GCM = GameObject.FindGameObjectWithTag("GameCardManager").GetComponent<GameCardManager>();
-        SM = GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController>();
+        if(!tutorial){
+            ReadTextFile(waveFilePath);
+            //PrintDebug(fullLevelData);
+            DM = GameObject.FindGameObjectWithTag("GameManager").GetComponent<DeckManager>();
+            
+            GCM = GameObject.FindGameObjectWithTag("GameCardManager").GetComponent<GameCardManager>();
+            SM = GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController>();
+        }
         
         
     }
 
 
     private void FixedUpdate() {
-        if(index<fullLevelData.Count){
-            currString=fullLevelData[index];
-        }else{
-            currString="x";
-        }
-        
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if(enemies.Length==0&&currString=="w"){
-            CheckNext();
-        }
-        //print(currString);
-        if(enemies.Length==0&&index==fullLevelData.Count){
-            going=false;
-            text.text="End of Level";
-        }
+        if(!tutorial){
+            if(index<fullLevelData.Count){
+                currString=fullLevelData[index];
+            }else{
+                currString="x";
+            }
+            
+            enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            if(enemies.Length==0&&currString=="w"){
+                CheckNext();
+            }
+            //print(currString);
+            if(enemies.Length==0&&index==fullLevelData.Count){
+                going=false;
+                text.text="End of Level";
+            }
 
-        if(!dealt){
-            DM.FillHand();
-            SM.recentSceneName = SceneManager.GetActiveScene().name;
-            dealt=true;
+            if(!dealt){
+                DM.FillHand();
+                SM.recentSceneName = SceneManager.GetActiveScene().name;
+                dealt=true;
+            }
         }
     }
     public void SpawnWave(){
@@ -147,18 +150,22 @@ public class WaveSpawner : MonoBehaviour
             endOfWave=false;
         }
         yield return new WaitForFixedUpdate();
-        CheckNext();
+        if(!tutorial){
+            CheckNext();
+        }
         
         yield break;
     }
-    IEnumerator Wait(float time){
+    public IEnumerator Wait(float time){
         yield return new WaitForSeconds(time);
         index+=1;
         yield return new WaitForFixedUpdate();
-        CheckNext();
+        if(!tutorial){
+            CheckNext();
+        }
         yield break;
     }
-    IEnumerator Spawn(char kind, int tier, char type, int path, int enemies){
+    public IEnumerator Spawn(char kind, int tier, char type, int path, int enemies){
         int spawned=0;
         Transform spawn = paths[path].GetComponent<Path>().waypoints[0];
         GameObject enemy;
@@ -203,7 +210,9 @@ public class WaveSpawner : MonoBehaviour
         }
         index+=1;
         yield return new WaitForFixedUpdate();
-        CheckNext();
+        if(!tutorial){
+            CheckNext();
+        }
         yield break;
     }
 
