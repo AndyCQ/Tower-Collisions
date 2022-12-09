@@ -154,13 +154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrLevel:
     m_Handle: 0
-<<<<<<< Updated upstream
-  noStartMenu: 1
-  testSceneName: Level1
-=======
   noStartMenu: 0
   testSceneName: Tutorial
->>>>>>> Stashed changes
   recentSceneName: 
   recentScene:
     m_Handle: 0
