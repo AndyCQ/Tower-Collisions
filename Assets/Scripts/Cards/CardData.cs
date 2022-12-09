@@ -9,6 +9,7 @@ public class CardData : ScriptableObject
 {
     public string cardName;
     public Sprite cardArt;
+    public string cardDescription;
     public GameObject towerPrefab;
     public int mainArrayIndex;
 
