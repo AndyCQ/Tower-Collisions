@@ -57,4 +57,7 @@ public class CardButton : MonoBehaviour
     public void testPointer() {
         Debug.Log("Enter pointer");
     }
+    public void testExitPointer() {
+        Debug.Log("Exit pointer");
+    }
 }
