@@ -153,7 +153,7 @@ MonoBehaviour:
   currCard: {fileID: 11400000, guid: 310c46713ca25a548bf4b3434abacfa1, type: 2}
   cardSprite: {fileID: 3073077470779107652}
   cardText: {fileID: 3073077472186281008}
-  PopupPrefab: {fileID: 0}
+  PopupPrefab: {fileID: 8308739799180111891}
   PopupPos: {fileID: 5979015892126029172}
   PopupWaitTime: 2
 --- !u!114 &6750809624454698524
@@ -421,6 +421,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5979015892126029172}
+  - component: {fileID: 7434371137640570205}
   m_Layer: 5
   m_Name: PopupPos
   m_TagString: Untagged
@@ -448,3 +449,16 @@ RectTransform:
   m_AnchoredPosition: {x: 32.5, y: 22.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7434371137640570205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8308739799180111891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7e14e538386454088b577c671dd11f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainText: {fileID: 0}
