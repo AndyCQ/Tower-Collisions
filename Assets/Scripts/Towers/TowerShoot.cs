@@ -77,6 +77,7 @@ public class TowerShoot : MonoBehaviour
             GameObject bullet = Instantiate(controller.projectile, gameObject.transform.position, Quaternion.identity).gameObject;
             bullet.GetComponent<Projectile>().SetBulletStats(curr_target,controller.damageType,controller.Damage*buff);        
             updateUI();
+            FindObjectOfType<MusicManager>().PlaySoundEffects(controller.element);
         }
     }
 

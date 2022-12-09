@@ -20,7 +20,7 @@ public class CardUIManager : MonoBehaviour
                 UIPanel.transform) as GameObject;
             currButton.GetComponent<CardButton>().currCard = cd;
             currButton.GetComponent<CardButton>().SetUp();
-            // currButton.GetComponent<CardButton>().SetArt();
+            currButton.GetComponent<CardButton>().SetArt();
             currButtons.Add(currButton);
         }
     }

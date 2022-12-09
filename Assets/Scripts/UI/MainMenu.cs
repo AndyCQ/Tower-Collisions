@@ -12,9 +12,16 @@ public class MainMenu : MonoBehaviour
     public GameObject gachaMenu;
     
     SceneController SM;
-    public void SwitchScene(){
+
+    private void Start() {
         SM = GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController>();
+    }
+    public void SwitchScene(){  
         SM.swapToScene(SceneToGo);
+    }
+
+    public void TryAgain(){
+        SM.RecentScene();
     }
 
     public void gachaOn(){
