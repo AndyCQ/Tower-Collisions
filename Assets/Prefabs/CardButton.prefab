@@ -152,8 +152,9 @@ MonoBehaviour:
   currCard: {fileID: 11400000, guid: 310c46713ca25a548bf4b3434abacfa1, type: 2}
   cardSprite: {fileID: 3073077470779107652}
   cardText: {fileID: 3073077472186281008}
-  PopupPrefab: {fileID: 8437432146320837366, guid: b86f2904f2adca84d8bca370ab6a5930, type: 3}
+  PopupPrefab: {fileID: 0}
   PopupPos: {fileID: 5979015892126029172}
+  PopupWaitTime: 2
 --- !u!114 &6750809624454698524
 MonoBehaviour:
   m_ObjectHideFlags: 0

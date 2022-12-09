@@ -995,6 +995,54 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1777088275773613730, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.42857143
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777088275773613730, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777088275773613730, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.42857143
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777088275975938188, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777088275975938188, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777088275975938188, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777088275990000858, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777088275990000858, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777088276015906283, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777088277384313329, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.42857143
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777088277384313329, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174805739714389740, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2174805739755676601, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
       propertyPath: paths.Array.data[0]
       value: 
@@ -1086,6 +1134,10 @@ PrefabInstance:
     - target: {fileID: 2174805740208574550, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174805740208574550, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
@@ -1549,6 +1601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36cae47f83d20f4ba9306729889ec4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curr_target: {fileID: 0}
   projectile: {fileID: 81697750989776893, guid: 25b1c246df9eb304bbf89b969d1c47e5, type: 3}
   DamageType: 0
   range: 10
@@ -1557,6 +1610,9 @@ MonoBehaviour:
   buffrange: 0
   bufffireRate: 0
   buffDamage: 0
+  currrange: 0
+  currfireRate: 0
+  currDamage: 0
   firingPosition: {fileID: 648172615}
   TargetTag: TowerTarget
   TargetTag2: Shrine
