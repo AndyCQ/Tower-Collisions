@@ -17,10 +17,17 @@ public class DeckManager : MonoBehaviour
     int currHandSize = 3;
     CardUIManager UIM;
     GameCardManager GCM;
+    [SerializeField]
+    CardData ExtraTower;
 
     private void Start() {
         GCM = GameObject.FindGameObjectWithTag("GameCardManager").GetComponent<GameCardManager>();
         deckList = GCM.CurrCardList;
+        if (GCM.CurrCardList.Count < 4) {
+            for (int i = 4 - GCM.CurrCardList.Count; i > 0; i--) {
+                deckList.Add(ExtraTower);
+            }
+        }
         internalDeckList = new List<CardData>(deckList);
         UIM = GameObject.FindGameObjectWithTag("Canvas").GetComponent<CardUIManager>();
     }
