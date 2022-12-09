@@ -200,18 +200,22 @@ public class WaveSpawner : MonoBehaviour
                 case 'w':
                     enemy.GetComponentInChildren<EnemyShoot>().SetType("Water");
                     enemy.GetComponent<Health>().SetType("Water");
+                    enemy.GetComponent<EnemyVisuals>().Setup(TowerController.DamageType.Water);
                     break;
                 case 'p':
                     enemy.GetComponentInChildren<EnemyShoot>().SetType("Plant");
                     enemy.GetComponent<Health>().SetType("Plant");
+                    enemy.GetComponent<EnemyVisuals>().Setup(TowerController.DamageType.Plant);
                     break;
                 case 'f':
                     enemy.GetComponentInChildren<EnemyShoot>().SetType("Fire");
                     enemy.GetComponent<Health>().SetType("Fire");
+                    enemy.GetComponent<EnemyVisuals>().Setup(TowerController.DamageType.Fire);
                     break;
                 case 'n':
                     enemy.GetComponentInChildren<EnemyShoot>().SetType("Normal");
                     enemy.GetComponent<Health>().SetType("Normal");
+                    enemy.GetComponent<EnemyVisuals>().Setup(TowerController.DamageType.Normal);
                     break;
             }
             spawned+=1;

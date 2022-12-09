@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: FireTower
   m_EditorClassIdentifier: 
   cardName: Fire
-  cardArt: {fileID: 21300000, guid: 4b44a7955dc4cfd44923a0f2c68b2718, type: 3}
+  border: {fileID: 21300000, guid: 4b44a7955dc4cfd44923a0f2c68b2718, type: 3}
+  cardArt: {fileID: 21300000, guid: 6e9fa7bc913b0cc41985e9bf4d18bf69, type: 3}
   cardDescription: Test Description
   towerPrefab: {fileID: 5813593499651692779, guid: a3527ab638582f14eb4f33aa96b79d90, type: 3}
   mainArrayIndex: 0
@@ -26,3 +27,7 @@ MonoBehaviour:
   damageType: 1
   tier: 0
   rariety: 0
+  type: 0
+  buff: 0
+  buffAmo: 0
+  TargetTag: 

@@ -9,6 +9,7 @@ public class CardData : ScriptableObject
 {
     public enum TowerType { Tower,Shrine};
     public string cardName;
+    public Sprite border;
     public Sprite cardArt;
     public string cardDescription;
     public GameObject towerPrefab;

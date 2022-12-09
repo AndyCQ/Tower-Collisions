@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyMove : MonoBehaviour
 { 
     private Path path;
+    public Transform goal;
 
     [SerializeField] float moveSpeed = 2f;
 
@@ -21,7 +22,11 @@ public class EnemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+        goal = path.waypoints[waypointIndex].transform;
+        if(gameObject.GetComponentInChildren<EnemyShoot>().curr_target == null){
+            Move();
+        }
+        
     }
 
     void Move() {

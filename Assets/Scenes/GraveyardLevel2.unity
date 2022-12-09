@@ -1195,7 +1195,7 @@ PrefabInstance:
     - target: {fileID: 2174805739755676601, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
       propertyPath: skelPrefab
       value: 
-      objectReference: {fileID: 621763271064468882, guid: a20be4416d93a634f97f7fc9bafbc8a4, type: 3}
+      objectReference: {fileID: 621763271064468882, guid: d27c5f9452f01e34382ec2286916a09a, type: 3}
     - target: {fileID: 2174805739755676601, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
       propertyPath: waveNumber
       value: 1
@@ -1750,7 +1750,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UI: {fileID: 0}
-  wave: {fileID: 0}
 --- !u!1 &511798702
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,6 +18,7 @@ TagManager:
   - Save
   - Shrine
   - TowerBuff
+  - Skeleton
   layers:
   - Default
   - TransparentFX
