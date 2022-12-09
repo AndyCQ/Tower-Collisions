@@ -351,6 +351,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: skeletonGrunt
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 7c56f461c6072224fa094c7e2e761cda, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 411ca0d57168ba340a8f68eddf4ee734, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c56f461c6072224fa094c7e2e761cda, type: 3}
 --- !u!4 &4671906889661085009 stripped
