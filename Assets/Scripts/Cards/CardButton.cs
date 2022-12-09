@@ -41,6 +41,7 @@ public class CardButton : MonoBehaviour
 
     public void SetArt() {
         cardSprite.sprite = currCard.cardArt;
+        gameObject.transform.GetChild(2).gameObject.GetComponent<Image>().sprite = currCard.border;
     }
 
     public void SetText() {
