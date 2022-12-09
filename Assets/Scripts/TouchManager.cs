@@ -12,12 +12,12 @@ public class TouchManager : MonoBehaviour
         for (int i = 0; i < Input.touchCount; ++i)
         {
             Touch t = Input.GetTouch(i);
-            if (t.phase == TouchPhase.Began)
+            if (t.phase == TouchPhase.Began && Time.timeScale > 0f)
             {
                 TP.SpawnTowerAtPos(t.position);
             }
         }
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButtonDown(0) && Time.timeScale > 0f) {
             TP.SpawnTowerAtPos(Input.mousePosition);
         }
     }

@@ -33,6 +33,12 @@ public class DeckManager : MonoBehaviour
     public GameObject GetObjAtInd(int ind) {
         return handList[ind].towerPrefab;
     }
+    public void OverrideDeck(List<CardData> newList) {
+        internalDeckList.Clear();
+        discardList.Clear();
+        ClearHand();
+        internalDeckList = new List<CardData>(newList); 
+    }
     public void FillHand(int size = 3) {
         currHandSize = size;
         ClearHand();

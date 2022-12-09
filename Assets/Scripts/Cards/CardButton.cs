@@ -11,10 +11,13 @@ public class CardButton : MonoBehaviour
     Image cardSprite;
     [SerializeField]
     TMPro.TextMeshProUGUI cardText;
+    Image butImage;
     bool setup = false;
+    bool selected = false;
 
     private void Start() {
         GM = GameObject.FindGameObjectWithTag("GameManager");
+        butImage = this.GetComponent<Image>();
     }
 
     private void Update() {
@@ -37,9 +40,17 @@ public class CardButton : MonoBehaviour
     }
 
     public void SetTower() {
-        if (GM.GetComponent<TouchPlacement>().currTower == null) {
-            GM.GetComponent<TouchPlacement>().currTower = currCard;
-            Destroy(this.gameObject);
+        TouchPlacement TP = GM.GetComponent<TouchPlacement>();
+        if (TP.currTower == null && !selected) {
+            TP.currTower = currCard;
+            TP.currButton = this.gameObject;
+            butImage.color = Color.gray;
+            selected = true;
+        } else if (TP.currTower != null && selected) {
+            TP.currTower = null;
+            TP.currButton = null;
+            butImage.color = Color.white;
+            selected = false;
         }
     }
 }
