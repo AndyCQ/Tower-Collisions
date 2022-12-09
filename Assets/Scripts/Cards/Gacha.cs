@@ -42,7 +42,7 @@ public class Gacha : MonoBehaviour
             //     print("UR");
             //     GCM.MainCardList[card+12].count += 1;
             // }
-            int card = Random.Range(0,4);
+            int card = Random.Range(0,9);
             GCM.MainCardList[card].count += 1;
             GCM.currency-=10;
             pulled.Add(card);
@@ -78,7 +78,7 @@ public class Gacha : MonoBehaviour
             // print(card);
             
             for(int i=0;i<11;i++){
-                int card = Random.Range(0,4);
+                int card = Random.Range(0,9);
                 GCM.MainCardList[card].count += 1;
                 pulled.Add(card);
             }

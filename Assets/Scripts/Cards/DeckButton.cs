@@ -23,6 +23,7 @@ public class DeckButton : MonoBehaviour
         if (setup && currCard != null) {
             cardText.text = currCard.cardName;
             cardSprite.sprite = currCard.cardArt;
+            gameObject.transform.GetChild(1).gameObject.GetComponent<Image>().sprite = currCard.border;
             setup = false;
         }
     }

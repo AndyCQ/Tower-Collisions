@@ -22,8 +22,8 @@ MonoBehaviour:
   SetupHealth: 10
   SetupAmmo: 10
   range: 10
-  fireRate: 1
-  Damage: 5
+  fireRate: 1.5
+  Damage: 2
   damageType: 2
   tier: 0
   rariety: 0
