@@ -417,6 +417,9 @@ MonoBehaviour:
   damageType: 2
   tier: 0
   rariety: 0
+  buffrange: 0
+  bufffireRate: 0
+  buffDamage: 0
   projectile: {fileID: 81697750989776893, guid: 25b1c246df9eb304bbf89b969d1c47e5, type: 3}
   TowerBase: {fileID: 6660649772265146134}
   firingPosition: {fileID: 6660649772349769018}

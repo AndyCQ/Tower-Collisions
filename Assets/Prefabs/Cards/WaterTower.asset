@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: water
   cardArt: {fileID: 21300000, guid: 4b44a7955dc4cfd44923a0f2c68b2718, type: 3}
   cardDescription: Test Description
-  towerPrefab: {fileID: 5813593499651692779, guid: 4cd15d7cd07a8c3418891a0eabf02789, type: 3}
+  towerPrefab: {fileID: 5813593499651692779, guid: a3527ab638582f14eb4f33aa96b79d90, type: 3}
   mainArrayIndex: 0
   CardButton: {fileID: 0}
   SetupHealth: 10

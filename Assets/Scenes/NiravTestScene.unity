@@ -349,7 +349,7 @@ MonoBehaviour:
   SetupHealth: 10
   range: 10
   BuffAmount: 5
-  buffType: 2
+  buffType: 3
   tier: 1
   rariety: 3
   ShrineBase: {fileID: 435521313}
@@ -559,7 +559,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 171b3c0874cea5c45959a75a7a2791be, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 71e6f8f0b5c0cd948bf8556a2ef5c976, type: 2}
+      objectReference: {fileID: 2100000, guid: a3bcb68af76aa7246b763946afff835d, type: 2}
     - target: {fileID: 919132149155446097, guid: 171b3c0874cea5c45959a75a7a2791be, type: 3}
       propertyPath: m_Name
       value: lowTierCrystal
@@ -1252,7 +1252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 162bc31d4734cbd4a89c903ef8cdeb92, type: 3}
       propertyPath: m_TagString
-      value: TowerTarget
+      value: Shrine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 162bc31d4734cbd4a89c903ef8cdeb92, type: 3}
@@ -1606,6 +1606,10 @@ PrefabInstance:
     - target: {fileID: 2174805740208574550, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6086829163381766941, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0e0dd24cb851654993042300b9b06d1, type: 3}
@@ -2500,6 +2504,9 @@ MonoBehaviour:
   range: 10
   fireRate: 1
   Damage: 5
+  buffrange: 0
+  bufffireRate: 0
+  buffDamage: 0
   firingPosition: {fileID: 648172615}
   TargetTag: TowerTarget
   TargetTag2: Shrine
@@ -4425,6 +4432,9 @@ MonoBehaviour:
   damageType: 1
   tier: 0
   rariety: 0
+  buffrange: 0
+  bufffireRate: 0
+  buffDamage: 0
   projectile: {fileID: 81697750989776893, guid: 25b1c246df9eb304bbf89b969d1c47e5, type: 3}
   TowerBase: {fileID: 658177987}
   firingPosition: {fileID: 648172614}
