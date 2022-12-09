@@ -16,8 +16,12 @@ public class MainMenu : MonoBehaviour
     private void Start() {
         SM = GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController>();
     }
-    public void SwitchScene(){  
-        SM.swapToScene(SceneToGo);
+    public void SwitchScene(){
+        if(SM.begin){
+            SM.swapToScene("Tutorial");
+        }else{
+            SM.swapToScene(SceneToGo);
+        }
     }
 
     public void TryAgain(){

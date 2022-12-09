@@ -9,13 +9,17 @@ public class SaveGame : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameCardManager GCM;
+    public SceneController SM;
     void Start()
     {
         GCM = GameObject.FindGameObjectWithTag("GameCardManager").GetComponent<GameCardManager>();
+        SM = GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController>();
     }
 
     public void Save(){
+        try{
         GCM = GameObject.FindGameObjectWithTag("GameCardManager").GetComponent<GameCardManager>();
+        SM = GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController>();
         BinaryFormatter bf = new BinaryFormatter(); 
         FileStream file = File.Create(Application.persistentDataPath 
                     + "/save.dat"); 
@@ -28,13 +32,19 @@ public class SaveGame : MonoBehaviour
         for(int i = 0;i<GCM.CurrCardList.Count;i++){
             data.CurrCardList.Add(GCM.CurrCardList[i].mainArrayIndex);
         }
+
+        data.begin = SM.begin;
         bf.Serialize(file, data);
         file.Close();
+        }catch{}
     }
 
     public void Load()
     {
         GCM = GameObject.FindGameObjectWithTag("GameCardManager").GetComponent<GameCardManager>();
+        SM = GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController>();
+        print(Application.persistentDataPath 
+                    + "/save.dat");
         if (File.Exists(Application.persistentDataPath 
                     + "/save.dat"))
         {
@@ -50,6 +60,7 @@ public class SaveGame : MonoBehaviour
                 }
                 GCM.currency = data.currency;
                 GCM.CurrCardList.Clear();
+                SM.begin = data.begin;
                 for(int i = 0;i<data.CurrCardList.Count;i++){
                     GCM.CurrCardList.Add(GCM.MainCardList[data.CurrCardList[i]].CD);
                 }
@@ -71,4 +82,5 @@ public class SaveData
     public List<int> MainCardList = new List<int>();
     public List<int> CurrCardList = new List<int>();
     public int currency;
+    public bool begin;
 }
