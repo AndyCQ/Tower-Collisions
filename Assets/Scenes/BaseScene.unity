@@ -154,8 +154,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrLevel:
     m_Handle: 0
-  noStartMenu: 0
-  testSceneName: Level1
+  noStartMenu: 1
+  testSceneName: Tutorial
+  recentSceneName: 
+  recentScene:
+    m_Handle: 0
 --- !u!4 &428610912
 Transform:
   m_ObjectHideFlags: 0
