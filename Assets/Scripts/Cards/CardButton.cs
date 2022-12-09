@@ -11,9 +11,15 @@ public class CardButton : MonoBehaviour
     Image cardSprite;
     [SerializeField]
     TMPro.TextMeshProUGUI cardText;
+    [SerializeField]
+    GameObject PopupPrefab;
+    [SerializeField]
+    Transform PopupPos;
     Image butImage;
     bool setup = false;
     bool selected = false;
+    GameObject currPopup;
+    bool popUp = false;
 
     private void Start() {
         GM = GameObject.FindGameObjectWithTag("GameManager");
@@ -52,5 +58,28 @@ public class CardButton : MonoBehaviour
             butImage.color = Color.white;
             selected = false;
         }
+    }
+
+    IEnumerator waitTime(float time = .5f) {
+        yield return new WaitForSeconds(time);
+    }
+
+    public void startPopup() {
+        if (!popUp) {
+            popUp = true;
+            StartCoroutine(waitTime());
+            if (popUp) {
+                currPopup = Instantiate(PopupPrefab,
+                            PopupPos.position,
+                            Quaternion.identity,
+                            GameObject.FindGameObjectWithTag("Canvas").transform);
+                currPopup.GetComponent<InfoPopup>().SetUp(currCard);
+            }
+        }
+    }
+
+    public void endPopup() {
+        popUp = false;
+        Destroy(currPopup);
     }
 }

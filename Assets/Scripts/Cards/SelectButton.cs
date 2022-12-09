@@ -14,6 +14,12 @@ public class SelectButton : MonoBehaviour
     public int count;
     [SerializeField]
     DeckCreator DC;
+    [SerializeField]
+    GameObject PopupPrefab;
+    [SerializeField]
+    Transform PopupPos;
+    GameObject currPopup;
+    bool popUp = false;
 
     private void Start() {
         DC = GameObject.FindGameObjectWithTag("DeckMenu").GetComponent<DeckCreator>();
@@ -39,4 +45,27 @@ public class SelectButton : MonoBehaviour
     }
 
     public void DestroySelf() { Destroy(this.gameObject); }
+
+    IEnumerator waitTime(float time = .5f) {
+        yield return new WaitForSeconds(time);
+    }
+
+    public void startPopup() {
+        if (!popUp) {
+            popUp = true;
+            StartCoroutine(waitTime());
+            if (popUp) {
+                currPopup = Instantiate(PopupPrefab,
+                            PopupPos.position,
+                            Quaternion.identity,
+                            GameObject.FindGameObjectWithTag("Canvas").transform);
+                currPopup.GetComponent<InfoPopup>().SetUp(currCard);
+            }
+        }
+    }
+
+    public void endPopup() {
+        popUp = false;
+        Destroy(currPopup);
+    }
 }
