@@ -5,6 +5,7 @@ using UnityEngine;
 public class TouchPlacement : MonoBehaviour
 {
     public CardData currTower;
+    public GameObject currButton;
     [SerializeField]
     Camera mainCam;
 
@@ -22,9 +23,18 @@ public class TouchPlacement : MonoBehaviour
             && !hit.transform.CompareTag("Tower")
             ) {
             GameObject tower = Instantiate(currTower.towerPrefab, hit.point, Quaternion.identity);
-            tower.GetComponent<TowerController>().Setup(currTower.SetupHealth,currTower.SetupAmmo,currTower.range,currTower.fireRate,currTower.Damage,currTower.damageType,currTower.tier,currTower.rariety);
+            tower.GetComponent<TowerController>().Setup(currTower.SetupHealth,
+                                                        currTower.SetupAmmo,
+                                                        currTower.range,
+                                                        currTower.fireRate,
+                                                        currTower.Damage,
+                                                        currTower.damageType,
+                                                        currTower.tier,
+                                                        currTower.rariety);
             //Destroy(currTower.gameObject);
             currTower = null;
+            Destroy(currButton);
+            currButton = null;
             return true;
         } else {
             return false;
