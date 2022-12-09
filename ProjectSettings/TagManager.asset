@@ -16,6 +16,7 @@ TagManager:
   - GameCardManager
   - DeckMenu
   - Save
+  - Shrine
   layers:
   - Default
   - TransparentFX

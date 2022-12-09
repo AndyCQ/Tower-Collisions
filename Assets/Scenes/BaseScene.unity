@@ -154,8 +154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrLevel:
     m_Handle: 0
-  noStartMenu: 0
-  testSceneName: Level1
+  noStartMenu: 1
+  testSceneName: NiravTestScene
 --- !u!4 &428610912
 Transform:
   m_ObjectHideFlags: 0

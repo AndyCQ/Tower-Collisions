@@ -1325,7 +1325,7 @@ MonoBehaviour:
   waveNumber: 1
   index: 0
   currString: 
-  skelPrefab: {fileID: 621763271064468882, guid: a20be4416d93a634f97f7fc9bafbc8a4, type: 3}
+  skelPrefab: {fileID: 621763271064468882, guid: d27c5f9452f01e34382ec2286916a09a, type: 3}
   orcPrefab: {fileID: 621763271064468882, guid: 96b5ea9de4a21834084ebb330c1aa53f, type: 3}
   gobPrefab: {fileID: 621763271064468882, guid: a16d9e64970e46d4981a4cdf5fd571fa, type: 3}
   nextScene: ForestLevel2
