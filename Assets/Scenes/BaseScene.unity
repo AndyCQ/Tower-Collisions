@@ -159,7 +159,7 @@ MonoBehaviour:
   recentSceneName: 
   recentScene:
     m_Handle: 0
-  begin: 0
+  begin: 1
 --- !u!4 &428610912
 Transform:
   m_ObjectHideFlags: 0
