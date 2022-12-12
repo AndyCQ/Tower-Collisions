@@ -92,7 +92,9 @@ public class ShrineBuff : MonoBehaviour
 
     public void ReBuffAll(){
         foreach (GameObject tar in buffs) {
-            RemoveBuff(tar);
+            if(tar != null){
+                RemoveBuff(tar);
+            }
         }
     }
 }

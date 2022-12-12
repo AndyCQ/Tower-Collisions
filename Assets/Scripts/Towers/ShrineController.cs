@@ -70,7 +70,9 @@ public class ShrineController : MonoBehaviour
     {
         if(healthController.getCurrentHealth()<=0){
             buffController.ReBuffAll();
-            Destroy(gameObject);
+            if(gameObject != null){
+                Destroy(gameObject);
+            }
         }
     }
 
